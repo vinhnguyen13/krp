@@ -1,0 +1,76 @@
+.search-profile{
+	display: inline-block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.search-profile-info{
+	clear: both;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+    width: 450px;
+}
+
+.search-profile-info .info-detail{
+	float: left;
+}
+
+.search-profile-info .info-detail li{
+	
+}
+
+.search-profile-info .profile-avatar{
+	display: inline-block;
+    float: left;
+    margin-right: 6px;
+}
+
+.text-result{
+	font-size: 18px;
+    line-height: 34px;
+}
+
+.search-profile .album-user{
+	
+}
+
+.search-profile .album-user li{
+	float: left;
+	margin-left: 6px;
+}
+
+.search-profile .album-user img{
+	width: 90px;
+	vertical-align: inherit;
+	margin-bottom: 2px;
+}
+
+.search-profile .album-user p{
+	overflow: hidden;
+    white-space: pre;
+    width: 90px;
+}
+
+.search-album-info{
+	display: inline-block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.album_thumb{
+	float: left;
+	margin-right: 6px;
+}
+
+.album_thumb img{
+	width: 150px;
+}
+
+.album_info{
+	float: left;
+}
+
+.album_info .title{
+	font-weight: bold;
+}

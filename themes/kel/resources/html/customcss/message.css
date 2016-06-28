@@ -1,0 +1,39 @@
+.msgView{
+	
+}
+
+.msgView hr{
+	border: 0px;
+	border-top:1px solid #CECECE; 
+}
+
+.msgView .msgMenu{
+	height: 30px;
+	padding: 5px;
+}
+
+.ui-widget .msgResultFilter {
+    font-size: 11px !important;
+}
+
+.msgView .msgMenu .button{
+	margin-right: 10px;
+}
+
+.msgConversation .rfloat .msgStatus{
+	font-weight: bold;
+}
+.msgConversation .rfloat{
+	float: right;
+}
+
+.msgConversation ul li, .msgConversation ul li a{
+	float: left;
+	width: 100%;
+}
+.msgConversation ul li span.title{
+	font-style: italic;
+}
+.msgConversation ul li span.timestamp{
+	width: 150px;
+}

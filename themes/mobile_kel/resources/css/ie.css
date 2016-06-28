@@ -1,0 +1,22 @@
+.social-block ul li a span{
+	margin:8px 0px 0px 0px;
+}
+.social-block ul li.icon-unlike a span{
+	margin-top:10px;
+}
+.social-block ul li.icon-email a span{
+	margin-top:10px;
+}
+.page-login form input[type=checkbox]{
+	padding:0px;
+}
+.page-regis select{
+	padding:7px 10px 9px 5px;
+}
+.block-content-pro .list-tab-common li a{
+	font-size:.6em;
+	text-transform:uppercase;
+}
+.title-subpage select{
+	padding-right:0px;
+}

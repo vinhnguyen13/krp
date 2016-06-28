@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'AttitudeVNCactusBoldItalic-Bold';
+  src: url('../fonts/AttitudeVNCactusBoldItalic-Bold.eot?v=4.3.0');
+  src: url('../fonts/AttitudeVNCactusBoldItalic-Bold.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/AttitudeVNCactusBoldItalic-Bold.woff?v=4.3.0') format('woff'), url('../fonts/AttitudeVNCactusBoldItalic-Bold.woff?v=4.3.0') format('woff'), url('../fonts/AttitudeVNCactusBoldItalic-Bold.ttf?v=4.3.0') format('truetype'), url('../fonts/AttitudeVNCactusBoldItalic-Bold.svg?v=4.3.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AttitudeVNCactusLight-Light';
+  src: url('../fonts/AttitudeVNCactusLight-Light.eot?v=4.3.0');
+  src: url('../fonts/AttitudeVNCactusLight-Light.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/AttitudeVNCactusLight-Light.woff?v=4.3.0') format('woff'), url('../fonts/AttitudeVNCactusLight-Light.woff?v=4.3.0') format('woff'), url('../fonts/AttitudeVNCactusLight-Light.ttf?v=4.3.0') format('truetype'), url('../fonts/AttitudeVNCactusLight-Light.svg?v=4.3.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CenturyGothic';
+  src: url('../fonts/CenturyGothic.eot?v=4.3.0');
+  src: url('../fonts/CenturyGothic.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/CenturyGothic.woff?v=4.3.0') format('woff'), url('../fonts/CenturyGothic.woff?v=4.3.0') format('woff'), url('../fonts/CenturyGothic.ttf?v=4.3.0') format('truetype'), url('../fonts/CenturyGothic.svg?v=4.3.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CenturyGothic-Bold';
+  src: url('../fonts/CenturyGothic-Bold.eot?v=4.3.0');
+  src: url('../fonts/CenturyGothic-Bold.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/CenturyGothic-Bold.woff?v=4.3.0') format('woff'), url('../fonts/CenturyGothic-Bold.woff?v=4.3.0') format('woff'), url('../fonts/CenturyGothic-Bold.ttf?v=4.3.0') format('truetype'), url('../fonts/CenturyGothic-Bold.svg?v=4.3.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UVNHongHaHepBold';
+  src: url('../fonts/UVNHongHaHepBold.eot?v=4.3.0');
+  src: url('../fonts/UVNHongHaHepBold.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/UVNHongHaHepBold.woff?v=4.3.0') format('woff'), url('../fonts/UVNHongHaHepBold.woff?v=4.3.0') format('woff'), url('../fonts/UVNHongHaHepBold.ttf?v=4.3.0') format('truetype'), url('../fonts/UVNHongHaHepBold.svg?v=4.3.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UVNHongHaHep';
+  src: url('../fonts/UVNHongHaHep.eot?v=4.3.0');
+  src: url('../fonts/UVNHongHaHep.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/UVNHongHaHep.woff?v=4.3.0') format('woff'), url('../fonts/UVNHongHaHep.woff?v=4.3.0') format('woff'), url('../fonts/UVNHongHaHep.ttf?v=4.3.0') format('truetype'), url('../fonts/UVNHongHaHep.svg?v=4.3.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

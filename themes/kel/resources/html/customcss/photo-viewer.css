@@ -1,0 +1,96 @@
+/* preview styles */
+#photo_preview {
+    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    color: #000000;
+    display: none;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
+}
+.photo_wrp {
+    background-color: white;
+    height: auto;
+    margin: 20px auto 0;
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+    width: 1200px;
+
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.close {
+    cursor: pointer;
+    float: right;
+}
+
+.pleft {
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+.pleft img {
+	max-height:600px;
+    max-width: 720px;
+}
+.pright {
+    float: right;
+    position: relative;
+    width: 360px;
+    border: 1px solid;
+}
+
+.comment-list {
+	float: left;
+	overflow: hidden;
+	border: 1px solid;
+	clear: left;
+	width: 360px;
+}
+
+.avatar {
+	float: left;
+	width: 60px;
+	clear:left;
+}
+
+
+
+
+.preview_prev, .preview_next {
+    cursor: pointer;
+    margin-top: -64px;
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+
+    -moz-transition: opacity 0.2s ease 0s;
+    -ms-transition: opacity 0.2s ease 0s;
+    -o-transition: opacity 0.2s ease 0s;
+    -webkit-transition: opacity 0.2s ease 0s;
+    transition: opacity 0.2s ease 0s;
+}
+.preview_prev:hover, .preview_next:hover {
+    opacity: 1;
+}
+.preview_prev {
+    left: 20px;
+}
+.preview_next {
+    right: 40px;
+}
+
+.top {
+	top: 12%;
+	left: 75%;
+	
+}
+

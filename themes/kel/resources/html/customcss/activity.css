@@ -1,0 +1,56 @@
+.item-activity .stream-top{
+	clear: both;
+}
+
+.item-activity .avatar-profile{
+	width:50px;
+	height:50px;
+	vertical-align: inherit;
+}
+
+.content-activity{
+	margin-left: 58px;
+	padding-top: 5px;
+}
+
+.item-activity .profile{
+	float: left;
+}
+
+ul.activity-photos
+{
+	margin:10px 0px;
+}
+
+ul.activity-photos li{
+	border: none;
+	float: left;
+	width: auto;
+	margin-right: 5px;
+}
+
+ul.activity-photos li img{
+	width: 85px;
+}
+
+.stream-like, .stream-comment{
+	cursor: pointer;
+}
+
+.stream-like:hover, .stream-comment:hover{
+	text-decoration: underline;
+}
+
+.stream-avatar{
+	float: left;
+    margin-right: 4px;
+}
+
+.stream-post-comment{
+	margin-left: 42px;
+}
+
+.stream-box-comment{
+	display: inline-block;
+    width: 100%;
+}

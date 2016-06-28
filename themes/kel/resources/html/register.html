@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<title>Kelreport</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta name="Description" content="">
+<meta name="Keywords" content="">
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<link href="css/plugins.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<!--[if lt IE 9]>
+<link href="css/ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print"/>
+<script type="text/javascript" src="js/jquery.js"></script>	
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery.bxSlider.min.js"></script>
+<script type="text/javascript" src="js/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="js/inview.js"></script>
+<script type="text/javascript" src="js/icheck.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+</head>
+<body>
+	<div class="kel">
+		<div class="wrapper kel-home">
+				<div class="header">
+					<div class="welcome">
+						<p>Welcome</p>
+					</div>
+					<!-- welcome message -->
+					<div class="location">
+						<p>Choose Location to <a href="#" title="Singapore" class="btn-country">Singapore</a></p>
+						<div class="location-list">
+						</div>
+					</div>
+					<!-- location choose -->
+					<div class="logo">
+						<a href="#" title="Kelport"><h1>Kelreport</h1></a>
+						<!-- only insert <h1> tag at home -->
+					</div>
+					<!-- logo -->
+					<div class="authen">
+						<ul class="wrap">
+							<li class="item"><a title="Login" href="#"><i class="ismall ismall-login"></i><span class="itext">Login</span></a></li>
+							<li class="item">
+								<a title="Sign up" class="btn-reg" onclick="javascript:sprReg(this);"><i class="ismall ismall-reg"></i><span class="itext">Sign up</span></a>
+								<div class="reg-board">
+									<a href="#" class="btn-close" title="Close"></a>
+									<div class="span-wrap"><span class="arrow"></span></div>
+									<div class="reg-board-detail">
+										<ul>
+											<li>
+												<a href="#" title="Login with Facebook"><i class="btn-reg-facebook"></i></a>
+											</li>
+											<li>
+												<a href="#" title="Signup with Google"><i class="btn-reg-google"></i></a>
+											</li>
+											<li class="reg-email">
+												<a href="#" title="Signup using your email">Signup using your email?</a>
+											</li>
+											<li class="reg-policy">
+												<p>By signing up for <span class="bold">Kelreport</span> you agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a></p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- register popup -->
+							</li>
+					</div>
+					<!-- Authen -->
+					<div class="search">
+						<div class="input-wrap">
+							<input type="text" value="" name="" class="" placeholder="Search..."/>
+							<input type="submit" value="" name="" class=""/>
+						</div>
+					</div>
+					<!-- search -->
+				</div>
+				<!-- header -->
+				<div class="navigation">
+					<ul class="wrap">
+						<li class="item">
+							<a href="#" title="Editor's Picks">Editor's Picks</a>
+						</li>
+						<li class="item">
+							<a href="#" title="Editor's Picks">Fashion</a>
+							<div class="sub">
+								<span class="grad"></span>
+								<ul>
+									<li><a href="#" title="Clothing">Clothing</a></li>
+									<li><a href="#" title="Accessories">Accessories</a></li>
+									<li><a href="#" title="Bags">Bags</a></li>
+									<li><a href="#" title="Shoes">Shoes</a></li>
+									<li><a href="#" title="Services">Services</a></li>
+									<li><a href="#" title="Boutiques">Boutiques</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="item">
+							<a href="#" title="Editor's Picks">Beauty & Fitness</a>
+							<div class="sub">
+								<span class="grad"></span>
+								<ul>
+									<li><a href="#" title="Spa/Salon">Spa/Salon</a></li>
+									<li><a href="#" title="Wellness">Wellness</a></li>
+									<li><a href="#" title="Excercise/Fitness">Excercise/Fitness</a></li>
+									<li><a href="#" title="Products">Products</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="item">
+							<a href="#" title="Editor's Picks">Lifestyle</a>
+						</li>
+						<li class="item">
+							<a href="#" title="Editor's Picks">Deals</a>
+						</li>
+					</ul>
+				</div>
+				<!-- navigation -->
+				<div class="main-content">
+					<div class="cline cline-black"></div>
+					<div class="content-wrap">
+						<div class="page page-register">
+							<div class="head">
+								<h1>Register</h1>
+							</div>
+							<div class="register">
+								<ul>
+									<li>
+										<label for="">First name</label>
+										<input type="text" value="" id="" name=""/>
+										<div class="errorMessage"></div>
+										<span class="ico-note"><i></i>!</span>
+									</li>
+									<li class="gotError">
+										<label for="">Last name</label>
+										<input type="text" value="" id="" name=""/>
+										<div class="errorMessage">Error hiện ở đây nà</div>
+										<span class="ico-note"><i></i>!</span>
+									</li>
+									<li>
+										<label for="">Enter your email</label>
+										<input type="email" value="" id="" name=""/>
+										<div class="errorMessage"></div>
+										<span class="ico-note"><i></i>!</span>
+									</li>
+									<li>
+										<label for="">Enter your password</label>
+										<input type="password" value="" id="" name=""/>
+										<div class="errorMessage"></div>
+										<span class="ico-note"><i></i>!</span>
+									</li>
+									<li>
+										<label for="">Enter your password</label>
+										<input type="password" value="" id="" name=""/>
+										<div class="errorMessage"></div>
+										<span class="ico-note"><i></i>!</span>
+									</li>
+									<li>
+										<label>Gender</label>
+										<ul>
+											<li>
+												<input type="radio" value="" id="rd1" name="se"/>
+												<label for="rd1">Male</label>
+											</li>
+											<li>
+												<input type="radio" value="" id="rd2" name="se"/>
+												<label for="rd2">Female</label>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<label for="">Birthday</label>
+										<input type="text" value="" id="" name="" placeholder="DD / MM / YY"/>
+										<div class="errorMessage"></div>
+										<span class="ico-note"></span>
+									</li>
+									<li>
+										<label for="">Location</label>
+										<select>
+											<option>Select your location</option>
+											<option>Location</option>
+											<option>Location</option>
+											<option>Location</option>
+											<option>Location</option>
+										</select>
+									</li>
+									<li class="policy">
+										<p>
+											By clicking Sign Up you confirm that you accept our <a class="bold" href="#" target="_blank" title="">Privacy Policy</a> and <a class="bold" href="#" target="_blank" title="">Terms of Service</a>.
+										</p>
+									</li>
+									<li class="btn">
+										<input type="submit" value="Sign up now" id="" name=""/>
+										<p><a href="#" title="">You already have an account? Click to login</a></p>
+									</li>
+								</ul>
+							</div>
+							<!-- register info -->
+						</div>
+					</div>
+					<!-- content board -->
+				</div>
+				<!-- Main content board -->
+				<div class="bottom">
+					<div class="newsletter">
+						<label for="">Subcribe to our free email alerts</label>
+						<div class="input-wrap">
+							<input type="text" value="" placeholder="Email address"/>
+							<input type="submit" value="" />
+						</div>
+					</div>
+					<!-- Newsletter -->
+					<div class="footer clearfix">
+						<div class="column">
+							<h4>Editor's Pick</h4>
+						</div>
+						<!-- Single Column -->
+						<div class="column">
+							<h4>Fashion</h4>
+							<ul>
+								<li>
+									<a href="#" title="Clothing">Clothing</a>
+								</li>
+								<li>
+									<a href="#" title="Accessories">Accessories</a>
+								</li>
+								<li>
+									<a href="#" title="Bags">Bags</a>
+								</li>
+								<li>
+									<a href="#" title="Shoes">Shoes</a>
+								</li>
+								<li>
+									<a href="#" title="Services">Services</a>
+								</li>
+								<li>
+									<a href="#" title="Boutiques">Boutiques</a>
+								</li>
+							</ul>
+						</div>
+						<!-- Single Column -->
+						<div class="column">
+							<h4>Beauty & Fitness</h4>
+							<ul>
+								<li>
+									<a href="#" title="Spa/Salon">Spa/Salon</a>
+								</li>
+								<li>
+									<a href="#" title="Wellness">Wellness</a>
+								</li>
+								<li>
+									<a href="#" title="Excercise/Fitness">Excercise/Fitness</a>
+								</li>
+								<li>
+									<a href="#" title="Products">Products</a>
+								</li>
+							</ul>
+						</div>
+						<!-- Single Column -->
+						<div class="column">
+							<h4>Lifestyle</h4>
+							<ul>
+								<li>
+									<a href="#" title="Entertainment">Entertainment</a>
+								</li>
+								<li>
+									<a href="#" title="Going Out">Going Out</a>
+								</li>
+								<li>
+									<a href="#" title="Travel">Travel</a>
+								</li>
+								<li>
+									<a href="#" title="Car & Gadget">Car & Gadget</a>
+								</li>
+								<li>
+									<a href="#" title="House & Home">House & Home</a>
+								</li>
+							</ul>
+						</div>
+						<!-- Single Column -->
+						<div class="column">
+							<h4>Deals</h4>
+						</div>
+						<!-- Single Column -->
+						<div class="column">
+							<h4>About Us</h4>
+							<ul>
+								<li>
+									<a href="#" title="Spa/Salon">About Us</a>
+								</li>
+								<li>
+									<a href="#" title="Wellness">Advertising/Media Kit</a>
+								</li>
+								<li>
+									<a href="#" title="Excercise/Fitness">Submit Your News</a>
+								</li>
+								<li>
+									<a href="#" title="Products">Contact Us</a>
+								</li>
+								<li>
+									<a href="#" title="Products">Help</a>
+								</li>
+							</ul>
+						</div>
+						<!-- Single Column -->
+					</div>
+					<!-- footer -->
+					<div class="powered">
+						<div class="left">
+							<p>© 2012 Dream-Weavers Media. All rights reserved.</p>
+						</div>
+						<div class="right">
+							 <ul>
+								<li><a href="#" title="Editorial Policy" target="_blank">Editorial Policy</a></li>
+								<li><a href="#" title="Privacy Policy" target="_blank">Privacy Policy</a></li>
+								<li><a href="#" title="Terms & Conditions  " target="_blank">Terms & Conditions  </a></li>     
+							 </ul>
+						</div>
+					</div>
+					<!-- powered -->
+				</div>
+				<!-- bottom area -->
+		</div>
+		<!-- main wrapper -->
+	</div>
+	<!-- body -->
+</body>
+</html>

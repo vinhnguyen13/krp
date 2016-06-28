@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<title>Kelreport</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta name="Description" content="">
+<meta name="Keywords" content="">
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<link href="css/plugins.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<!--[if lt IE 9]>
+<link href="css/ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print"/>
+<script type="text/javascript" src="js/jquery.js"></script>	
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery.bxSlider.min.js"></script>
+<script type="text/javascript" src="js/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="js/inview.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+</head>
+<body>
+	<div class="kel">
+		<div class="wrapper kel-home">
+				<div class="header">
+					<div class="welcome">
+						<p>Welcome</p>
+					</div>
+					<!-- welcome message -->
+					<div class="location">
+						<p>Choose Location to <a href="#" title="Singapore" class="btn-country">Singapore</a></p>
+						<div class="location-list">
+						</div>
+					</div>
+					<!-- location choose -->
+					<div class="logo">
+						<a href="#" title="Kelport"><h1>Kelreport</h1></a>
+						<!-- only insert <h1> tag at home -->
+					</div>
+					<!-- logo -->
+					<div class="authen">
+						<ul class="wrap">
+							<li class="item">
+								<a title="Login" href="#"onclick="javascript:sprReg(this);"><i class="ismall ismall-login"></i><span class="itext">Login</span></a>
+								<div class="reg-board board-login">
+									<a href="#" class="btn-close" title="Close"></a>
+									<div class="span-wrap"><span class="arrow"></span></div>
+									<div class="reg-board-detail">
+										<ul>	
+											<li>
+												<input type="text" value="" placeholder="Username"/>
+												<div class="errorMessage"></div>
+											</li>
+											<li>
+												<input type="password" value="" placeholder="Password"/>
+												<div class="errorMessage"></div>
+											</li>
+											<li class="remember-me">
+												<div class="block-inline">
+													<input type="checkbox" id="remember-cb"/>
+													<label for="remember-cb">Remember me</label>
+												</div>
+												<div class="block-inline block-sep">
+													<span>|</span>
+												</div>
+												<div class="block-inline">
+													<a href="#" target="_blank">
+														Forgot your password?
+													</a>
+												</div>
+											</li>
+											<li class="buttons">
+												<input type="submit" value="LOG IN"/>
+											</li>
+											<li class="line">
+												<span></span>
+											</li>
+											<li>
+												<a href="#" title="Login with Facebook"><i class="btn-reg-facebook"></i></a>
+											</li>
+											<li>
+												<a href="#" title="Login with Google"><i class="btn-login-google"></i></a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- Login popup -->
+							</li>
+							<li class="item">
+								<a title="Sign up" class="btn-reg" onclick="javascript:sprReg(this);"><i class="ismall ismall-reg"></i><span class="itext">Sign up</span></a>
+								<div class="reg-board">
+									<a href="#" class="btn-close" title="Close"></a>
+									<div class="span-wrap"><span class="arrow"></span></div>
+									<div class="reg-board-detail">
+										<ul>
+											<li>
+												<a href="#" title="Login with Facebook"><i class="btn-reg-facebook"></i></a>
+											</li>
+											<li>
+												<a href="#" title="Signup with Google"><i class="btn-reg-google"></i></a>
+											</li>
+											<li class="reg-email">
+												<a href="#" title="Signup using your email">Signup using your email?</a>
+											</li>
+											<li class="reg-policy">
+												<p>By signing up for <span class="bold">Kelreport</span> you agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a></p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- register popup -->
+							</li>
+					</div>
+					<!-- Authen -->
+					<div class="search">
+						<div class="input-wrap">
+							<input type="text" value="" name="" class="" placeholder="Search..."/>
+							<input type="submit" value="" name="" class=""/>
+						</div>
+					</div>
+					<!-- search -->
+				</div>
+				<!-- header -->
+				<div class="navigation">
+					<ul class="wrap">
+						<li class="item">
+							<a href="#" title="Editor's Picks">Editor's Picks</a>
+						</li>
+						<li class="item">
+							<a href="#" title="Editor's Picks">Fashion</a>
+							<div class="sub">
+								<span class="grad"></span>
+								<ul>
+									<li><a href="#" title="Clothing">Clothing</a></li>
+									<li><a href="#" title="Accessories">Accessories</a></li>
+									<li><a href="#" title="Bags">Bags</a></li>
+									<li><a href="#" title="Shoes">Shoes</a></li>
+									<li><a href="#" title="Services">Services</a></li>
+									<li><a href="#" title="Boutiques">Boutiques</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="item">
+							<a href="#" title="Editor's Picks">Beauty & Fitness</a>
+							<div class="sub">
+								<span class="grad"></span>
+								<ul>
+									<li><a href="#" title="Spa/Salon">Spa/Salon</a></li>
+									<li><a href="#" title="Wellness">Wellness</a></li>
+									<li><a href="#" title="Excercise/Fitness">Excercise/Fitness</a></li>
+									<li><a href="#" title="Products">Products</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="item">
+							<a href="#" title="Editor's Picks">Lifestyle</a>
+						</li>
+						<li class="item">
+							<a href="#" title="Editor's Picks">Deals</a>
+						</li>
+					</ul>
+				</div>
+				<!-- navigation -->
+				<div class="main-content">
+					<div class="cline cline-black"></div>
+					<div class="content-wrap">
+						<div class="slide">
+							<div class="slide-wrap">
+								<ul class="slide-list">
+									<li>
+										<a href="#" title="Slide Title">
+											<img src="css/images/img-slide-001.jpg" alt="Slide Title" border="" />
+										</a>
+									</li>
+									<li>
+										<a href="#" title="Slide Title">
+											<img src="css/images/img-slide-001.jpg" alt="Slide Title" border="" />
+										</a>
+									</li>
+									<li>
+										<a href="#" title="Slide Title">
+											<img src="css/images/img-slide-001.jpg" alt="Slide Title" border="" />
+										</a>
+									</li>
+									<li>
+										<a href="#" title="Slide Title">
+											<img src="css/images/img-slide-001.jpg" alt="Slide Title" border="" />
+										</a>
+									</li>
+									<li>
+										<a href="#" title="Slide Title">
+											<img src="css/images/img-slide-001.jpg" alt="Slide Title" border="" />
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- slide -->
+						<div class="sections">
+							<div class="section section-odd">
+								<div class="section-head">
+									<img src="css/images/img-section-001.jpg" alt="Section Title" border=""/>
+									<div class="section-name">
+										<h2><a href="#" title="Fashion">Fashion</a></h2>
+										<span class="arrow-above"></span>
+										<span class="arrow-below"></span>
+									</div>									
+								</div>
+								<!-- Section header -->
+								<div class="section-content">
+									<ul>
+										<li class="item first">
+											<h3 class="clearfix">
+												<a href="#" title="">
+													<img src="css/images/img-tmb-001.jpg" alt="" border="" />
+													<span class="text">Mecury Rising</span>
+													<span class="des">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor...</span>
+												</a>
+											</h3>
+										</li>
+										<li class="item">
+											<h3 class="clearfix">
+												<a href="#" title="">
+													<img src="css/images/img-tmb-002.jpg" alt="" border="" />
+													<span class="text">Bộ thời trang theo cảm hứng "Somebody that i used to know"</span>
+												</a>
+											</h3>
+										</li>
+										<li class="item">
+											<h3 class="clearfix">
+												<a href="#" title="">
+													<img src="css/images/img-tmb-003.jpg" alt="" border="" />
+													<span class="text">Jean Paul Gaultier ra mắt bộ sưu tập Autumn Fall mới</span>
+												</a>
+											</h3>
+										</li>
+										<li class="item">
+											<h3 class="clearfix">
+												<a href="#" title="">
+													<img src="css/images/img-tmb-004.jpg" alt="" border="" />
+													<span class="text">Jean Paul Gaultier ra mắt bộ sưu tập Autumn Fall mới</span>
+												</a>
+											</h3>
+										</li>
+									</ul>
+								</div>
+								<!-- Picks list -->
+							</div>
+							<!-- Main Section Item -->
+							<div class="section section-even">
+								<div class="section-head">
+									<img src="css/images/img-section-002.jpg" alt="Section Title" border=""/>
+									<div class="section-name">
+										<h2><a href="#" title="Beauty & Fitness">Beauty & Fitness</a></h2>
+										<span class="arrow-above"></span>
+										<span class="arrow-below"></span>
+									</div>									
+								</div>
+								<!-- Section header -->
+								<div class="section-content">
+									<ul>
+										<li class="item first">
+											<h3 class="clearfix">
+												<a href="#" title="">
+													<img src="css/images/img-tmb-001.jpg" alt="" border="" />
+													<span class="text">Mecury Rising</span>
+													<span class="des">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor...</span>
+												</a>
+											</h3>
+										</li>
+										<li class="item">
+											<h3 class="clearfix">
+												<a href="#" title="">
+													<img src="css/images/img-tmb-002.jpg" alt="" border="" />
+													<span class="text">Bộ thời trang theo cảm hứng "Somebody that i used to know"</span>
+												</a>
+											</h3>
+										</li>
+										<li class="item">
+											<h3 class="clearfix">
+												<a href="#" title="">
+													<img src="css/images/img-tmb-003.jpg" alt="" border="" />
+													<span class="text">Jean Paul Gaultier ra mắt bộ sưu tập Autumn Fall mới</span>
+												</a>
+											</h3>
+										</li>
+										<li class="item">
+											<h3 class="clearfix">
+												<a href="#" title="">
+													<img src="css/images/img-tmb-004.jpg" alt="" border="" />
+													<span class="text">Jean Paul Gaultier ra mắt bộ sưu tập Autumn Fall mới</span>
+												</a>
+											</h3>
+										</li>
+									</ul>
+								</div>
+								<!-- Picks list -->
+							</div>
+							<!-- Main Section Item -->
+							<div class="section section-odd">
+								<div class="section-head">
+									<img src="css/images/img-section-003.jpg" alt="Section Title" border=""/>
+									<div class="section-name">
+										<h2><a href="#" title="Deals">Deals</a></h2>
+										<span class="arrow-above"></span>
+										<span class="arrow-below"></span>
+									</div>									
+								</div>
+								<!-- Section header -->
+								<div class="section-content">
+									<ul>
+										<li class="item first">
+											<h3 class="clearfix">
+												<a href="#" title="">
+													<img src="css/images/img-tmb-001.jpg" alt="" border="" />
+													<span class="text">Mecury Rising</span>
+													<span class="des">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor...</span>
+												</a>
+											</h3>
+										</li>
+										<li class="item">
+											<h3 class="clearfix">
+												<a href="#" title="">
+													<img src="css/images/img-tmb-002.jpg" alt="" border="" />
+													<span class="text">Bộ thời trang theo cảm hứng "Somebody that i used to know" Bộ thời trang theo cảm hứng "Somebody that i used to know"</span>
+												</a>
+											</h3>
+										</li>
+										<li class="item">
+											<h3 class="clearfix">
+												<a href="#" title="">
+													<img src="css/images/img-tmb-003.jpg" alt="" border="" />
+													<span class="text">Jean Paul Gaultier ra mắt bộ sưu tập Autumn Fall mới</span>
+												</a>
+											</h3>
+										</li>
+										<li class="item">
+											<h3 class="clearfix">
+												<a href="#" title="">
+													<img src="css/images/img-tmb-004.jpg" alt="" border="" />
+													<span class="text">Jean Paul Gaultier ra mắt bộ sưu tập Autumn Fall mới</span>
+												</a>
+											</h3>
+										</li>
+									</ul>
+								</div>
+								<!-- Picks list -->
+							</div>
+							<!-- Main Section Item -->
+							<div class="section section-even">
+								<div class="section-head">
+									<img src="css/images/img-section-004.jpg" alt="Section Title" border=""/>
+									<div class="section-name">
+										<h2><a href="#" title="Lifestyle">Lifestyle</a></h2>
+										<span class="arrow-above"></span>
+										<span class="arrow-below"></span>
+									</div>									
+								</div>
+								<!-- Section header -->
+								<div class="section-content">
+									<ul>
+										<li class="item first">
+											<h3 class="clearfix">
+												<a href="#" title="">
+													<img src="css/images/img-tmb-001.jpg" alt="" border="" />
+													<span class="text">Mecury Rising</span>
+													<span class="des">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor...</span>
+												</a>
+											</h3>
+										</li>
+										<li class="item">
+											<h3 class="clearfix">
+												<a href="#" title="">
+													<img src="css/images/img-tmb-002.jpg" alt="" border="" />
+													<span class="text">Bộ thời trang theo cảm hứng "Somebody that i used to know"</span>
+												</a>
+											</h3>
+										</li>
+										<li class="item">
+											<h3 class="clearfix">
+												<a href="#" title="">
+													<img src="css/images/img-tmb-003.jpg" alt="" border="" />
+													<span class="text">Jean Paul Gaultier ra mắt bộ sưu tập Autumn Fall mới</span>
+												</a>
+											</h3>
+										</li>
+										<li class="item">
+											<h3 class="clearfix">
+												<a href="#" title="">
+													<img src="css/images/img-tmb-004.jpg" alt="" border="" />
+													<span class="text">Jean Paul Gaultier ra mắt bộ sưu tập Autumn Fall mới</span>
+												</a>
+											</h3>
+										</li>
+									</ul>
+								</div>
+								<!-- Picks list -->
+							</div>
+							<!-- Main Section Item -->
+						</div>
+						<!-- Picks Sections -->
+					</div>
+					<!-- content board -->
+				</div>
+				<!-- Main content board -->
+				<div class="bottom">
+					<div class="newsletter">
+						<label for="">Subcribe to our free email alerts</label>
+						<div class="input-wrap">
+							<input type="text" value="" placeholder="Email address"/>
+							<input type="submit" value="" />
+						</div>
+					</div>
+					<!-- Newsletter -->
+					<div class="footer clearfix">
+						<div class="column">
+							<h4>Editor's Pick</h4>
+						</div>
+						<!-- Single Column -->
+						<div class="column">
+							<h4>Fashion</h4>
+							<ul>
+								<li>
+									<a href="#" title="Clothing">Clothing</a>
+								</li>
+								<li>
+									<a href="#" title="Accessories">Accessories</a>
+								</li>
+								<li>
+									<a href="#" title="Bags">Bags</a>
+								</li>
+								<li>
+									<a href="#" title="Shoes">Shoes</a>
+								</li>
+								<li>
+									<a href="#" title="Services">Services</a>
+								</li>
+								<li>
+									<a href="#" title="Boutiques">Boutiques</a>
+								</li>
+							</ul>
+						</div>
+						<!-- Single Column -->
+						<div class="column">
+							<h4>Beauty & Fitness</h4>
+							<ul>
+								<li>
+									<a href="#" title="Spa/Salon">Spa/Salon</a>
+								</li>
+								<li>
+									<a href="#" title="Wellness">Wellness</a>
+								</li>
+								<li>
+									<a href="#" title="Excercise/Fitness">Excercise/Fitness</a>
+								</li>
+								<li>
+									<a href="#" title="Products">Products</a>
+								</li>
+							</ul>
+						</div>
+						<!-- Single Column -->
+						<div class="column">
+							<h4>Lifestyle</h4>
+							<ul>
+								<li>
+									<a href="#" title="Entertainment">Entertainment</a>
+								</li>
+								<li>
+									<a href="#" title="Going Out">Going Out</a>
+								</li>
+								<li>
+									<a href="#" title="Travel">Travel</a>
+								</li>
+								<li>
+									<a href="#" title="Car & Gadget">Car & Gadget</a>
+								</li>
+								<li>
+									<a href="#" title="House & Home">House & Home</a>
+								</li>
+							</ul>
+						</div>
+						<!-- Single Column -->
+						<div class="column">
+							<h4>Deals</h4>
+						</div>
+						<!-- Single Column -->
+						<div class="column">
+							<h4>About Us</h4>
+							<ul>
+								<li>
+									<a href="#" title="Spa/Salon">About Us</a>
+								</li>
+								<li>
+									<a href="#" title="Wellness">Advertising/Media Kit</a>
+								</li>
+								<li>
+									<a href="#" title="Excercise/Fitness">Submit Your News</a>
+								</li>
+								<li>
+									<a href="#" title="Products">Contact Us</a>
+								</li>
+								<li>
+									<a href="#" title="Products">Help</a>
+								</li>
+							</ul>
+						</div>
+						<!-- Single Column -->
+					</div>
+					<!-- footer -->
+					<div class="powered">
+						<div class="left">
+							<p>© 2012 Dream-Weavers Media. All rights reserved.</p>
+						</div>
+						<div class="right">
+							 <ul>
+								<li><a href="#" title="Editorial Policy" target="_blank">Editorial Policy</a></li>
+								<li><a href="#" title="Privacy Policy" target="_blank">Privacy Policy</a></li>
+								<li><a href="#" title="Terms & Conditions  " target="_blank">Terms & Conditions  </a></li>     
+							 </ul>
+						</div>
+					</div>
+					<!-- powered -->
+				</div>
+				<!-- bottom area -->
+		</div>
+		<!-- main wrapper -->
+	</div>
+	<!-- body -->
+</body>
+</html>

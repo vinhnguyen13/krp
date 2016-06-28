@@ -1,0 +1,183 @@
+@import url("more.css");
+.show, .active{
+	display: inline-block;
+}
+.hidden{
+	display: none !important;
+}
+.clear{
+	clear: both;
+}
+
+.loading{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 10;
+	background: url(images/uploading.gif) no-repeat center center rgba(255,255,255,0.5);
+}
+
+
+.note-guide{
+	font-family: SegoeUI, Calibri, Verdana, Geneva, sans-serif
+    font-size: 11px;
+}
+
+.ui-widget {
+    font-size: 12px !important;
+}
+/* UI diaglog */
+div.ui-dialog .ui-dialog-content{
+	padding: 0;
+}
+
+.pop .pop-cont{
+	
+}
+
+.ui-datepicker-trigger{
+	cursor: pointer;
+    margin-left: 4px;
+    margin-top: 3px;
+}
+
+.ui-datepicker{
+	z-index: 999 !important;
+}
+
+/* album update */
+.photo-items{
+	display: inline-block;
+	width: 100%;
+}
+
+.first_login{
+	width: 428px;
+	height: 418px;
+	background: url('../css/images/flogin_bg.jpg') no-repeat;
+	overflow: hidden;
+}
+
+.first_login_complete{
+	background: url('../css/images/flogin_complete.jpg') no-repeat !important;
+	width: 404px !important;
+	height: 167px !important;
+}
+
+.first_login .inner{
+	padding-left: 40px;
+	padding-top: 41px;
+}
+
+.first_login h2{
+	color: #2C9CD7;
+    font-size: 25px;
+    font-style: italic;
+}
+
+.first_login .intro{
+	color: #969696;
+    padding: 16px 0;
+}
+
+.first_login .row{
+	background: url(../css/images/flogin_row.png) no-repeat;
+	padding-bottom: 8px;
+    padding-left: 36px;
+    padding-top: 2px;
+	position: relative;
+}
+
+.first_login .srow{
+	padding: 4px 0;
+}
+
+.first_login label{
+	color: #2378A5;
+    display: inline-block;
+    font-size: 14px;
+    min-width: 110px;
+    padding-top: 4px;
+}
+
+.first_login input[type="text"]{
+	width: 141px;
+}
+
+.first_login .num{
+	color: #CDE4F9;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    left: 8px;
+    position: absolute;
+    top: 5px;
+}
+
+.first_login .level{
+	color: #747474;
+    font-weight: bold;
+    padding: 0 4px 0 7px;
+}
+
+.first_login .buttons{
+	background: none;
+	margin-top: 8px;
+}
+
+.first_login .upload_avatar{
+	clear: both;
+    margin-top: 8px;
+    width: 315px;
+}
+
+.first_login .avatar{
+	border: 1px solid #CCCCCC;
+    display: inline-block;
+    float: left;
+    margin-right: 20px;
+    padding: 2px;
+}
+
+.first_login .avatar img{
+	width: 60px;
+}
+
+.first_login .browse{
+	background-color: #fff;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+    padding: 4px 6px;
+    position: relative;
+    width: 156px;
+}
+
+.first_login .browse .p1{
+	font-style: italic;
+}
+
+.first_login .browse .p2{
+	background: url("../css/images/flogin_p2.png") no-repeat;
+    display: inline-block;
+    font-weight: bold;
+    height: 29px;
+    padding-top: 3px;
+    position: absolute;
+    right: -2px;
+    text-align: center;
+    top: -2px;
+    width: 32px;
+}
+
+.first_login .upload{
+	margin-top: 12px;
+}
+
+.first_login .errorMessage{
+	color: red;
+    font-family: tahoma;
+    font-size: 11px;
+    line-height: 18px;
+}

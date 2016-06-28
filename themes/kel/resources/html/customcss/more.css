@@ -1,0 +1,74 @@
+.moko-nav .right li .messages {
+	width: 23px;
+	height: 23px;
+	background: url('../images/ico-message.png') 0 0 no-repeat;
+	padding: 0;
+	text-align: center;
+	color: #fff;
+	line-height: 17px;
+	font-family: tahoma,helvetica,clean,sans-serif;
+	font-size: 11px;
+	float: left;
+	margin-top: 5px;
+}
+
+
+.msg-list {
+	width: 320px;
+	border: #cecece solid 1px;
+	background: #fff;
+	position: absolute;
+	top: 34px;
+	right: 0;
+	font-size: 12px;
+	font-family: tahoma,helvetica,clean,sans-serif;
+	z-index: 10;
+	display: none;
+}
+.msg-list h2, .msg-list a {
+	font-size: 11px;
+	font-family: tahoma,helvetica,clean,sans-serif;
+}
+.msg-list a.sendMessage {
+	float: right;
+}
+.msg-list h2 {
+	padding: 8px;
+	border-bottom: #cecece solid 1px;
+	float: left;
+	font-weight: bold;
+}
+.msg-list h3 a {
+	font-weight: bold;
+	padding: 0;
+}
+.msg-list h3 {
+	text-align: center;
+	border-top: #cecece solid 1px;
+	padding: 8px;
+	width: 304px;
+	float: left;
+}
+.msg-list ul {
+	float: left;
+	width: 100%;
+	clear: both;
+	padding: 0;
+	margin: 0;
+}
+.moko-nav .right .msg-list ul li {
+	width: 312px;
+	padding: 4px;
+	border-top: #cecece solid 1px;
+	float: left;
+	margin: 0;
+}
+.moko-nav .right .msg-list ul li a {
+	padding: 0;
+	color: #666;
+	width: 100%;
+	display: block;
+}
+.moko-nav .right .msg-list ul li:hover {
+	background: #f4f6f9;
+}

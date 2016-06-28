@@ -1,0 +1,90 @@
+.errorSummary{
+	color: red;
+	padding: 10px;
+}
+
+.errorSummary ul li{
+	padding: 0;
+	margin: 0;
+}
+
+.message{
+	background-color: #D7ECF4;
+    border: 1px solid #9DCDE1;
+    margin: 10px 0;
+    padding: 5px;
+    display: none;
+}
+/*
+.button{
+	font-family: "Helvetica Neue",Helvetica Neue,Helvetica,Arial,sans-serif !important;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 3px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+	border: 1px solid #ccc;
+    background-color: #fbfbfb;
+    font-size: 12px !important;
+    background-repeat: no-repeat;
+    background-position:3px center;
+    text-shadow: 0 1px 0 #D5D5D5;
+    color: #565656;
+    padding: 3px 6px 3px 18px;
+    margin: 0 2px 0 0;
+}
+
+span.button{
+	margin: 0 4px 0 0;
+}
+
+.button:hover{
+	-moz-transition-duration: 0.3s;
+	background-color: #e7e7e7;
+}
+
+.btn-blue{
+	background-color: #66c7e7;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+	color: #FFFFFF;
+	border: 1px solid #2A91B6;
+}
+
+.btn-blue:hover{
+	-moz-transition-duration: 0.3s;
+    background-color: #95d0e4;
+    color: #2A91B6;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+*/
+/*
+.btn-new {
+	background-image: url('images/arrow-plus.png');
+}
+
+.btn-cancel {
+	background-image: url('images/cancel.png');
+}
+
+.btn-save {
+	background-image: url(images/tick-save.png);
+}
+
+.btn-save-small {
+	background-image: url(images/tick-save.png);
+	padding: 2px 4px 2px 17px;
+	font-size: 12px;
+}
+
+.btn-del {
+	background-image: url(images/del.png);
+}
+
+.btn-edit {
+	background-image: url(images/edit-small.gif);
+	padding-left: 14px;
+}
+
+.btn-upload {
+	background-image: url(images/upload.png);
+}
+*/

@@ -1,0 +1,28 @@
+<?php
+return array(
+		'Activity'=>'Hoạt động',
+		'Badges'=>'Huy hiệu',
+		'Notification'=>'Thông báo',
+		'Rack'=>'Tủ quần áo',
+		'Friends'=>'Bạn bè',
+		'Followers'=>'Người theo dõi',
+		'Following'=>'Bạn đang theo dõi',
+		'Find Friends'=>'Tìm bạn',
+		'Invite friends'=>'Mời bạn bè',
+		'Invite'=>'Mời',
+		'RECENT SENT'=>'MỚI GỬI',
+		'Member since'=>'Là thành viên từ',
+		'Like'=>'Thích',
+		'Dislike'=>'Không thích',
+		'Bought'=>'Đã mua',
+		'Connect to facebook'=>'Kết nối với Facebook',
+		'See More'=>'Xem Thêm',
+		'Email Address'=>'Địa chỉ email',
+		'Join me on Kelreport'=>'Hãy tham gia Kelreport',
+		'Find Facebook Friends'=>'Tìm Bạn trên Facebook',
+		'Find Friends from Your Contacts'=>'Tìm Bạn từ Danh Bạ',
+		'Follow your friends'=>'Theo dõi',
+		'Invite your friends'=>'Mời bạn',
+		'Connect to facebook' => 'Kết nối Facebook',
+		'Disconnect facebook' => 'Dừng kết nối Facebook'
+);

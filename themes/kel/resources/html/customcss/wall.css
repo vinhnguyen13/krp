@@ -1,0 +1,20 @@
+.wall{
+	margin-bottom: 6px;
+	display: inline-block;
+	width: 100%;
+}
+
+.wall .status{
+	border: 1px solid #CCCCCC;
+    font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+    font-size: 13px;
+    height: 55px;
+    padding: 2px 2px 2px 3px;
+    resize: none;
+    width: 99%;
+    margin-bottom: 4px;
+}
+
+.wall .button{
+	float: right;
+}

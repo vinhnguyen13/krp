@@ -1,0 +1,70 @@
+/* -----------------------------------------------------------------------
+
+
+ Blueprint CSS Framework 1.0.1
+ http://blueprintcss.org
+
+   * Copyright (c) 2007-Present. See LICENSE for more info.
+   * See README for instructions on how to use Blueprint.
+   * For credits and origins, see AUTHORS.
+   * This is a compressed file. See the sources in the 'src' directory.
+
+----------------------------------------------------------------------- */
+
+/* print.css */
+body {font-family: Arial, Helvetica, sans-serif;color:#000;background:none;}
+.detail-article .col-left, .detail-article .col-right {
+	 font-size:14pt; font-weight: normal;
+}
+.wrapper {
+	width: auto;
+	margin: 2% 10%;
+}
+.welcome, 
+.location, 
+.authen, 
+.search,
+.navigation,
+.detail-article .col-right,
+.powered .right,
+.newsletter,
+.footer,
+.cline,
+.detail-article .related-article,
+.article-comment,
+.detail-article .article-nav .nav-left {
+	display: none;
+}
+.header {
+	height: 80px;
+	margin-bottom: 10px;
+}
+.header .logo {
+	left: 0;
+	margin-left: 0;
+}
+.header .logo a {
+	margin-left: 0;
+	display: none;
+}
+.header .logo .image {
+	display: block;
+}
+.main-content {
+	border: 0;
+	border-top: #000 solid 8px;
+}
+.detail-article .col-left {
+	width: 100%;
+	margin-right: 0;
+	display: inline;
+}
+.powered {
+	padding-left: 0;
+}
+.detail-article .article-content {
+	padding: 0;
+}
+.bottom {
+	width: 100%;
+}

@@ -1,0 +1,94 @@
+.login{
+	display: block;
+    left: 625px;
+    position: absolute;
+    top: 383px;
+    width: 274px;
+}
+
+.login .row{
+	margin: 4px 0;
+}
+
+.login label{
+	display: inline-block;
+   	width: 66px;
+	color: #d86c88;
+	font-size: 13px;
+}
+
+.login .rememberMe{
+	padding-left: 65px;
+}
+
+.login .rememberMe label{
+	width: auto;
+}
+
+input[type="text"], input[type="password"]{
+    border: 1px dotted #d86c88;
+    border-radius: 6px;
+    color: #666666;
+    margin: 0;
+    padding: 4px;
+}
+
+.login .buttons{
+	text-align: center;
+}
+
+.login .lgbutton{
+	background: url(../css/images/login_button.png); no-repeat;
+	border: medium none;
+    height: 30px;
+    width: 71px;
+	cursor: pointer;
+}
+
+.login .errorMessage{
+	color: red;
+    font-family: tahoma;
+    font-size: 11px;
+    margin-left: 70px;
+    padding-top: 4px;
+}
+
+body{
+	background: url(../css/images/loginbg.jpg) no-repeat center rgba(222,204,191,0.33);
+}
+
+.content-wrap{
+	min-height: 650px;
+    position: relative;
+}
+
+.login_intro{
+	background: url(../css/images/login_intro.png) no-repeat;
+	height: 45px;
+    left: 550px;
+    position: absolute;
+    top: 168px;
+    width: 343px;
+}
+
+.login_sologan{
+	background: url(../css/images/login_sologan.png) no-repeat;
+	height: 69px;
+    left: 607px;
+    position: absolute;
+    top: 245px;
+    width: 244px;
+}
+
+.login_error{
+	background-color: #ECE2E4;
+    border: 1px dotted #D86C88;
+    border-radius: 3px 3px 3px 3px;
+    color: red;
+    font-size: 13px;
+    left: 600px;
+    padding: 2px 4px;
+    position: absolute;
+    top: 330px;
+    width: 290px;
+}

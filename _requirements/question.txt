@@ -1,0 +1,72 @@
+﻿1. Home:
+- Choose location như thế nào, có giống chọn ngôn ngữ ko hay tự động detect theo IP ?
+// Cái này là quản lý Country, Default lần đầu là Detect theo IP. Nếu user có thay đổi thì lưu lại.
+- Sile hình ảnh lấy từ đâu
+// Back end, giống slide của Xinh. Editor chọn
+- 4 block sẽ lấy tin theo 4 section (category) khác nhau ?
+// 4 sections
+- subcribe sẽ xử lý sao ?
+// Lưu list email. Để gửi newsletter giống Like. Export ra được Excel.
+
+
+
+2. Fashion:
+- Short theo bao nhiêu tiêu chí ?
+// By Time, By Views
+- Hình thumbnail được chọn hay lấy tự động ?
+// Chọn, Upload Thumbnail như Like. Editor phải tự xử lí hình thumbnail
+- Có bao nhiêu hình ảnh trong phần chi tiết ?
+// Có 2 loại hình, 1 loại là hình của bài viết, 1 loại là hình map từ gallery theo product ID
+- View more xử lý giống Facebook ?
+// Xử lí giống MMOSITE, click vô view more hiện thêm chứ ko phải scroll.
+
+3. Detail Fashion:
+- Check It có ý nghĩa thế nào ?
+- Send me deal code via email ?
+// Cái này để hỏi lại bên đó, requirement yêu cầu làm 3 tính năng khác =]]
+- Advertisement ?
+// Hệ thống quảng cáo mình làm
+- Email, Print ?
+// Nút send email cái link, Nút click để in
+- Comment hiện bao nhiêu kết quả, sắp xếp mới nhất lên đầu hay xuống dưới, phân trang sao (nên giống facebook), post comment có cần duyệt, có thể edit dc ko ?
+// Hiện n (số n config dc) - Để default là 5. Mới nhất ở dưới cùng, xem thêm comment cũ click view more.
+- More pick ?
+// Picks hiểu là article, More picks ~ related article (cùng tags). Latest Picks ~ Latest Articles.
+4. About US ?
+// HTML page -> cho chỉnh sửa content = editor dc ko?
+
+5. Sign Up
+- username là email ?
+// Đúng rùi 
+- password tối thiểu bao nhiêu kí tự, gồm những gì?
+// 6 kí tự, quy định khác làm sau chưa có yêu cầu
+- Location lấy động hay chọn ?
+// Chọn
+- SignUp thành công kích hoạt acc luôn hay thông qua email mới kích hoạt?
+// Kích hoạt, để option cho backend chọn nếu muốn deactive (ko cần kích hoạt)
+
+6. Profile
+- Connect facebook sẽ dẫn đi đâu, xử lý thế nào ?
+// Connect facebook user allow Facebook apps của kel -> user activity sẽ dc update lên facebook activity.
+- Flows, Badges, Notification, Garage hiển thị những gì?
+// Flows = Follow Stream, Badges = Archivement, Notification = Activity, Garage = Hiển thị Product user check i bought it / will buy it.
+
+7. Tags ?
+// List article theo tags. Ex: http://mmosite.vn/tags/?name=The+International+3
+
+8. Search 
+- Theo tiêu chí nào, search title hay desc ?
+// Ưu tiên Title -> Content
+
+9. Send message
+// Send message bình thường thôi, hiển thị dạng conversation - Ko có real time chatting.
+// Cái này tạm thời ko làm, bên họ bỏ =]]
+
+
+
+
+===============================================================
+Quản lý Brands -> Create product
+Create shop
+Create article sẽ chọn product + shop
+Thống kê số người mua và xem sản phẩm đó

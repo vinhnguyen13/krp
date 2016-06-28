@@ -1,0 +1,56 @@
+.giftcode {
+	margin-bottom: 10px;
+	border: #dfebf7 solid 1px;
+}
+.giftcode h2 {
+	float: left;
+	width: 100%;
+	background: #dfebf7;
+}
+.giftcode h2 span {
+	float: left;
+	padding: 10px;
+	color: #0063DC;
+}
+.giftcode ul, .giftcode form {
+	float: left;
+	width: 98%;
+	padding: 10px;
+}
+.giftcode ul li {
+	float: left;	
+}
+.giftcode ul li label{
+	font-weight: bold;
+	text-transform: capitalize;
+}
+.giftcode ul li ul li p{
+	border: #dddddd solid 1px;
+	float: left;
+	padding: 10px;
+	margin:0 10px 0 0;
+}
+
+.giftcode ul li ul li p label{
+	float: left;
+	padding:0 10px 0 0;
+	font-weight: bold;
+	text-decoration: underline;
+}
+.giftcode ul li ul li p span{
+	float: left;
+	padding:0 10px 0 0;
+}
+.giftcode input[type="submit"], #cancel_request, #add_request, #deny_request, #remove_friend {
+	background: #fff;
+	border: #dddddd solid 1px;
+	color: #444444;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 2px 4px;
+	margin: 0 5px 0 0;
+	width: 56px;
+}

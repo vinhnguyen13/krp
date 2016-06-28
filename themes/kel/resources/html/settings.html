@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<title>Kelreport</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta name="Description" content="">
+<meta name="Keywords" content="">
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<link href="css/plugins.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<!--[if lt IE 9]>
+<link href="css/ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print"/>
+<script type="text/javascript" src="js/jquery.js"></script>	
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery.bxSlider.min.js"></script>
+<script type="text/javascript" src="js/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="js/inview.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+</head>
+<body>
+	<div class="kel">
+		<div class="wrapper">
+				<div class="header">
+					<div class="welcome">
+						<p>Welcome</p>
+					</div>
+					<!-- welcome message -->
+					<div class="location">
+						<p>Choose Location to <a href="#" title="Singapore" class="btn-country">Singapore</a></p>
+						<div class="location-list">
+						</div>
+					</div>
+					<!-- location choose -->
+					<div class="logo">
+						<a href="#" title="Kelport"><h1>Kelreport</h1></a>
+						<!-- only insert <h1> tag at home -->
+					</div>
+					<!-- logo -->
+					<div class="authen">
+						<ul class="wrap">
+							<li class="item"><a title="Login" href="#"><i class="ismall ismall-login"></i><span class="itext">Login</span></a></li>
+							<li class="item">
+								<a title="Sign up" class="btn-reg" onclick="javascript:sprReg(this);"><i class="ismall ismall-reg"></i><span class="itext">Sign up</span></a>
+								<div class="reg-board">
+									<a href="#" class="btn-close" title="Close"></a>
+									<div class="span-wrap"><span class="arrow"></span></div>
+									<div class="reg-board-detail">
+										<ul>
+											<li>
+												<a href="#" title="Login with Facebook"><i class="btn-reg-facebook"></i></a>
+											</li>
+											<li>
+												<a href="#" title="Signup with Google"><i class="btn-reg-google"></i></a>
+											</li>
+											<li class="reg-email">
+												<a href="#" title="Signup using your email">Signup using your email?</a>
+											</li>
+											<li class="reg-policy">
+												<p>By signing up for <span class="bold">Kelreport</span> you agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a></p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- register popup -->
+							</li>
+					</div>
+					<!-- Authen -->
+					<div class="search">
+						<div class="input-wrap">
+							<input type="text" value="" name="" class="" placeholder="Search..."/>
+							<input type="submit" value="" name="" class=""/>
+						</div>
+					</div>
+					<!-- search -->
+				</div>
+				<!-- header -->
+				<div class="navigation">
+					<ul class="wrap">
+						<li class="item">
+							<a href="#" title="Editor's Picks">Editor's Picks</a>
+						</li>
+						<li class="item">
+							<a href="#" title="Editor's Picks">Fashion</a>
+							<div class="sub">
+								<span class="grad"></span>
+								<ul>
+									<li><a href="#" title="Clothing">Clothing</a></li>
+									<li><a href="#" title="Accessories">Accessories</a></li>
+									<li><a href="#" title="Bags">Bags</a></li>
+									<li><a href="#" title="Shoes">Shoes</a></li>
+									<li><a href="#" title="Services">Services</a></li>
+									<li><a href="#" title="Boutiques">Boutiques</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="item">
+							<a href="#" title="Editor's Picks">Beauty & Fitness</a>
+							<div class="sub">
+								<span class="grad"></span>
+								<ul>
+									<li><a href="#" title="Spa/Salon">Spa/Salon</a></li>
+									<li><a href="#" title="Wellness">Wellness</a></li>
+									<li><a href="#" title="Excercise/Fitness">Excercise/Fitness</a></li>
+									<li><a href="#" title="Products">Products</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="item">
+							<a href="#" title="Editor's Picks">Lifestyle</a>
+						</li>
+						<li class="item">
+							<a href="#" title="Editor's Picks">Deals</a>
+						</li>
+					</ul>
+				</div>
+				<!-- navigation -->
+				<div class="main-content">
+					<div class="cline cline-black"></div>
+					<div class="content-wrap">
+						<div class="page-profile clearfix">
+							<div class="profile-left">
+								<div class="user-info">
+									<div class="info clearfix">
+										<a href="#" class="btn-settings"><i class="imed imed-setting"></i></a>
+										<div class="ava rounded100">
+											<img src="css/images/ava-100x100.jpg" alt="" border=""/>
+										</div>
+										<div class="detail">
+											<h3>Kevin To</h3>
+											<p class="des">Member since 2010</p>
+										</div>
+									</div>
+									<div class="user-social">
+										<ul>
+											<li>
+												<a href="#">
+													<i class="i24 i24-heart-white"></i><br/>
+													<span class="text">158 Followers</span>
+												</a>
+											</li>
+											<li class="profile-following active">
+												<a href="#">
+													<i class="i24 i24-following-white"></i><br/>
+													<span class="text">158 Following</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													<i class="i24 i24-facebook-white"></i><br/>
+													<span class="text">Connect Facebook</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="user-follow">
+									<h2>Following</h2>
+									<div class="list">
+										<ul>
+											<li class="item">
+												<a href="#" class="user">
+													<img src="css/images/ava-60x60.jpg" alt="" border=""/>
+												</a>
+												<a href="#" class="btn btn-follow">
+													Follow
+												</a>
+											</li>
+											<li class="item">
+												<a href="#" class="user">
+													<img src="css/images/ava-60x60.jpg" alt="" border=""/>
+												</a>
+												<a href="#" class="btn btn-unfollow">
+													Unfollow
+												</a>
+											</li>
+											<li class="item">
+												<a href="#" class="user">
+													<img src="css/images/ava-60x60.jpg" alt="" border=""/>
+												</a>
+												<a href="#" class="btn btn-unfollow">
+													Unfollow
+												</a>
+											</li>
+											<li class="item">
+												<a href="#" class="user">
+													<img src="css/images/ava-60x60.jpg" alt="" border=""/>
+												</a>
+												<a href="#" class="btn btn-unfollow">
+													Unfollow
+												</a>
+											</li>
+											<li class="item">
+												<a href="#" class="user">
+													<img src="css/images/ava-60x60.jpg" alt="" border=""/>
+												</a>
+												<a href="#" class="btn btn-unfollow">
+													Unfollow
+												</a>
+											</li>
+											<li class="item">
+												<a href="#" class="user">
+													<img src="css/images/ava-60x60.jpg" alt="" border=""/>
+												</a>
+												<a href="#" class="btn btn-unfollow">
+													Unfollow
+												</a>
+											</li>
+											<li class="item">
+												<a href="#" class="user">
+													<img src="css/images/ava-60x60.jpg" alt="" border=""/>
+												</a>
+												<a href="#" class="btn btn-unfollow">
+													Unfollow
+												</a>
+											</li>
+											<li class="item">
+												<a href="#" class="user">
+													<img src="css/images/ava-60x60.jpg" alt="" border=""/>
+												</a>
+												<a href="#" class="btn btn-unfollow">
+													Unfollow
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- user activity -->
+								<!-- user info -->
+								<div class="user-activity">
+									<button class="btn-unfollow"><i class="i24 i24-message-white"></i><span class="itext text">Unfollow</span></button>
+								</div>
+								<!-- user activity -->
+								<div class="user-stats">
+									<ul>
+										<li>
+											<a href="#">
+												<i class="i50 i50-check-white"></i>
+												<span class="number">35</span>
+												<span class="text">Like</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<i class="i50 i50-cart-white"></i>
+												<span class="number">68</span>
+												<span class="text">Dislike</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<i class="i50 i50-unlike-white"></i>
+												<span class="number">19</span>
+												<span class="text">Bought It</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<!-- user stats -->
+							</div>
+							<!-- left column -->
+							<div class="profile-right">
+								<div class="tabs profile-tabs">
+									<ul>
+										<li>
+											<a href="javascript:void(0);">Activity</a>
+										</li>
+									</ul>
+								</div>
+								<!-- profile tabs -->
+								<div class="tabs-content-wrap">
+									<div class="line"></div>
+									<div id="profile-tabs-0" class="tabs-content active">
+										<div class="profile-settings">
+											<div class="settings-nav">
+												<ul>
+													<li><a href="#" class="active">Account Settings</a></li>
+													<li class="sep"><span>|</span></li>
+													<li><a href="#">Privacy & Others</a></li>
+												</ul>
+											</div>
+											<!-- Settings Nav -->
+											<div class="settings-avatar">
+												<div class="avatar-current">
+													<img src="css/images/ava-100x100.jpg" alt="" border="">
+												</div>
+												<!-- current avatar -->
+												<div class="avatar-upload">
+													<a href="#" class="btn-upload">Change your avatar</a>
+												</div>
+											</div>
+											<!-- Settings Avatar -->
+											<div class="settings-info">
+												<ul class="settings-form">
+													<li>
+														<div class="wrap">
+															<label for="">Full Name:</label>
+															<input type="text" value="Kevin To"/>
+															<div class="errorMessage">1123</div>
+														</div>
+													</li>
+													<li>
+														<div class="wrap">
+															<label for="">Email:</label>
+															<input type="text" value="abc@dwm.vn" disabled="disabled"/>
+														</div>
+													</li>
+												</ul>
+											</div>
+											<!-- Settings Info -->
+											<div class="settings-password">
+												<ul class="settings-form">
+													<li>
+														<div class="wrap">
+															<label for="">Current Password:</label>
+															<input type="password" value="123456"/>
+														</div>
+													</li>
+													<li>
+														<div class="wrap">
+															<label for="">New Password:</label>
+															<input type="password" value=""/>
+														</div>
+													</li>
+													<li>
+														<div class="wrap">
+															<label for="">Re-type New Password:</label>
+															<input type="password" value=""/>
+														</div>
+													</li>
+												</ul>
+											</div>
+											<!-- Settings Info -->
+											<div class="settings-buttons">
+												<button class="btn-default">Save changes</button>
+											</div>
+										</div>
+										<!-- talks list -->
+									</div>
+								</div>
+							</div>
+							<!-- right column -->
+						</div>
+						<!-- Page wrap : Profile page -->
+					</div>
+					<!-- content board -->
+				</div>
+				<!-- Main content board -->
+				<div class="bottom">
+					<div class="newsletter">
+						<label for="">Subcribe to our free email alerts</label>
+						<div class="input-wrap">
+							<input type="text" value="" placeholder="Email address"/>
+							<input type="submit" value="" />
+						</div>
+					</div>
+					<!-- Newsletter -->
+					<div class="footer clearfix">
+						<div class="column">
+							<h4>Editor's Pick</h4>
+						</div>
+						<!-- Single Column -->
+						<div class="column">
+							<h4>Fashion</h4>
+							<ul>
+								<li>
+									<a href="#" title="Clothing">Clothing</a>
+								</li>
+								<li>
+									<a href="#" title="Accessories">Accessories</a>
+								</li>
+								<li>
+									<a href="#" title="Bags">Bags</a>
+								</li>
+								<li>
+									<a href="#" title="Shoes">Shoes</a>
+								</li>
+								<li>
+									<a href="#" title="Services">Services</a>
+								</li>
+								<li>
+									<a href="#" title="Boutiques">Boutiques</a>
+								</li>
+							</ul>
+						</div>
+						<!-- Single Column -->
+						<div class="column">
+							<h4>Beauty & Fitness</h4>
+							<ul>
+								<li>
+									<a href="#" title="Spa/Salon">Spa/Salon</a>
+								</li>
+								<li>
+									<a href="#" title="Wellness">Wellness</a>
+								</li>
+								<li>
+									<a href="#" title="Excercise/Fitness">Excercise/Fitness</a>
+								</li>
+								<li>
+									<a href="#" title="Products">Products</a>
+								</li>
+							</ul>
+						</div>
+						<!-- Single Column -->
+						<div class="column">
+							<h4>Lifestyle</h4>
+							<ul>
+								<li>
+									<a href="#" title="Entertainment">Entertainment</a>
+								</li>
+								<li>
+									<a href="#" title="Going Out">Going Out</a>
+								</li>
+								<li>
+									<a href="#" title="Travel">Travel</a>
+								</li>
+								<li>
+									<a href="#" title="Car & Gadget">Car & Gadget</a>
+								</li>
+								<li>
+									<a href="#" title="House & Home">House & Home</a>
+								</li>
+							</ul>
+						</div>
+						<!-- Single Column -->
+						<div class="column">
+							<h4>Deals</h4>
+						</div>
+						<!-- Single Column -->
+						<div class="column">
+							<h4>About Us</h4>
+							<ul>
+								<li>
+									<a href="#" title="Spa/Salon">About Us</a>
+								</li>
+								<li>
+									<a href="#" title="Wellness">Advertising/Media Kit</a>
+								</li>
+								<li>
+									<a href="#" title="Excercise/Fitness">Submit Your News</a>
+								</li>
+								<li>
+									<a href="#" title="Products">Contact Us</a>
+								</li>
+								<li>
+									<a href="#" title="Products">Help</a>
+								</li>
+							</ul>
+						</div>
+						<!-- Single Column -->
+					</div>
+					<!-- footer -->
+					<div class="powered">
+						<div class="left">
+							<p>© 2012 Dream-Weavers Media. All rights reserved.</p>
+						</div>
+						<div class="right">
+							 <ul>
+								<li><a href="#" title="Editorial Policy" target="_blank">Editorial Policy</a></li>
+								<li><a href="#" title="Privacy Policy" target="_blank">Privacy Policy</a></li>
+								<li><a href="#" title="Terms & Conditions  " target="_blank">Terms & Conditions  </a></li>     
+							 </ul>
+						</div>
+					</div>
+					<!-- powered -->
+				</div>
+				<!-- bottom area -->
+		</div>
+		<!-- main wrapper -->
+	</div>
+	<!-- body -->
+</body>
+</html>

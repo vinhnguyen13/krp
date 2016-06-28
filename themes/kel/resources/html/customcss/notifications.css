@@ -1,0 +1,40 @@
+.yourNotifications{
+	
+}
+
+.yourNotifications h2.uiHeader{
+	line-height: 20px;
+    min-height: 20px;
+    padding-bottom: 20px;
+    vertical-align: bottom;
+    color: #1C2A47;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.yourNotifications .notify-info {
+    font-size: 11px;
+    line-height: 1.35em;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.yourNotifications .notify-text {
+    float: left;
+    overflow: hidden;
+}
+
+.yourNotifications .notify-meta {
+    color: #CECECE;
+}
+
+.pop-notifications .noti-li{
+	cursor: pointer;
+}
+
+.imgLoadingMn{
+	left: 46%;
+    margin-top: 10px;
+    position: absolute;
+}

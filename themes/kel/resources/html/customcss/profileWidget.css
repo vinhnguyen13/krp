@@ -1,0 +1,10 @@
+.inputStatusNew{
+	font-family: arial,helvetica,clean,sans-serif;
+    font-size: 12px;
+    height: 53px;
+    width: 98%;
+    overflow: auto;
+}
+.txt-status{
+	width: 90%;
+}

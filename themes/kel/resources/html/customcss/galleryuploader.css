@@ -1,0 +1,77 @@
+.clearfix {
+  clear: both;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.qq-upload-drop-mask{
+	font-size: 14px;
+    padding-top: 160px;
+    text-align: center;
+}
+
+.qq-upload-failed-text, .qq-upload-cancel {
+    display: none;
+}
+
+.qq-upload-failed-text, .qq-upload-cancel {
+    display: none;
+}
+
+.upload-step2 ul li .wrap .photo{
+	height: 184px;
+}
+
+.qq-upload-fileupload{
+	width: 110px;
+	height: 118px;
+	text-align: center;
+}
+
+.upload-left{
+	min-height: 443px;
+}
+
+.qq-upload-list{
+	min-height: 420px;
+}
+
+.uploading{
+	background: url(../css/images/ajax-loader.gif) no-repeat center center rgba(255, 255, 255, 0.5);
+    display: block;
+    height: 118px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+    width: 110px;
+}
+
+.pop-toAlbum .fullwidth{
+	width: 500px;
+}
+
+.pop .pop-cont{
+	min-width: 440px;
+}
+
+.pop-createalbum{
+	margin: 20px;
+}
+
+.add-album .fullwidth{
+	width: 440px;
+}
+
+.pop-createalbum ul li textarea{
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2) inset;
+    width: 260px;
+	overflow: auto;
+}

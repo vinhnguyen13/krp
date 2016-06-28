@@ -1,0 +1,33 @@
+.view_other{
+	background-color: #000000;
+    border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    display: none;
+    font-size: 12px;
+    left: -6px;
+    line-height: 1em;
+    padding: 2px 4px;
+    position: absolute;
+    z-index: 1;
+}
+
+.view_other li
+{
+	white-space: nowrap;
+}
+
+.click_view_other{
+	cursor: pointer;
+	position: relative;
+	display: inline;
+}
+
+.comment-thumb img{
+	float: left;
+    margin-right: 4px;
+    width: 40px;
+}
+
+.comment-thumb-textbox{
+	width: 575px !important;
+}

@@ -1,0 +1,64 @@
+#popup_container {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	min-width: 300px; /* Dialog will be no smaller than this */
+	max-width: 600px; /* Dialog will wrap after this width */
+	background: #FFF;
+	border: solid 5px #999;
+	color: #000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#popup_title {
+	background: url('../css/images/dialog-top.jpg') 0 0 repeat-x;
+	height: 39px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	-moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.08);
+	-webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.08);
+	box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.08);
+	border: #E2E2E2 solid 1px;
+	padding: 0 0 0 15px;
+	z-index: 10;
+	width: auto;
+	font-size: 18px;
+	color: #2C9CD7;
+	text-shadow: 0px 1px 1px white;
+	letter-spacing: -1px;
+	line-height: 36px;
+}
+
+#popup_content {
+	padding: 0;
+	margin: 0em;
+}
+
+#popup_content.alert {
+}
+
+#popup_content.confirm {
+	background-image: url(images/important.gif);
+}
+
+#popup_content.prompt {
+	background-image: url(images/help.gif);
+}
+
+#popup_message {
+	padding: 12px 15px;
+}
+
+#popup_panel {
+	text-align: right;
+	margin: 0;
+	padding: 8px 12px;
+	background: #ededed;
+}
+#popup_panel input[type="button"] {
+}
+#popup_prompt {
+	margin: .5em 0em;
+}

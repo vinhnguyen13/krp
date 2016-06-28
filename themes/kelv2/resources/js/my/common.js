@@ -1,0 +1,6 @@
+var Common = {
+	listFriends: function () {
+		
+	},
+}
+

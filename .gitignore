@@ -1,0 +1,7 @@
+/uploads/
+/.settings/
+/*.buildpath
+/*.project
+/assets/
+/.idea/
+*.log

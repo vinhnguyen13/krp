@@ -30,6 +30,7 @@ class ArticleController extends Controller
 	 */
 	public function actionView($section, $slug, $id, $page = null)
 	{
+
 		Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/resources/js/article/view.js', CClientScript::POS_BEGIN);
 		$article = new Article();
 		$view = $article->loadFullArticle($id);
@@ -56,8 +57,12 @@ class ArticleController extends Controller
 		$comment = $comment->getArticleComments($page, Comment::TYPE_COMMENT_ARTICLE, $id);
 		
 		$layout = (empty($view->layout)) ? 1 : $view->layout;
-		
-		$this->render('view', array('view'=>$view, 'comment' => $comment, 'layout' => $layout));
+		//$section='video';
+		$section='restaurants';
+		//$section='features';
+		//$this->render('view', array('view'=>$view, 'comment' => $comment, 'layout' => $layout));
+		$this->render($this->loadArticleTemplate($section));
+
 	}
 	
 	public function actionMail(){
@@ -101,11 +106,12 @@ class ArticleController extends Controller
 			$data = Article::model()->getListArticlesBySection($section->id, $currentPage, $sort);
 			$data['section'] = $section;
 			$data['sort'] = $sort;
-			$this->render('section', $data);
+			$this->render($this->loadSectionTemplate($section->slug), $data);
 		}
     }
 	public function actionCategory($section = null, $category, $page = null, $sort = null)
     {
+
     	$currentPage = (!empty($page) && $page > 0) ? $page - 1 : 0;
 		$sort = (isset($sort)) ? $sort : 'current';
 		//$category = Yii::app()->request->getParam("category");
@@ -117,11 +123,94 @@ class ArticleController extends Controller
 			$data['category'] = $category;
 			$data['section'] = $section;
 			$data['sort'] = $sort;
-			$this->render('category', $data);
+
+			$this->render($this->loadCategoryTemplate($category), $data);
 		}
-		
-        
     }
+
+	function loadCategoryTemplate($category){
+
+		switch ($category){
+			case 'Video':{
+				return 'category-video';
+				break;
+			}
+			default:{
+				return 'category';
+				break;
+			}
+		}
+	}
+
+	function loadSectionTemplate($section){
+
+		switch ($section){
+			case 'video':{
+				return 'section-video';
+				break;
+			}
+			case 'news-promo':{
+				return 'section-news-promo';
+				break;
+			}
+			case 'restaurants':{
+				return 'section-restaurants';
+				break;
+			}
+			case 'most-popular':{
+				return 'section-most-popular';
+				break;
+			}
+			case 'people':{
+				return 'section-people';
+				break;
+			}
+
+			case 'features':{
+				return 'section-features';
+				break;
+			}
+			default:{
+				return 'section';
+				break;
+			}
+		}
+	}
+
+	function loadArticleTemplate($section){
+
+		switch ($section){
+			case 'video':{
+				return 'view-video';
+				break;
+			}
+			case 'news-promo':{
+				return 'view-news-promo';
+				break;
+			}
+			case 'restaurants':{
+				return 'view-restaurants';
+				break;
+			}
+			case 'most-popular':{
+				return 'view-most-popular';
+				break;
+			}
+			case 'people':{
+				return 'view-people';
+				break;
+			}
+
+			case 'features':{
+				return 'view-features';
+				break;
+			}
+			default:{
+				return 'view';
+				break;
+			}
+		}
+	}
 	
 	public function actionEditor($page = 0, $sort = null)
     {

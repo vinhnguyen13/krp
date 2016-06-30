@@ -8,6 +8,7 @@
 <link href="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/css/reset.min.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/css/swiper.min.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/css/owl.carousel.css" rel="stylesheet" type="text/css" />
 
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/js/respond.min.js"></script>
 <script type="text/javascript">

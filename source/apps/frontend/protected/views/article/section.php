@@ -1,4 +1,4 @@
-<div class="header-fs section-<? echo $section->slug; ?>"> 
+<div class="header-fs section-<? echo $section->slug; ?>">
 	<h2 class="left"><? echo $section->title; ?></h2>
 	<div class="right drop-select-fs">
 		<span class="txt-left left"><?php echo Lang::t('article', 'Display');?>:</span>

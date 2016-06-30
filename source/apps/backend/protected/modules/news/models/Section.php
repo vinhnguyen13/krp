@@ -220,13 +220,15 @@ class Section extends CActiveRecord
 	 * @see CActiveRecord::findAll()
 	 */
 	public function findAll($condition='',$params=array()){
-
+		//print_r($condition);
 		$language = Yii::app()->language;
 		if(!($condition instanceof CDbCriteria)){
-			$condition_clone=$condition;
+			//$condition_clone=$condition;
 			$condition = new CDbCriteria();
-			$condition->addCondition($condition_clone);
+			//$condition->addCondition($condition_clone);
+
 		}
+
 		if(!empty($language) && Yii::app()->name != 'Admin'){
 			$languageDefault = Language::model()->find("is_default = 1");
 			if(!empty($languageDefault) ){

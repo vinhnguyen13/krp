@@ -44,7 +44,7 @@ class SiteController extends Controller
 		$data['beaty'] = $article->getListArticlesBySection(2, 0, 4);
 		$data['deal'] = $article->getListArticlesBySection(3, 0, 4);
 		$data['lifestyle'] = $article->getListArticlesBySection(4, 0, 4);*/
-		
+
 		$this->render('index');
 	}
 

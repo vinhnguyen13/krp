@@ -8,12 +8,14 @@ class NewlyOpenedWidget extends CWidget {
 		//Yii::app()->cache->flush();
 		//$data = Yii::app()->cache->get($this->cache_key);
 		//if (!$data){
-			$section = Section::model()->findAll('status=1');
+			//$section = Section::model()->findAll('status=1');
 			//die();
 			//Yii::app()->cache->set($this->cache_key, $section, $this->timeout);
 		//}
-		$new_and_promo = Section::model()->findAll('status=1');
-		$this->render('newly-opened', array('section' => $section));
+		$newly_opened = Article::model()->getListNewlyOpenedBySection(8, 0, 4);
+		$newly_opened['title'] = 'NEWLY OPENED';
+
+		$this->render('newly-opened', array('newly_opened' => $newly_opened));
 	}
 
 }

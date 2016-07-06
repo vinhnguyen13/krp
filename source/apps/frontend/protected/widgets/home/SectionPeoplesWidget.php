@@ -5,15 +5,14 @@ class SectionPeoplesWidget extends CWidget {
 	public $timeout = 0;
 	
 	public function run(){
-		//Yii::app()->cache->flush();
-		//$data = Yii::app()->cache->get($this->cache_key);
-		//if (!$data){
-			$section = Section::model()->findAll('status=1');
-			//die();
-			//Yii::app()->cache->set($this->cache_key, $section, $this->timeout);
-		//}
-		$new_and_promo = Section::model()->findAll('status=1');
-		$this->render('section-peoples', array('section' => $section));
+		Yii::app()->cache->flush();
+		$section_peoples = Yii::app()->cache->get($this->cache_key);
+		if (!$section_peoples){
+			$section_peoples = Article::model()->getListArticlesBySection(10, 0, 4, 2);
+			Yii::app()->cache->set($this->cache_key, $section_peoples, $this->timeout);
+		}
+		$section_peoples['title']='People';
+		$this->render('section-peoples', array('section_peoples' => $section_peoples));
 	}
 
 }

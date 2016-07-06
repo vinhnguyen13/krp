@@ -22,7 +22,7 @@
 <?php $this->beginContent('//layouts/partials/ga'); ?><?php $this->endContent(); ?>
 
 <!--[if IE ]>
-<link type="text/css" media="screen,projection" rel="stylesheet" href="css/ie.css" />
+<link type="text/css" media="screen,projection" rel="stylesheet" href="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/css/ie.css" />
 <![endif]-->
 <!--[if lt IE 9]>
 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/js/html5shiv.js"></script>

@@ -453,7 +453,7 @@ class Article extends CActiveRecord
 	
 	
 	//Nam Le
-	public function getListArticlesBySection($section_id, $current_page, $sort){
+	public function getListArticlesBySection($section_id, $current_page, $sort,$limit=9){
 		$criteria=new CDbCriteria;
 		$criteria->with = array(
 				'sections' => array(
@@ -497,7 +497,7 @@ class Article extends CActiveRecord
 		
 		$count = count(Article::model()->findAll($criteria));
         $pages = new CPagination($count);
-        $pages->pageSize = 9;
+        $pages->pageSize = $limit;
         $pages->setCurrentPage($current_page);
         $pages->applyLimit($criteria);
         $data['pages'] = $pages;
@@ -506,6 +506,62 @@ class Article extends CActiveRecord
 		$news = Article::model()->findAll($criteria);
         $data['news'] = $news;
         return $data;
+	}
+
+	//Duc Nguyen
+	public function getListNewlyOpenedBySection($section_id, $current_page, $sort){
+		$criteria=new CDbCriteria;
+		$criteria->with = array(
+			'sections' => array(
+				'alias'		=> 'as',
+				'joinType'=>'INNER JOIN',
+				'together'=>true,
+			),
+			'categories' => array(
+				'alias'		=> 'c',
+				'joinType'=>'LEFT JOIN',
+			),
+			'comments' => array(
+				'alias'		=> 'cm',
+				'joinType'=>'LEFT JOIN',
+			),
+		);
+
+		$criteria->addCondition('sections_as.section_id = :section_id AND public_time <= :time AND ispublic = 1');
+		$criteria->params = array('section_id' => $section_id, 'time' => time());
+
+		if(isset($sort)){
+			switch ($sort) {
+				case 'view':
+					$criteria->order = 't.views DESC';
+					break;
+				case 'comment':
+					$criteria->order =  't.comment DESC';
+					break;
+				case 'current':
+					$criteria->order =  't.id DESC';
+					break;
+			}
+		} else {
+			$criteria->order = 't.public_time DESC';
+		}
+
+		/**
+		 * Pagination
+		 */
+
+
+		$count = count(Article::model()->findAll($criteria));
+		$pages = new CPagination($count);
+		$pages->pageSize = 1;
+		$pages->setCurrentPage($current_page);
+		$pages->applyLimit($criteria);
+		$data['pages'] = $pages;
+
+		//get data
+		$news = Article::model()->findAll($criteria);
+		$data['news'] = $news;
+		return $data;
 	}
 	
 	public function getListArticlesBySectionHome($section_id, $current_page = 0, $limit = 3){

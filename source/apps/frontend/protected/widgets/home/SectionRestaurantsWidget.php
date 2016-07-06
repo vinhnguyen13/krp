@@ -5,15 +5,15 @@ class SectionRestaurantsWidget extends CWidget {
 	public $timeout = 0;
 	
 	public function run(){
-		//Yii::app()->cache->flush();
-		//$data = Yii::app()->cache->get($this->cache_key);
-		//if (!$data){
-			$section = Section::model()->findAll('status=1');
-			//die();
-			//Yii::app()->cache->set($this->cache_key, $section, $this->timeout);
-		//}
-		$new_and_promo = Section::model()->findAll('status=1');
-		$this->render('section-restaurants', array('section' => $section));
+		Yii::app()->cache->flush();
+		$section_restaurants = Yii::app()->cache->get($this->cache_key);
+		if (!$section_restaurants){
+			$section_restaurants = Article::model()->getListArticlesBySection(8, 0, 4);
+			Yii::app()->cache->set($this->cache_key, $section_restaurants, $this->timeout);
+		}
+
+		$section_restaurants['title'] = 'RESTAURANTS';
+		$this->render('section-restaurants', array('section_restaurants' => $section_restaurants));
 	}
 
 }

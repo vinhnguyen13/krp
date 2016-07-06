@@ -5,15 +5,14 @@ class SectionPopularWidget extends CWidget {
 	public $timeout = 0;
 	
 	public function run(){
-		//Yii::app()->cache->flush();
-		//$data = Yii::app()->cache->get($this->cache_key);
-		//if (!$data){
-			$section = Section::model()->findAll('status=1');
-			//die();
-			//Yii::app()->cache->set($this->cache_key, $section, $this->timeout);
-		//}
-		$new_and_promo = Section::model()->findAll('status=1');
-		$this->render('section-popular', array('section' => $section));
+		Yii::app()->cache->flush();
+		$data = Yii::app()->cache->get($this->cache_key);
+		if (!$data){
+			$data	=	Article::model()->getMostLike(5);
+			Yii::app()->cache->set($this->cache_key, $data, $this->timeout);
+		}
+
+		$this->render('section-popular', array('section_populars' => $data));
 	}
 
 }

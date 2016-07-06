@@ -40,12 +40,14 @@ class SiteController extends Controller
 	    $this->pageTitle = Yii::app()->name . ' - ' . Lang::t('general', 'Daily Recommendations on Shopping & Lifestyle');
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-	/*	$data['fashion'] = $article->getListArticlesBySection(1, 0, 4);
-		$data['beaty'] = $article->getListArticlesBySection(2, 0, 4);
-		$data['deal'] = $article->getListArticlesBySection(3, 0, 4);
-		$data['lifestyle'] = $article->getListArticlesBySection(4, 0, 4);*/
+		$data['news_and_promos'] = Article::model()->getListArticlesBySection(7, 0, 4);
+		$data['features'] = Article::model()->getListArticlesBySection(12, 0, 4);
+		$data['restaurants'] = Article::model()->getListArticlesBySection(8, 0, 4);
+		$data['videos'] = Article::model()->getListArticlesBySection(11, 0, 4);
+		$data['peoples'] = Article::model()->getListArticlesBySection(10, 0, 4);
+		$data['populars'] = Article::model()->getMostLike(5);
 
-		$this->render('index');
+		$this->render('index',array('data'=>$data));
 	}
 
 	public function actionLang()

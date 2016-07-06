@@ -7,7 +7,8 @@ class FooterWidget extends CWidget {
 		$category = new Category();
 		$section = new Section();
 		$section = $section->getAll();
-		$this->render($this->view, array('section' => $section, 'category' => $category));
+		$model = new Subscribe();
+		$this->render($this->view, array('section' => $section, 'category' => $category,'model' => $model));
 	}
 	
 }

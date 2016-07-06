@@ -1,4 +1,3 @@
-
 <?php //$this->widget('frontend.widgets.home.SectionWidget'); ?>
 <div class="container">
     <?php $this->widget('frontend.widgets.home.NewsAndPromoWidget'); ?>

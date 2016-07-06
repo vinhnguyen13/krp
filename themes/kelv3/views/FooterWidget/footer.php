@@ -111,10 +111,22 @@
                                 <p>news Directly in your inbox</p>
                             </div>
                         </div>
-                        <form action="">
-                            <input type="text" class="iput w-100">
-                            <button id="btn-letter"></button>
-                        </form>
+                        <?php
+                        $form = $this->beginWidget('CActiveForm', array(
+                            'id' => 'subcribe-form2',
+                            'action' => Yii::app()->createUrl('//site/subscribe'),
+                            'enableAjaxValidation' => true,
+                            'enableClientValidation' => true,
+                            'clientOptions' => array(
+                                'validateOnSubmit' => true,
+                                'afterValidate' => 'js:Subcribe'
+                            ),
+                        )); ?>
+                        <?php echo $form->textField($model, 'email', array('class' => 'iput w-100', 'placeholder' => 'Email address')); ?>
+                        <?php echo CHtml::submitButton('', array('id' => 'btn-letter')); ?>
+                        <?php echo $form->error($model, 'email'); ?>
+                        <?php $this->endWidget();
+                        ?>
                     </div>
 
                     <div class="follow-social">

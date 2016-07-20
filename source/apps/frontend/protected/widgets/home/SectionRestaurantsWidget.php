@@ -12,7 +12,7 @@ class SectionRestaurantsWidget extends CWidget {
 			Yii::app()->cache->set($this->cache_key, $section_restaurants, $this->timeout);
 		}
 
-		$section_restaurants['title'] = 'RESTAURANTS';
+		$section_restaurants['title'] = Lang::t('article', 'RESTAURANTS');
 		$this->render('section-restaurants', array('section_restaurants' => $section_restaurants));
 	}
 

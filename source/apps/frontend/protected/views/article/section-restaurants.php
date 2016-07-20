@@ -14,12 +14,22 @@
 	<div class="title-box">
 		<span>Restaurants</span>
 	</div>
+	<?php if(!empty($news)){?>
 	<ul class="clearfix row list-restau-page">
+		<?php
+		$count=1;
+		foreach ($news as $key => $article) { ?>
+			<?php $url = Yii::app()->createUrl('/article/view', array('section' => $article->sections['0']->slug, 'slug' => $article->slug, 'id' => $article->id));?>
 		<li class="col-lg-3 col-md-4 col-sm-6">
 			<div class="inner-restau">
-				<a href="#" class="thumb"><img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img275x345.jpg" alt="" /></a>
+				<a href="<?php echo $url; ?>" class="thumb">
+					<!--
+					<img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img275x345.jpg" alt="" />
+					-->
+					<?php echo $article->getImageThumbnail(array('border' => '', 'width' => 275, 'height' => 345)); ?>
+				</a>
 				<div class="intro-item">
-					<a href="#" class="link-title">MOF Japanese Dessert Cafe - Vincom Center</a>
+					<a href="<?php echo $url; ?>" class="link-title"><?php echo $article->title; ?></a>
 					<div class="stars">
 						<ul class="clearfix">
 							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
@@ -29,221 +39,21 @@
 							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
 						</ul>
 					</div>
-					<p>Noma will be auctioning off fifteen tables online today to raise funds for both Oz Harvest and MAD, Redzepi’s not-for-profit food education community.</p>
+					<p><?php echo Util::partString($article->description, 0,150); ?></p>
 				</div>
 			</div>
 		</li>
-		<li class="col-lg-3 col-md-4 col-sm-6">
-			<div class="inner-restau">
-				<a href="#" class="thumb"><img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img275x345.jpg" alt="" /></a>
-				<div class="intro-item">
-					<a href="#" class="link-title">MOF Japanese Dessert Cafe - Vincom Center</a>
-					<div class="stars">
-						<ul class="clearfix">
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-					<p>Noma will be auctioning off fifteen tables online today to raise funds for both Oz Harvest and MAD, Redzepi’s not-for-profit food education community.</p>
-				</div>
-			</div>
-		</li>
-		<li class="col-lg-3 col-md-4 col-sm-6">
-			<div class="inner-restau">
-				<a href="#" class="thumb"><img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img275x345.jpg" alt="" /></a>
-				<div class="intro-item">
-					<a href="#" class="link-title">MOF Japanese Dessert Cafe - Vincom Center</a>
-					<div class="stars">
-						<ul class="clearfix">
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-					<p>Noma will be auctioning off fifteen tables online today to raise funds for both Oz Harvest and MAD, Redzepi’s not-for-profit food education community.</p>
-				</div>
-			</div>
-		</li>
-		<li class="col-lg-3 col-md-4 col-sm-6">
-			<div class="inner-restau">
-				<a href="#" class="thumb"><img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img275x345.jpg" alt="" /></a>
-				<div class="intro-item">
-					<a href="#" class="link-title">MOF Japanese Dessert Cafe - Vincom Center</a>
-					<div class="stars">
-						<ul class="clearfix">
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-					<p>Noma will be auctioning off fifteen tables online today to raise funds for both Oz Harvest and MAD, Redzepi’s not-for-profit food education community.</p>
-				</div>
-			</div>
-		</li>
-		<li class="col-lg-3 col-md-4 col-sm-6">
-			<div class="inner-restau">
-				<a href="#" class="thumb"><img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img275x345.jpg" alt="" /></a>
-				<div class="intro-item">
-					<a href="#" class="link-title">MOF Japanese Dessert Cafe - Vincom Center</a>
-					<div class="stars">
-						<ul class="clearfix">
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-					<p>Noma will be auctioning off fifteen tables online today to raise funds for both Oz Harvest and MAD, Redzepi’s not-for-profit food education community.</p>
-				</div>
-			</div>
-		</li>
-		<li class="col-lg-3 col-md-4 col-sm-6">
-			<div class="inner-restau">
-				<a href="#" class="thumb"><img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img275x345.jpg" alt="" /></a>
-				<div class="intro-item">
-					<a href="#" class="link-title">MOF Japanese Dessert Cafe - Vincom Center</a>
-					<div class="stars">
-						<ul class="clearfix">
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-					<p>Noma will be auctioning off fifteen tables online today to raise funds for both Oz Harvest and MAD, Redzepi’s not-for-profit food education community.</p>
-				</div>
-			</div>
-		</li>
-		<li class="col-lg-3 col-md-4 col-sm-6">
-			<div class="inner-restau">
-				<a href="#" class="thumb"><img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img275x345.jpg" alt="" /></a>
-				<div class="intro-item">
-					<a href="#" class="link-title">MOF Japanese Dessert Cafe - Vincom Center</a>
-					<div class="stars">
-						<ul class="clearfix">
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-					<p>Noma will be auctioning off fifteen tables online today to raise funds for both Oz Harvest and MAD, Redzepi’s not-for-profit food education community.</p>
-				</div>
-			</div>
-		</li>
-		<li class="col-lg-3 col-md-4 col-sm-6">
-			<div class="inner-restau">
-				<a href="#" class="thumb"><img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img275x345.jpg" alt="" /></a>
-				<div class="intro-item">
-					<a href="#" class="link-title">MOF Japanese Dessert Cafe - Vincom Center</a>
-					<div class="stars">
-						<ul class="clearfix">
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-					<p>Noma will be auctioning off fifteen tables online today to raise funds for both Oz Harvest and MAD, Redzepi’s not-for-profit food education community.</p>
-				</div>
-			</div>
-		</li>
-		<li class="col-lg-3 col-md-4 col-sm-6">
-			<div class="inner-restau">
-				<a href="#" class="thumb"><img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img275x345.jpg" alt="" /></a>
-				<div class="intro-item">
-					<a href="#" class="link-title">MOF Japanese Dessert Cafe - Vincom Center</a>
-					<div class="stars">
-						<ul class="clearfix">
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-					<p>Noma will be auctioning off fifteen tables online today to raise funds for both Oz Harvest and MAD, Redzepi’s not-for-profit food education community.</p>
-				</div>
-			</div>
-		</li>
-		<li class="col-lg-3 col-md-4 col-sm-6">
-			<div class="inner-restau">
-				<a href="#" class="thumb"><img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img275x345.jpg" alt="" /></a>
-				<div class="intro-item">
-					<a href="#" class="link-title">MOF Japanese Dessert Cafe - Vincom Center</a>
-					<div class="stars">
-						<ul class="clearfix">
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-					<p>Noma will be auctioning off fifteen tables online today to raise funds for both Oz Harvest and MAD, Redzepi’s not-for-profit food education community.</p>
-				</div>
-			</div>
-		</li>
-		<li class="col-lg-3 col-md-4 col-sm-6">
-			<div class="inner-restau">
-				<a href="#" class="thumb"><img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img275x345.jpg" alt="" /></a>
-				<div class="intro-item">
-					<a href="#" class="link-title">MOF Japanese Dessert Cafe - Vincom Center</a>
-					<div class="stars">
-						<ul class="clearfix">
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-					<p>Noma will be auctioning off fifteen tables online today to raise funds for both Oz Harvest and MAD, Redzepi’s not-for-profit food education community.</p>
-				</div>
-			</div>
-		</li>
-		<li class="col-lg-3 col-md-4 col-sm-6">
-			<div class="inner-restau">
-				<a href="#" class="thumb"><img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img275x345.jpg" alt="" /></a>
-				<div class="intro-item">
-					<a href="#" class="link-title">MOF Japanese Dessert Cafe - Vincom Center</a>
-					<div class="stars">
-						<ul class="clearfix">
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-						</ul>
-					</div>
-					<p>Noma will be auctioning off fifteen tables online today to raise funds for both Oz Harvest and MAD, Redzepi’s not-for-profit food education community.</p>
-				</div>
-			</div>
-		</li>
+		<?php
+		$count++;
+		}?>
 	</ul>
+	<?php } ?>
 	<div class="pagi mgB-20">
-		<ul class="clearfix text-center">
-			<li class="active"><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
-			<li><a href="#">6</a></li>
-			<li><a href="#">7</a></li>
-			<li><a href="#">8</a></li>
-			<li><a href="#">9</a></li>
-		</ul>
+		<?php
+		if(!empty($pages)):?>
+			<?php $this->widget('backend.extensions.ExtLinkPager',array('pages'=>$pages)); ?>
+		<?php endif;
+		?>
 	</div>
 </div>
 <!-- InstanceEndEditable -->

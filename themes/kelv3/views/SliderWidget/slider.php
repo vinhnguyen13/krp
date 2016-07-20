@@ -15,6 +15,7 @@ if ($items && count($items) > 0) {
                             <img src="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/images/img539x480.jpg" alt=""/></a>
                             -->
                             <?php echo $value->getImageThumbnail(array('height' => '539px', 'width' => '480px')); ?>
+                        </a>
                         <div class="intro-item">
                             <a href="<?php echo $producturl; ?>" class="link-item"><?php echo $value->title; ?></a>
 

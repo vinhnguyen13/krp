@@ -11,6 +11,7 @@
  * @property string $slug
  * @property string $description
  * @property string $body
+ * @property string $extra_description
  */
 class ArticleTranslation extends CActiveRecord
 {
@@ -34,10 +35,10 @@ class ArticleTranslation extends CActiveRecord
 			array('article_id', 'numerical', 'integerOnly'=>true),
 			array('language_code', 'length', 'max'=>10),
 			array('title, slug', 'length', 'max'=>500),
-			array('description, body', 'safe'),
+			array('extra_description,description, body', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, article_id, language_code, title, slug, description, body', 'safe', 'on'=>'search'),
+			array('id, article_id, language_code, title, slug, extra_description, description, body', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -76,6 +77,7 @@ class ArticleTranslation extends CActiveRecord
 			'title' => 'Title',
 			'slug' => 'Slug',
 			'description' => 'Description',
+			'extra_description' => 'Restaurant Description',
 			'body' => 'Body',
 		);
 	}
@@ -104,6 +106,7 @@ class ArticleTranslation extends CActiveRecord
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('slug',$this->slug,true);
 		$criteria->compare('description',$this->description,true);
+		$criteria->compare('extra_description',$this->extra_description,true);
 		$criteria->compare('body',$this->body,true);
 
 		return new CActiveDataProvider($this, array(

@@ -26,6 +26,9 @@
 		?>
 	</div>
 	<div class="text-center">
-		<a href="#" class="view-all text-uper font-centuB">view all</a>
+		<?php
+		$viewall_url= Yii::app()->createUrl('//article/section', array('section' => 'restaurants'));
+		?>
+		<a href="<?php echo $viewall_url; ?>" class="view-all text-uper font-centuB">view all</a>
 	</div>
 </div>

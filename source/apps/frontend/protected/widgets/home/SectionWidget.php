@@ -15,8 +15,7 @@ class SectionWidget extends CWidget {
 		$criteria= new CDbCriteria();
 		$criteria->condition = 'status=:status';
 		$criteria->params = array(':status'=>1);
-		//print_r($criteria); die();
-		//$new_and_promo = Section::model()->findAll($criteria);
+
 		$section = Section::model()->findAll($criteria);
 		$this->render('home', array('section' => $section));
 	}

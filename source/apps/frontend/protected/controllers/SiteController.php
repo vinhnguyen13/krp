@@ -198,22 +198,38 @@ class SiteController extends Controller
 	
 	public function actionAjaxLogin()
 	{
+//		error_reporting(E_ALL);
+//		ini_set('display_errors', 1);
 		$model=new LoginForm;
-		
-		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-		
 		// collect user input data
 		if(isset($_POST['LoginForm']))
 		{
 			$model->attributes=$_POST['LoginForm'];
+			$model->rememberMe=true;
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-				return true;
+			if($model->validate() && $model->login()){
+				echo json_encode(array('status'=>true, 'message' => 'Login is successful'));
+				Yii::app()->end();
+			}
+		}
+		return false;
+	}
+
+	public function actionAjaxRegister()
+	{
+		$model = new RegisterForm();
+		if(Yii::app()->request->isPostRequest){
+			$model->attributes = Yii::app()->request->getPost('RegisterForm');
+			$model->validate();
+			if(!$model->hasErrors()){
+				if($model->save()) {
+					$frlogin=new LoginForm();
+					$frlogin->loginByUsernamePass($model->email, $model->password, false);
+					//$this->redirect('/');
+					echo json_encode(array('status'=>true, 'message' => 'Register is successful'));
+					Yii::app()->end();
+				}
+			}
 		}
 		return false;
 	}
@@ -230,7 +246,12 @@ class SiteController extends Controller
 				if($model->save()) {
 					$frlogin=new LoginForm();
 					$frlogin->loginByUsernamePass($model->email, $model->password, false);
-					$this->redirect('/');
+					if(isset($_POST['ajax'])){
+						echo json_encode(array('status'=>true, 'message' => 'Register is successful'));
+						Yii::app()->end();
+					}else{
+						$this->redirect('/');
+					}
 				}
 			}
 		}
@@ -390,6 +411,33 @@ class SiteController extends Controller
 				Yii::app()->end();
 			}
 			
+		}
+	}
+
+	public function actionSubscribe2(){
+		if (Yii::app()->request->isAjaxRequest){
+			$post = Yii::app()->request->getPost('Subscribe2');
+			$model = new Subscribe();
+			$model->attributes = $post;
+			if(!$model->exists('email = :email', array(':email' => $model->email))){
+
+				$model->status = 1;
+				$model->created = time();
+				$model->validate();
+				if(!$model->errors){
+					if($model->save()){
+						echo json_encode(array('status'=>true, 'message' => 'Your email has been successfully subscribed'));
+						Yii::app()->end();
+					} else {
+						echo json_encode($model->errors);
+						Yii::app()->end();
+					}
+				}
+			} else {
+				echo json_encode(array('status'=>true, 'message' => 'This email address already exists in our subscription list!'));
+				Yii::app()->end();
+			}
+
 		}
 	}
 	

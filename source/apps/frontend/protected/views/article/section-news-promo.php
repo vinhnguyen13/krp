@@ -14,146 +14,36 @@
 	<div class="title-box">
 		<span>Video</span>
 	</div>
+	<?php if(!empty($news)){?>
 	<ul class="clearfix row list-video-page">
-		<li class="col-lg-4 col-md-2">
-			<div class="item-video">
-				<a href="#">
-					<div class="bg-bottom"></div>
-					<div class="inner-item style-box">
-						<div class="thumb">
-							<img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img324x356.jpg" alt="">
-							<span class="icon-video"><i class="fa fa-play-circle-o" aria-hidden="true"></i></span>
+		<?php foreach ($news as $key => $article) { ?>
+			<?php $url = Yii::app()->createUrl('/article/view', array('section' => $article->sections['0']->slug, 'slug' => $article->slug, 'id' => $article->id));?>
+			<li class="col-lg-4 col-md-2">
+				<div class="item-video">
+					<a href="<?php echo $url; ?>">
+						<div class="bg-bottom"></div>
+						<div class="inner-item style-box">
+							<div class="thumb">
+								<!--
+								<img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img324x356.jpg" alt="">
+								-->
+								<?php echo $article->getImageThumbnail(array('border' => '', 'width' => 324, 'height' => 356)); ?>
+								<span class="icon-video"><i class="fa fa-play-circle-o" aria-hidden="true"></i></span>
+							</div>
+							<div class="text-center link-title"><?php echo $article->title; ?></div>
 						</div>
-						<div class="text-center link-title">Gnocchi recipes</div>
-					</div>
-				</a>
-			</div>
-		</li>
-		<li class="col-lg-4 col-md-2">
-			<div class="item-video">
-				<a href="#">
-					<div class="bg-bottom"></div>
-					<div class="inner-item style-box">
-						<div class="thumb">
-							<img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img324x356.jpg" alt="">
-							<span class="icon-video"><i class="fa fa-play-circle-o" aria-hidden="true"></i></span>
-						</div>
-						<div class="text-center link-title">Gnocchi recipes</div>
-					</div>
-				</a>
-			</div>
-		</li>
-		<li class="col-lg-4 col-md-2">
-			<div class="item-video">
-				<a href="#">
-					<div class="bg-bottom"></div>
-					<div class="inner-item style-box">
-						<div class="thumb">
-							<img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img324x356.jpg" alt="">
-							<span class="icon-video"><i class="fa fa-play-circle-o" aria-hidden="true"></i></span>
-						</div>
-						<div class="text-center link-title">Gnocchi recipes</div>
-					</div>
-				</a>
-			</div>
-		</li>
-		<li class="col-lg-4 col-md-2">
-			<div class="item-video">
-				<a href="#">
-					<div class="bg-bottom"></div>
-					<div class="inner-item style-box">
-						<div class="thumb">
-							<img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img324x356.jpg" alt="">
-							<span class="icon-video"><i class="fa fa-play-circle-o" aria-hidden="true"></i></span>
-						</div>
-						<div class="text-center link-title">Gnocchi recipes</div>
-					</div>
-				</a>
-			</div>
-		</li>
-		<li class="col-lg-4 col-md-2">
-			<div class="item-video">
-				<a href="#">
-					<div class="bg-bottom"></div>
-					<div class="inner-item style-box">
-						<div class="thumb">
-							<img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img324x356.jpg" alt="">
-							<span class="icon-video"><i class="fa fa-play-circle-o" aria-hidden="true"></i></span>
-						</div>
-						<div class="text-center link-title">Gnocchi recipes</div>
-					</div>
-				</a>
-			</div>
-		</li>
-		<li class="col-lg-4 col-md-2">
-			<div class="item-video">
-				<a href="#">
-					<div class="bg-bottom"></div>
-					<div class="inner-item style-box">
-						<div class="thumb">
-							<img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img324x356.jpg" alt="">
-							<span class="icon-video"><i class="fa fa-play-circle-o" aria-hidden="true"></i></span>
-						</div>
-						<div class="text-center link-title">Gnocchi recipes</div>
-					</div>
-				</a>
-			</div>
-		</li>
-		<li class="col-lg-4 col-md-2">
-			<div class="item-video">
-				<a href="#">
-					<div class="bg-bottom"></div>
-					<div class="inner-item style-box">
-						<div class="thumb">
-							<img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img324x356.jpg" alt="">
-							<span class="icon-video"><i class="fa fa-play-circle-o" aria-hidden="true"></i></span>
-						</div>
-						<div class="text-center link-title">Gnocchi recipes</div>
-					</div>
-				</a>
-			</div>
-		</li>
-		<li class="col-lg-4 col-md-2">
-			<div class="item-video">
-				<a href="#">
-					<div class="bg-bottom"></div>
-					<div class="inner-item style-box">
-						<div class="thumb">
-							<img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img324x356.jpg" alt="">
-							<span class="icon-video"><i class="fa fa-play-circle-o" aria-hidden="true"></i></span>
-						</div>
-						<div class="text-center link-title">Gnocchi recipes</div>
-					</div>
-				</a>
-			</div>
-		</li>
-		<li class="col-lg-4 col-md-2">
-			<div class="item-video">
-				<a href="#">
-					<div class="bg-bottom"></div>
-					<div class="inner-item style-box">
-						<div class="thumb">
-							<img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img324x356.jpg" alt="">
-							<span class="icon-video"><i class="fa fa-play-circle-o" aria-hidden="true"></i></span>
-						</div>
-						<div class="text-center link-title">Gnocchi recipes</div>
-					</div>
-				</a>
-			</div>
-		</li>
+					</a>
+				</div>
+			</li>
+		<?php } ?>
 	</ul>
+	<?php } ?>
 	<div class="pagi mgB-20">
-		<ul class="clearfix text-center">
-			<li class="active"><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
-			<li><a href="#">6</a></li>
-			<li><a href="#">7</a></li>
-			<li><a href="#">8</a></li>
-			<li><a href="#">9</a></li>
-		</ul>
+		<?php
+		if(!empty($pages)):?>
+			<?php $this->widget('backend.extensions.ExtLinkPager',array('pages'=>$pages)); ?>
+		<?php endif;
+		?>
 	</div>
 </div>
 <!-- InstanceEndEditable -->

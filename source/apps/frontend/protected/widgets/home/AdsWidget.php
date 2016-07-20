@@ -8,10 +8,12 @@
 
 class AdsWidget extends CWidget {
     public $position;
+    public $hideFollowing;
     public function run(){
         $zone = AdsZone::model()->getAll($this->position);
         $this->render('ads', array(
-            'zone' => $zone
+            'zone' => $zone,
+            'hideFollowing'=>$this->hideFollowing
         ));
     }
 }

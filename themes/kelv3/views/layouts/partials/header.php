@@ -16,7 +16,9 @@ $user = Yii::app()->user->data();
 								<li><a href="#" data-toggle="modal" data-target="#popup-login-form"><?php echo Lang::t('general', 'Login'); ?></a></li>
 								<li><a href="#" data-toggle="modal" data-target="#popup-sign-up">Sign up</a></li>
 							<?php }else{?>
-								<li><a href="<?php echo Yii::app()->user->data()->getUserUrl();?>">Sign out</a></li>
+
+								<li><a href="<?php echo Yii::app()->user->data()->getUserUrl();?>"><?php echo Yii::app()->user->data()->getDisplayName();?></a></li>
+								<li><a href="<?php echo Yii::app()->createUrl('//site/logout')?>">Sign out</a></li>
 <!--								<a title="Login" href="" class="logged-user"><span class="show-lightbox">--><?php //echo Yii::app()->user->data()->getDisplayName();?><!--</span></a>-->
 							<?php }?>
 

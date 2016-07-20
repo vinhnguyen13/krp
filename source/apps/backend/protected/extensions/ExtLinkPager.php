@@ -1,11 +1,11 @@
 <?php
 class ExtLinkPager extends CLinkPager
 {
-	const CSS_SELECTED_PAGE='current';
-	const CSS_FIRST_PAGE='out';
-	const CSS_LAST_PAGE='out';
-	const CSS_PREVIOUS_PAGE='out';
-	const CSS_NEXT_PAGE='out';
+	const CSS_SELECTED_PAGE='active';
+	const CSS_FIRST_PAGE='';
+	const CSS_LAST_PAGE='';
+	const CSS_PREVIOUS_PAGE='';
+	const CSS_NEXT_PAGE='';
 	const CSS_INTERNAL_PAGE='page';
 	const CSS_HIDDEN_PAGE='hidden';
 	public $header = '';
@@ -25,7 +25,7 @@ class ExtLinkPager extends CLinkPager
 		if(!isset($this->htmlOptions['id']))
 			$this->htmlOptions['id']=$this->getId();
 		if(!isset($this->htmlOptions['class']))
-			$this->htmlOptions['class']='yiiPager';
+			$this->htmlOptions['class']='clearfix text-center';
 	}
 	/**
 	 * Executes the widget.
@@ -39,7 +39,7 @@ class ExtLinkPager extends CLinkPager
 		if(empty($buttons))
 			return;
 		echo $this->header;
-		echo CHtml::tag('div',$this->htmlOptions,implode("\n",$buttons));
+		echo CHtml::tag('ul	',$this->htmlOptions,implode("\n",$buttons));
 		echo $this->footer;
     }
 	protected function createPageButtons()
@@ -84,7 +84,7 @@ class ExtLinkPager extends CLinkPager
 			unset($_GET[$this->getPages()->pageVar]);
 			$href = Yii::app()->createUrl($this->getController()->route, $_GET);
 		}
-		return CHtml::link($label, $href, array('class'=>$class));
+		return '<li>'.CHtml::link($label, $href, array('class'=>$class)).'</li>';
 	}
 
 }

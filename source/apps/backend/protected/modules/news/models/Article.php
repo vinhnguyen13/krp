@@ -22,6 +22,7 @@
  * @property integer $featured
  * @property integer $comment
  * @property integer $like
+ * @property string $extra_description
  */
 class Article extends CActiveRecord
 {
@@ -63,10 +64,10 @@ class Article extends CActiveRecord
 			array('title, meta_description, meta_keywords, html_title, author_name,', 'length', 'max'=>500),
 			array('type, title, description, body, public_time, ispublic, author_name', 'required'),
 			array('thumbnail', 'length', 'max'=>255),
-			array('description, body, slug, related, related_id, views, comment, like, thumbnail_slide', 'safe'),				
+			array('description,extra_description, body, slug, related, related_id, views, comment, like, thumbnail_slide', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, type, title, slug, description, body, thumbnail, thumbnail2, created, creator, last_modify, ispublic, public_time, meta_description, meta_keywords, html_title, author_name, views, layout, featured, comment, like, thumbnail_slide', 'safe', 'on'=>'search'),
+			array('id, type, title, slug, description,extra_description, body, thumbnail, thumbnail2, created, creator, last_modify, ispublic, public_time, meta_description, meta_keywords, html_title, author_name, views, layout, featured, comment, like, thumbnail_slide', 'safe', 'on'=>'search'),
 		);
 	}
 	
@@ -321,7 +322,7 @@ class Article extends CActiveRecord
 						'styles' => array(
 								# name => size
 								# use ! if you would like 'keepratio' => false
-								'thumb2' => '!679x334',
+								'thumb3' => '!679x334',
 						)
 				),				
 		);
@@ -338,6 +339,7 @@ class Article extends CActiveRecord
 			'title' => 'Title',
 			'slug'	=> 'Slug',
 			'description' => 'Description',
+			'extra_description' => 'Restaurant Description',
 			'body' => 'Body',
 			'thumbnail' => 'Thumbnail',
 			'thumbnail2' => 'Thumbnail2',
@@ -372,6 +374,7 @@ class Article extends CActiveRecord
 		$criteria->compare('views',$this->views);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('description',$this->description,true);
+		$criteria->compare('extra_description',$this->extra_description,true);
 		$criteria->compare('body',$this->body,true);
 		$criteria->compare('thumbnail',$this->thumbnail,true);
 		$criteria->compare('thumbnail2',$this->thumbnail2,true);
@@ -493,8 +496,7 @@ class Article extends CActiveRecord
 		/**
         * Pagination
         */
-		
-		
+
 		$count = count(Article::model()->findAll($criteria));
         $pages = new CPagination($count);
         $pages->pageSize = $limit;
@@ -953,15 +955,15 @@ class Article extends CActiveRecord
 		} else { 
 			$root_folder = Yii::getPathOfAlias ( 'pathroot' );
 			$get_thum_img = explode('.', $this->thumbnail);
-			if(count($get_thum_img) == 2){
-				$thumbnail = $get_thum_img[0] . '-thumb.' . $get_thum_img[1];
-				if(!file_exists($root_folder . $thumbnail)){
-					$thumbnail = $this->thumbnail;
-				}
-			} else {
-				$thumbnail = $this->thumbnail;
-			}
-			
+//			if(count($get_thum_img) == 2){
+//				$thumbnail = $get_thum_img[0] . '-thumb.' . $get_thum_img[1];
+//				if(!file_exists($root_folder . $thumbnail)){
+//					$thumbnail = $this->thumbnail;
+//				}
+//			} else {
+//				$thumbnail = $this->thumbnail;
+//			}
+			$thumbnail = $this->thumbnail;
 		} 
 		
 		return CHtml::image($thumbnail, $this->title, $htmlOptions);
@@ -1062,7 +1064,7 @@ class Article extends CActiveRecord
 		if (!$news){
 			$criteria=new CDbCriteria;
 			$criteria->addCondition('t.ispublic = 1');
-			$criteria->addInCondition('id', $array_id);
+			$criteria->addInCondition('t.id', $array_id);
 			$criteria->order = 't.public_time DESC';
 			$news = $this->findAll($criteria);
 			
@@ -1090,7 +1092,7 @@ class Article extends CActiveRecord
 	
 	public function getArticleByArrayId($article_ids){
 		$criteria=new CDbCriteria;
-		$criteria->addInCondition('id', $article_ids);
+		$criteria->addInCondition('t.id', $article_ids);
 		$criteria->addCondition('ispublic = 1');
 		$criteria->order = 'public_time DESC';
 		return $this->findAll($criteria);
@@ -1139,6 +1141,7 @@ class Article extends CActiveRecord
     	if(!($condition instanceof CDbCriteria)){
     		$condition = new CDbCriteria();
     	}
+
     	if(!empty($language) && Yii::app()->name != 'Admin'){
     		$languageDefault = Language::model()->find("is_default = 1");
     		if(!empty($languageDefault) ){
@@ -1187,6 +1190,7 @@ class Article extends CActiveRecord
 	    		$this->title =  $modelTrans->title;
 	    		$this->slug =  $modelTrans->slug;
 	    		$this->description =  $modelTrans->description;
+				$this->extra_description =  $modelTrans->extra_description;
 	    		$this->body =  $modelTrans->body;
 	    	}
     	}

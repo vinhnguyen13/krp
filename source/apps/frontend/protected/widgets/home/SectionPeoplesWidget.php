@@ -11,7 +11,7 @@ class SectionPeoplesWidget extends CWidget {
 			$section_peoples = Article::model()->getListArticlesBySection(10, 0, 4, 2);
 			Yii::app()->cache->set($this->cache_key, $section_peoples, $this->timeout);
 		}
-		$section_peoples['title']='People';
+		$section_peoples['title']=Lang::t('article', 'People');
 		$this->render('section-peoples', array('section_peoples' => $section_peoples));
 	}
 

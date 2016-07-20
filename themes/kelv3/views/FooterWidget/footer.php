@@ -71,15 +71,16 @@
             <div class="menu-footer col-md-7">
                 <div class="row">
                     <div class="col-sm-3">
-                        <a href="#" class="d-b text-uper">Editor's Picks</a>
-                        <a href="#" class="d-b text-uper">Restaurants</a>
-                        <a href="#" class="d-b text-uper">Events</a>
-                        <a href="#" class="d-b text-uper">Chefs</a>
-                        <a href="#" class="d-b text-uper">Curator's Blog</a>
+                        <a href="<?php echo Yii::app()->createUrl('//article/editor');?>" class="d-b text-uper">Editor's Picks</a>
+                        <?php if(isset($section)) {?>
+                            <?php foreach ($section as $key => $value) {?>
+                                <a href="<?php echo $value->getUrl();?>" class="d-b text-uper"><?php echo $value->title;?></a>
+                            <?php } ?>
+                        <?php } ?>
                     </div>
                     <div class="col-sm-3">
-                        <a href="#" class="d-b text-uper">About us</a>
-                        <a href="#" class="d-b text-uper">Contact us</a>
+                        <a href="<?php echo Yii::app()->createUrl('/site/page/view/about');?>" class="d-b text-uper"><?php echo Lang::t('general', 'About Us'); ?></a>
+                        <a href="<?php echo Yii::app()->createUrl('/site/contact');?>" class="d-b text-uper"><?php echo Lang::t('general', 'Contact Us'); ?></a>
                         <a href="#" class="d-b text-uper">Advertising</a>
                         <a href="#" class="d-b text-uper">FAQs</a>
                         <a href="#" class="d-b text-uper">privacy-policy</a>
@@ -123,8 +124,9 @@
                             ),
                         )); ?>
                         <?php echo $form->textField($model, 'email', array('class' => 'iput w-100', 'placeholder' => 'Email address')); ?>
-                        <?php echo CHtml::submitButton('', array('id' => 'btn-letter')); ?>
                         <?php echo $form->error($model, 'email'); ?>
+                        <?php echo CHtml::submitButton('', array('id' => 'btn-letter')); ?>
+
                         <?php $this->endWidget();
                         ?>
                     </div>

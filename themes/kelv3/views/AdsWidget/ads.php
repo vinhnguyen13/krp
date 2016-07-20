@@ -34,5 +34,7 @@
 <div class="col-xs-12 col-md-3 pdL-0 pdR-0 box-ads-follow">
     <div class="ads-350x250"><a href="#"><img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img300x250.jpg" alt="" /></a></div>
     <?php $this->widget('frontend.widgets.home.SubscribeWidget'); ?>
+    <?php if($hideFollowing==1){ ?>
     <?php $this->widget('frontend.widgets.home.SocialFollowWidget'); ?>
+    <?php } ?>
 </div>

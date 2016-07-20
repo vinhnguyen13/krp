@@ -25,6 +25,9 @@
 
 .color-fff{color: #fff;}
 
+.errorMessage{
+    color:red;
+}
 header {
     padding-top: 10px;
 }

@@ -4,7 +4,7 @@ var Comment = {
 			e.preventDefault();
 			var item = $("#comment-form");
 			var data = item.serialize();
-			$('body').loading();
+			//$('body').loading();
 			$.ajax({
 				type: 'POST',
 				url: item.attr('action'),
@@ -13,19 +13,19 @@ var Comment = {
 				success:function(response){
 					$('.comment-list').prepend(response);
 					$('#Comment_content').val('');
-					$('body').unloading();
+					//$('body').unloading();
 					
 			    },
 			 });
 		});
-		
-		
+
+
 		$(".text-cmt").on("keydown", ".cmt-post-text", function(e){
 			if (e.which == 13 && !e.shiftKey){
 				e.preventDefault();
 				var item = $("#comment-form");
 				var data = item.serialize();
-				$('body').loading();
+				//$('body').loading();
 				$.ajax({
 					type: 'POST',
 					url: item.attr('action'),
@@ -34,7 +34,7 @@ var Comment = {
 					success:function(response){
 						$('.comment-list').prepend(response);
 						$('#Comment_content').val('');
-						$('body').unloading();
+						//$('body').unloading();
 						
 				    },
 				 });

@@ -13,7 +13,7 @@ class NewsAndPromoWidget extends CWidget {
 			//Yii::app()->cache->set($this->cache_key, $section, $this->timeout);
 		//}
 		$new_and_promos = Article::model()->getListArticlesBySection(7, 0, 4);
-		$new_and_promos['title'] = 'NEWS & PROMO';
+		$new_and_promos['title'] = Lang::t('article', 'NEWS & PROMO');
 		$this->render('news-and-promo', array('new_and_promos' => $new_and_promos));
 	}
 

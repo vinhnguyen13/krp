@@ -53,12 +53,12 @@ $modelTransDefault = ArticleTranslation::model()->findByAttributes(array('articl
 								'class' => 'application.extensions.elFinder.TinyMceElFinder',
 								'connectorRoute'=> Yii::app()->createUrl('//../elfinder/connector'),
 						),
-						'settings' => array(
-							'theme_advanced_buttons1' => "save,newdocument,|,bold,italic,underline,strikethrough",
-							'theme_advanced_buttons2' => "",
-							'theme_advanced_buttons3' => "",
-							'theme_advanced_buttons4' => "",
-						),
+//						'settings' => array(
+//							'theme_advanced_buttons1' => "save,newdocument,|,bold,italic,underline,strikethrough",
+//							'theme_advanced_buttons2' => "",
+//							'theme_advanced_buttons3' => "",
+//							'theme_advanced_buttons4' => "",
+//						),
 						'htmlOptions' => array(
 								'rows' => 20,
 								'cols' => 60,
@@ -69,6 +69,35 @@ $modelTransDefault = ArticleTranslation::model()->findByAttributes(array('articl
 				<?php echo $form->error($model,'description'); ?>
 				</div>
 			</div>
+
+			<div class="block">
+				<h2><?php echo $form->labelEx($model,'extra_description'); ?></h2>
+				<div class="input-wrap">
+					<?php
+//					$this->widget('application.extensions.tinymce.TinyMce', array(
+//						'model' => $model,
+//						'attribute' => 'extra_description',
+//						'fileManager' => array(
+//							'class' => 'application.extensions.elFinder.TinyMceElFinder',
+//							'connectorRoute'=> Yii::app()->createUrl('//../elfinder/connector'),
+//						),
+////						'settings' => array(
+////							//'theme_advanced_buttons1' => "save,newdocument,|,bold,italic,underline,strikethrough",
+////							'theme_advanced_buttons2' => "",
+////							'theme_advanced_buttons3' => "",
+////							'theme_advanced_buttons4' => "",
+////						),
+//						'htmlOptions' => array(
+//							'rows' => 20,
+//							'cols' => 60,
+//						),
+//					));
+					?>
+					<?php echo $form->textArea($model,'extra_description',array('rows'=>20,'cols'=>300, 'value'=>!empty($modelTransDefault->extra_description) ? $modelTransDefault->extra_description : '')); ?>
+					<?php echo $form->error($model,'extra_description'); ?>
+				</div>
+			</div>
+
 			<div class="block clearfix">
 					<h2><?php echo $form->labelEx($model,'thumbnail'); ?> (400 x 300)</h2>
 					<div class="input-wrap clearfix">
@@ -166,15 +195,17 @@ $modelTransDefault = ArticleTranslation::model()->findByAttributes(array('articl
 							'class' => 'application.extensions.elFinder.TinyMceElFinder',
 							'connectorRoute'=> Yii::app()->createUrl('//../elfinder/connector'),
 						),
-						'settings' => array(
-								'theme_advanced_buttons1' => "save,newdocument,|,bold,italic,underline,strikethrough",
-								'theme_advanced_buttons2' => "",
-								'theme_advanced_buttons3' => "",
-								'theme_advanced_buttons4' => "",
-						),
+//						'settings' => array(
+//								'theme_advanced_buttons1' => "save,newdocument,|,bold,italic,underline,strikethrough",
+//								'theme_advanced_buttons2' => "",
+//								'theme_advanced_buttons3' => "",
+//								'theme_advanced_buttons4' => "",
+//						),
 						'htmlOptions' => array(
 							'rows' => 20,
 							'cols' => 60,
+							'id' => 'body',
+							'name' => 'Article[body]',
 						),
 					));
 				?>
@@ -380,12 +411,12 @@ $modelTransDefault = ArticleTranslation::model()->findByAttributes(array('articl
 						'class' => 'application.extensions.elFinder.TinyMceElFinder',
 						'connectorRoute'=> Yii::app()->createUrl('//../elfinder/connector'),
 					),
-					'settings' => array(
-							'theme_advanced_buttons1' => "save,newdocument,|,bold,italic,underline,strikethrough",
-							'theme_advanced_buttons2' => "",
-							'theme_advanced_buttons3' => "",
-							'theme_advanced_buttons4' => "",
-					),
+//					'settings' => array(
+//							'theme_advanced_buttons1' => "save,newdocument,|,bold,italic,underline,strikethrough",
+//							'theme_advanced_buttons2' => "",
+//							'theme_advanced_buttons3' => "",
+//							'theme_advanced_buttons4' => "",
+//					),
 					'htmlOptions' => array(
 						'rows' => 10,
 						'cols' => 60,
@@ -398,6 +429,36 @@ $modelTransDefault = ArticleTranslation::model()->findByAttributes(array('articl
 			<?php echo $form->error($modelTrans,'description'); ?>
 			</div>
 		</div>
+
+		<div class="block">
+			<h2><?php echo $form->labelEx($modelTrans,'extra_description'); ?></h2>
+			<div class="input-wrap">
+				<?php
+//				$this->widget('application.extensions.tinymce.TinyMce', array(
+//					'model' => $modelTrans,
+//					'attribute' => 'extra_description',
+//					'fileManager' => array(
+//						'class' => 'application.extensions.elFinder.TinyMceElFinder',
+//						'connectorRoute'=> Yii::app()->createUrl('//../elfinder/connector'),
+//					),
+////					'settings' => array(
+////						'theme_advanced_buttons1' => "save,newdocument,|,bold,italic,underline,strikethrough",
+////						'theme_advanced_buttons2' => "",
+////						'theme_advanced_buttons3' => "",
+////						'theme_advanced_buttons4' => "",
+////					),
+//					'htmlOptions' => array(
+//						'rows' => 10,
+//						'cols' => 60,
+//						'id' => 'extra_description_'.$language->code,
+//						'name' => 'ArticleTranslation['.$language->code.'][extra_description]',
+//					),
+//				));
+				?>
+				<?php echo $form->textArea($modelTrans,'extra_description',array('rows'=>10,'cols'=>60, 'name'=>'ArticleTranslation['.$language->code.'][extra_description]')); ?>
+				<?php echo $form->error($modelTrans,'extra_description'); ?>
+			</div>
+		</div>
 		<div class="block">
 			<h2><?php echo $form->labelEx($modelTrans,'body'); ?>
 			<?php 
@@ -408,12 +469,12 @@ $modelTransDefault = ArticleTranslation::model()->findByAttributes(array('articl
 						'class' => 'application.extensions.elFinder.TinyMceElFinder',
 						'connectorRoute'=> Yii::app()->createUrl('//../elfinder/connector'),
 					),
-					'settings' => array(
-							'theme_advanced_buttons1' => "save,newdocument,|,bold,italic,underline,strikethrough",
-							'theme_advanced_buttons2' => "",
-							'theme_advanced_buttons3' => "",
-							'theme_advanced_buttons4' => "",
-					),
+//					'settings' => array(
+//							'theme_advanced_buttons1' => "save,newdocument,|,bold,italic,underline,strikethrough",
+//							'theme_advanced_buttons2' => "",
+//							'theme_advanced_buttons3' => "",
+//							'theme_advanced_buttons4' => "",
+//					),
 					'htmlOptions' => array(
 						'rows' => 20,
 						'cols' => 60,

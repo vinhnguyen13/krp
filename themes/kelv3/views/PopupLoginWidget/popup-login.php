@@ -21,7 +21,7 @@
         </div>
         <div>
         	<?php echo $form->passwordField($model,'password', array('placeholder'=>Lang::t('general', 'Password'))); ?>
-			<?php echo $form->error($model,'password'); ?>    
+			<?php echo $form->error($model,'password'); ?>
         </div>
         <?php echo $form->checkBox($model,'rememberMe', array('id'=>'check-rem-popup')); ?>
         <p><?php echo Lang::t('general', 'Remember me');?> | <a href="#"><?php echo Lang::t('general', 'Forgot your password?');?></a></p>
@@ -79,7 +79,8 @@
 					</div>
 					<div class="ver-c clearfix">
 						<button type="submit" class="btn-auth pull-right">send</button>
-						<a href="#">Forgot password?</a>
+						<?php echo $form->checkBox($model,'rememberMe', array('id'=>'check-rem-popup')); ?>
+						<p><?php echo Lang::t('general', 'Remember me');?> | <a href="#"><?php echo Lang::t('general', 'Forgot your password?');?></a></p>
 						<!--
 						<button type="submit" class="btn-auth pull-right">send</button>
 						<a href="#">Forgot password?</a>
@@ -94,7 +95,7 @@
 <script>
 function PopupLogin (form, data, hasError) {
 	if (!hasError) {
-		$('body').loading();
+		//$('body').loading();
 		var item = $("#login-form");
 		var data = item.serialize();
 		$.ajax({
@@ -102,7 +103,7 @@ function PopupLogin (form, data, hasError) {
 			url: item.attr('action'),
 		  	data:data,
 			success:function(response){
-				$('body').unloading();
+				//$('body').unloading();
 				location.reload(); 
 		    },
 		 	dataType:'json'

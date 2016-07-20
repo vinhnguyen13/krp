@@ -15,7 +15,7 @@
 			<li><a href="#" class="text-uper">Spanish<i class="fa fa-caret-right" aria-hidden="true"></i></a></li>
 		</ul>
 	</div>
-	<h1 class="title-detail">Morgan McGlone’s dining room opens at Harpoon Harry</h1>
+	<h1 class="title-detail"> adfad Morgan McGlone’s dining room opens at Harpoon Harry</h1>
 </div>
 <div class="detail-page detail-video">
 	<div class="container">

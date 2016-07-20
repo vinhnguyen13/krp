@@ -40,7 +40,7 @@ class TinyMce extends CInputWidget
 //        'skin_variant' => "black",
 //        'skin' => 'thebigreason',
         'skin' => 'cirkuit',
-
+        'extended_valid_elements'=>'ul,li,i',
         'plugins' => "autolink,lists,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,advlist",
 
         // Theme options
@@ -54,7 +54,7 @@ class TinyMce extends CInputWidget
         'theme_advanced_resizing' => true,
         'height' => '400px',
     	'width' => '640',
-    
+
         'relative_urls' => false,
 
         'spellchecker_languages' => "+Русский=ru",

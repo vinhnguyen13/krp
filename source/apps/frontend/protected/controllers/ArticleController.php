@@ -30,7 +30,6 @@ class ArticleController extends Controller
 	 */
 	public function actionView($section, $slug, $id, $page = null)
 	{
-
 		Yii::app()->clientScript->registerScriptFile(Yii::app()->theme->baseUrl . '/resources/js/article/view.js', CClientScript::POS_BEGIN);
 		$article = new Article();
 		$view = $article->loadFullArticle($id);
@@ -57,12 +56,24 @@ class ArticleController extends Controller
 		$comment = $comment->getArticleComments($page, Comment::TYPE_COMMENT_ARTICLE, $id);
 		
 		$layout = (empty($view->layout)) ? 1 : $view->layout;
+		$morevideos=array();
+		$morerestaurants=array();
+
+		switch ($section){
+			case 'video':{
+				$morevideos = Article::model()->getListArticlesBySection(11, 1, 4,4);
+				break;
+			}
+			case 'restaurants':{
+				$morerestaurants = Article::model()->getListArticlesBySection(8, 1, 4,3);
+			}
+		}
+
 		//$section='video';
-		$section='restaurants';
+		//$section='restaurants';
 		//$section='features';
 		//$this->render('view', array('view'=>$view, 'comment' => $comment, 'layout' => $layout));
-		$this->render($this->loadArticleTemplate($section));
-
+		$this->render($this->loadArticleTemplate($section),array('view'=>$view, 'comment' => $comment,'morerestaurants'=>$morerestaurants,'morevideos'=>$morevideos,'layout' => $layout));
 	}
 	
 	public function actionMail(){
@@ -103,7 +114,7 @@ class ArticleController extends Controller
 		$sort = (isset($sort)) ? $sort : 'current';
 		$section = Section::model()->findByAttributes(array('slug' => $section ));
 		if(!empty($section)){
-			$data = Article::model()->getListArticlesBySection($section->id, $currentPage, $sort);
+			$data = Article::model()->getListArticlesBySection($section->id, $currentPage, $sort,12);
 			$data['section'] = $section;
 			$data['sort'] = $sort;
 			$this->render($this->loadSectionTemplate($section->slug), $data);
@@ -309,7 +320,7 @@ class ArticleController extends Controller
 	    			}
 	    		}
     		} else {
-    			
+    			echo 'aaa';
     		}
     	}		
     	Yii::app()->end();

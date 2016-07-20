@@ -15,61 +15,11 @@
 </div>
 
 <?php $this->widget('frontend.widgets.home.PopupLoginWidget'); ?>
+<?php $this->widget('frontend.widgets.home.PopupRegisterWidget'); ?>
 
-<div class="modal fade popup-common" id="popup-sign-up" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-close" aria-hidden="true"></i></button>
-			<div class="modal-body">
-				<div class="text-uper font-centuB fs-29 lh-100 text-center pdT-30 pdB-30">sign up</div>
-				<form action="" id="sign-up">
-					<div class="mgB-15">
-						<input type="text" placeholder="Email" />
-						<div class="vali-error hide"></div>
-					</div>
-					<div class="mgB-15">
-						<input type="text" placeholder="Name" />
-						<div class="vali-error hide"></div>
-					</div>
-					<div class="mgB-15">
-						<input type="password" placeholder="Password" />
-						<div class="vali-error hide"></div>
-					</div>
-					<div class="mgB-15">
-						<input type="text" placeholder="Enter the Pawword" />
-						<div class="vali-error hide"></div>
-					</div>
-					<div class="clearfix mgB-25">
-						<div class="w-50 pull-left">
-							<input type="text" placeholder="Verification" />
-						</div>
-						<div class="w-30 text-center cap-cha pull-left">
-							<img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/capcha.jpg" />
-						</div>
-						<div class="w-20 pull-left reload-capcha">
-							<a href="#"><i class="fa fa-refresh" aria-hidden="true"></i></a>
-						</div>
-					</div>
-					<div class="ver-c clearfix">
-						<button type="submit" class="btn-auth pull-right">register</button>
-						Have not account ! <a href="#" class="text-decor" data-toggle="modal" data-target="#popup-sign-in">Sign in now</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
-<?php Yii::app()->clientScript->registerCoreScript('jquery',CClientScript::POS_END); ?>
-<?php Yii::app()->clientScript->registerCoreScript('jquery.ui',CClientScript::POS_END); ?>
-<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/js/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/js/jquery.activeform.js"></script>
-<?php //Yii::app()->clientScript->registerCoreScript('jquery'); ?>
-
-<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/js/bootstrap.min.js"></script>
-<!--<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>-->
 <!-- InstanceBeginEditable name="EditRegion2" -->
 <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/js/common.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/js/swiper.jquery.min.js"></script>
+
 <?php Yii::app()->clientScript->registerCoreScript('jquery');?>
 <?php Yii::app()->clientScript->registerCoreScript('cookie');?>
 <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>

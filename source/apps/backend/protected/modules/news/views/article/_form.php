@@ -221,7 +221,7 @@ $modelTransDefault = ArticleTranslation::model()->findByAttributes(array('articl
 		<div class="block">
 			<h2><?php echo $form->labelEx($model,'layout'); ?></h2>
 			<div class="input-wrap">
-			<?php echo CHtml::activeDropDownList($model, 'layout', array(1 => 'Layout 1', 2 => 'Layout 2')); ?>
+			<?php echo CHtml::activeDropDownList($model, 'layout', array('1' => 'Default', '2' => 'Video','3' => 'Restaurant','4' => 'Feature','5'=>'News & Promo','6'=> 'Most Popular','7'=>'People')); ?>
 			<?php echo $form->error($model,'layout'); ?> 
 			</div>
 		</div>

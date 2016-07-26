@@ -15,63 +15,56 @@
     $form = $this->beginWidget('CActiveForm', array(
         'id' => 'subcribe-form',
         'action' => Yii::app()->createUrl('//site/subscribe'),
-        'enableAjaxValidation' => true,
+        'enableAjaxValidation' => false,
         'enableClientValidation' => true,
         'clientOptions' => array(
             'validateOnSubmit' => true,
-            'afterValidate' => 'js:Subcribe2'
+            'afterValidate' => 'js:Subcribe'
         ),
     )); ?>
     <?php echo $form->textField($model, 'email', array('class' => 'iput w-100', 'placeholder' => 'Email address')); ?>
-    <?php echo $form->error($model, 'email'); ?>
+    <?php echo $form->error($model, 'email',array('id'=>'Subscribe_email_em_')); ?>
     <?php echo CHtml::submitButton('', array('id' => 'btn-letter')); ?>
     <?php $this->endWidget();
     ?>
 </div>
 <script type="text/javascript">
-    function Subcribe2(form, data, hasError) {
+    function Subcribe(form, data, hasError) {
+
         if (!hasError) {
-            var item = $("#subcribe-form2");
-            var data = item.serialize();
+            if($('#Subscribe_email').val() == '') {
+                    Util.popAlertSuccess('<?php echo Lang::t('general', 'Please input a valid email'); ?>', 300);
+
+                    setTimeout(function () {
+                        $( ".pop-mess-succ" ).pdialog('close');
+                    }, 2000);
+                    //$("#Subscribe_email_em_").css('display', 'block');
+                    alert("Email could not be empty!");
+            }else{
+                var item = $("#subcribe-form");
+                var data = item.serialize();
+                console.log('bbb');
                 $.ajax({
                     type: 'POST',
                     url: item.attr('action'),
                     data: data,
                     success: function (response) {
+                        console.log(response);
                         if (response.status != undefined && response.status == true) {
                             alert(response.message);
+                            return false;
                         } else {
                             $.each(response, function (i, items) {
                                 $("#MessageForm_" + i + "_em_").html(items[0]);
                                 $("#MessageForm_" + i + "_em_").css('display', 'block');
                             });
                         }
+                        return false;
                     },
                     dataType: 'json'
                 });
-        }
-    }
+            }
 
-    function Subcribe(form, data, hasError) {
-        if (!hasError) {
-            var item = $("#subcribe-form");
-            var data = item.serialize();
-            $.ajax({
-                type: 'POST',
-                url: item.attr('action'),
-                data: data,
-                success: function (response) {
-                    if (response.status != undefined && response.status == true) {
-                        alert(response.message);
-                    } else {
-                        $.each(response, function (i, items) {
-                            $("#MessageForm_" + i + "_em_").html(items[0]);
-                            $("#MessageForm_" + i + "_em_").css('display', 'block');
-                        });
-                    }
-                },
-                dataType: 'json'
-            });
         }
     }
 </script>

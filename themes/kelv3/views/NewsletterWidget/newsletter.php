@@ -20,40 +20,40 @@
 </div>
 
 <script type="text/javascript">
-function Subcribe(form, data, hasError) {
-	if (!hasError) {
-		if($('#Subscribe_email').val() == ''){
-			Util.popAlertSuccess('<?php echo Lang::t('general', 'Please input a valid email'); ?>', 300);
-			
-	        setTimeout(function () {
-	         $( ".pop-mess-succ" ).pdialog('close');
-	        }, 2000);				
-		}else{
-			
-			var item = $("#subcribe-form");
-			var data = item.serialize();
-			$.ajax({
-				type: 'POST',
-				url: item.attr('action'),
-			  	data:data,
-				success:function(response){
-					if (response.status != undefined && response.status == true){
-						Util.popAlertSuccess(response.message, 300);
-						
-		    	        setTimeout(function () {
-		    	         $( ".pop-mess-succ" ).pdialog('close');
-		    	        }, 2000);
-		    	        
-					} else{
-						$.each(response, function(i, items) {
-							$("#MessageForm_"+i+"_em_").html(items[0]);
-							$("#MessageForm_"+i+"_em_").css('display', 'block');
-						});
-					}
-			    },
-			 	dataType:'json'
-			 });
-		}
-	}
-}
+//function Subcribe(form, data, hasError) {
+//	if (!hasError) {
+//		if($('#Subscribe_email').val() == ''){
+//			Util.popAlertSuccess('<?php //echo Lang::t('general', 'Please input a valid email'); ?>//', 300);
+//
+//	        setTimeout(function () {
+//	         $( ".pop-mess-succ" ).pdialog('close');
+//	        }, 2000);
+//		}else{
+//
+//			var item = $("#subcribe-form");
+//			var data = item.serialize();
+//			$.ajax({
+//				type: 'POST',
+//				url: item.attr('action'),
+//			  	data:data,
+//				success:function(response){
+//					if (response.status != undefined && response.status == true){
+//						Util.popAlertSuccess(response.message, 300);
+//
+//		    	        setTimeout(function () {
+//		    	         $( ".pop-mess-succ" ).pdialog('close');
+//		    	        }, 2000);
+//
+//					} else{
+//						$.each(response, function(i, items) {
+//							$("#MessageForm_"+i+"_em_").html(items[0]);
+//							$("#MessageForm_"+i+"_em_").css('display', 'block');
+//						});
+//					}
+//			    },
+//			 	dataType:'json'
+//			 });
+//		}
+//	}
+//}
 </script>

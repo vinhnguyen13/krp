@@ -73,7 +73,7 @@ class ArticleController extends Controller
 		//$section='restaurants';
 		//$section='features';
 		//$this->render('view', array('view'=>$view, 'comment' => $comment, 'layout' => $layout));
-		$this->render($this->loadArticleTemplate($section),array('view'=>$view, 'comment' => $comment,'morerestaurants'=>$morerestaurants,'morevideos'=>$morevideos,'layout' => $layout));
+		$this->render($this->loadArticleTemplate($layout),array('view'=>$view, 'comment' => $comment,'morerestaurants'=>$morerestaurants,'morevideos'=>$morevideos,'layout' => $layout));
 	}
 	
 	public function actionMail(){
@@ -191,31 +191,34 @@ class ArticleController extends Controller
 	function loadArticleTemplate($section){
 
 		switch ($section){
-			case 'video':{
+            case '1':{
+                return 'view';
+                break;
+            }
+			case '2':{
 				return 'view-video';
 				break;
 			}
-			case 'news-promo':{
-				return 'view-news-promo';
-				break;
-			}
-			case 'restaurants':{
+			case '3':{
 				return 'view-restaurants';
 				break;
 			}
-			case 'most-popular':{
-				return 'view-most-popular';
-				break;
-			}
-			case 'people':{
-				return 'view-people';
-				break;
-			}
-
-			case 'features':{
+			case '4':{
 				return 'view-features';
 				break;
 			}
+            case '5':{
+                return 'view-news-promo';
+                break;
+            }
+            case '6':{
+                return 'view-most-popular';
+                break;
+            }
+            case '7':{
+                return 'view-people';
+                break;
+            }
 			default:{
 				return 'view';
 				break;

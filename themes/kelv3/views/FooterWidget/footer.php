@@ -113,22 +113,56 @@
                             </div>
                         </div>
                         <?php
+
                         $form = $this->beginWidget('CActiveForm', array(
                             'id' => 'subcribe-form2',
                             'action' => Yii::app()->createUrl('//site/subscribe'),
-                            'enableAjaxValidation' => true,
+                            'enableAjaxValidation' => false,
                             'enableClientValidation' => true,
                             'clientOptions' => array(
                                 'validateOnSubmit' => true,
-                                'afterValidate' => 'js:Subcribe'
+                                'afterValidate' => 'js:Subcribe2'
                             ),
                         )); ?>
-                        <?php echo $form->textField($model, 'email', array('class' => 'iput w-100', 'placeholder' => 'Email address')); ?>
-                        <?php echo $form->error($model, 'email'); ?>
-                        <?php echo CHtml::submitButton('', array('id' => 'btn-letter')); ?>
+                        <?php echo $form->textField($model2, 'email', array('name' => 'Subcribe2[email]','class' => 'iput w-100', 'placeholder' => 'Email address')); ?>
+                        <?php echo $form->error($model2, 'email',array('id'=>'Subscribe2_email_em_')); ?>
+                        <?php echo CHtml::submitButton('', array('id' => 'btn-letter','name' => 'Subcribe2[btn-letter]')); ?>
 
                         <?php $this->endWidget();
                         ?>
+
+                        <script type="text/javascript">
+                            function Subcribe2(form, data, hasError) {
+                                if($('#Subcribe2_email').val() == '') {
+                                        Util.popAlertSuccess('<?php echo Lang::t('general', 'Please input a valid email'); ?>', 300);
+
+                                        setTimeout(function () {
+                                            $( ".pop-mess-succ" ).pdialog('close');
+                                        }, 2000);
+                                    alert("Email could not be empty!");
+                                }else{
+                                    var item = $("#subcribe-form2");
+                                    var data = item.serialize();
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: item.attr('action'),
+                                        data: data,
+                                        success: function (response) {
+                                            if (response.status != undefined && response.status == true) {
+                                                alert(response.message);
+                                                return false;
+                                            } else {
+                                                $.each(response, function (i, items) {
+                                                    $("#MessageForm_" + i + "_em_").html(items[0]);
+                                                    $("#MessageForm_" + i + "_em_").css('display', 'block');
+                                                });
+                                            }
+                                        },
+                                        dataType: 'json'
+                                    });
+                                }
+                            }
+                        </script>
                     </div>
 
                     <div class="follow-social">

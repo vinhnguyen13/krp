@@ -4,12 +4,12 @@ $(function(){
 
 var Util = {
 	init: function (){
-		$(".ui-widget-overlay").live("click", function (){
+		$(".ui-widget-overlay").on("click", function (){
 			$("div:ui-dialog:visible").pdialog("close");
 		});
 		Util.uiDialog();
         Util.uiloading();
-        $('.ui-dialog-content .btn-close-dialog').live("click", function (){
+        $('.ui-dialog-content .btn-close-dialog').on("click", function (){
             $("div:ui-dialog:visible").pdialog("close");
         });
 	},

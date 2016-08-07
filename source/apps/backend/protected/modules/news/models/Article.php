@@ -23,6 +23,8 @@
  * @property integer $comment
  * @property integer $like
  * @property string $extra_description
+ * @property integer $rating_number
+ * @property integer $total_points
  */
 class Article extends CActiveRecord
 {
@@ -60,7 +62,7 @@ class Article extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('sections', 'checkSection'),
-			array('type, created, creator, last_modify, ispublic, layout, comment, like', 'numerical', 'integerOnly'=>true),
+			array('rating_number, total_points,type, created, creator, last_modify, ispublic, layout, comment, like', 'numerical', 'integerOnly'=>true),
 			array('title, meta_description, meta_keywords, html_title, author_name,', 'length', 'max'=>500),
 			array('type, title, description, body, public_time, ispublic, author_name', 'required'),
 			array('thumbnail', 'length', 'max'=>255),

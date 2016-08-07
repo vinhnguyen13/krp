@@ -56,24 +56,24 @@ class ArticleController extends Controller
 		$comment = $comment->getArticleComments($page, Comment::TYPE_COMMENT_ARTICLE, $id);
 		
 		$layout = (empty($view->layout)) ? 1 : $view->layout;
-		$morevideos=array();
-		$morerestaurants=array();
+        $mores=array();
 
 		switch ($section){
 			case 'video':{
-				$morevideos = Article::model()->getListArticlesBySection(11, 1, 4,4);
+                $mores = Article::model()->getListArticlesBySection(11, 1, 4,4);
 				break;
 			}
 			case 'restaurants':{
-				$morerestaurants = Article::model()->getListArticlesBySection(8, 1, 4,3);
+                $mores = Article::model()->getListArticlesBySection(8, 1, 4,3);
 			}
 		}
-
+        //echo $layout; die();
 		//$section='video';
 		//$section='restaurants';
 		//$section='features';
 		//$this->render('view', array('view'=>$view, 'comment' => $comment, 'layout' => $layout));
-		$this->render($this->loadArticleTemplate($layout),array('view'=>$view, 'comment' => $comment,'morerestaurants'=>$morerestaurants,'morevideos'=>$morevideos,'layout' => $layout));
+
+		$this->render($this->loadArticleTemplate($layout),array('view'=>$view, 'comment' => $comment,'mores'=>$mores,'layout' => $layout));
 	}
 	
 	public function actionMail(){

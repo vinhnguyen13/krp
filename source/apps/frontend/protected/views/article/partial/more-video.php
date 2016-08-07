@@ -1,8 +1,11 @@
+<?php
+if(isset($mores['news'])){
+?>
 <div class="title-box">
 	<span>More Video</span>
 </div>
 <?php
-foreach($morevideos['news'] as $key=>$value){
+foreach($mores['news'] as $key=>$value){
 	$producturl='';
 	$producturl	=	Yii::app()->createUrl('/article/view', array('section' => $value->sections['0']->slug, 'slug' => $value->slug, 'id' => $value->id));
 ?>
@@ -18,5 +21,6 @@ foreach($morevideos['news'] as $key=>$value){
 	</div>
 </div>
 <?php
+}
 }
 ?>

@@ -30,13 +30,19 @@
 				</a>
 				<div class="intro-item">
 					<a href="<?php echo $url; ?>" class="link-title"><?php echo $article->title; ?></a>
+
 					<div class="stars">
 						<ul class="clearfix">
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+                            <?php $current_rating=$article->rating_number!=0?$article->total_points/$article->rating_number:0; ?>
+                            <?php
+                            for($i=0 ;$i<5 ;$i++){
+                                if($i<$current_rating){?>
+                                    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                <?php }else{ ?>
+                                    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                <?php }
+                            }
+                            ?>
 						</ul>
 					</div>
 					<p><?php echo Util::partString($article->description, 0,150); ?></p>

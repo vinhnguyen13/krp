@@ -12,9 +12,11 @@
 				<!--
 				<a href="#" class="thumb"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/images/img135x172.jpg" alt=""/></a>
 				-->
-				<?php echo $value->getImageThumbnail(array('class'=>'thumb','height' => '135px', 'width' => '172px')); ?>
+                <a href = "<?php echo $producturl; ?>" class="thumb" >
+				    <?php echo $value->getImageThumbnail(array('class'=>'thumb','height' => '135px', 'width' => '172px')); ?>
+                </a>
 				<div class="intro-item">
-					<a href="#" class="link-item"><?php echo $value->title; ?></a>
+					<a href="<?php echo $producturl; ?>" class="link-item"><?php echo $value->title; ?></a>
 
 					<p class="date-post"><?php echo date('d.m.Y',$value->public_time); ?></p>
 

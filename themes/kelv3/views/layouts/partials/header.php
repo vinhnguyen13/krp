@@ -44,10 +44,7 @@ $user = Yii::app()->user->data();
 				<div class="search-bar pull-left dropdown-emu">
 					<a href="#" class="btn-search-header item-click"><i class="fa fa-search" aria-hidden="true"></i></a>
 					<div class="item-drop">
-						<form action="" id="">
-							<input type="text" />
-							<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-						</form>
+                        <?php $this->widget('frontend.widgets.home.SearchWidget'); ?>
 					</div>
 				</div>
 				<?php

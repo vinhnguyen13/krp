@@ -25,6 +25,7 @@ return array(
 		'application.modules.cms.models.*',
 		'application.modules.media.models.*',
 		'application.modules.news.models.*',
+        'application.modules.rating.models.*',
 		'application.modules.product.models.*',
 		'application.modules.user.models.*',
 		'application.modules.systems.models.*',
@@ -120,6 +121,7 @@ return array(
 			'layout' => '//layouts/column1'
 		),
 		'ads',
+        	'rating',
 		'cms',
 		'media',
 		'news',

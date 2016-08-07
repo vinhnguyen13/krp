@@ -32,6 +32,7 @@ return array(
 		'backend.modules.cms.models.*',
 		'backend.modules.media.models.*',
 		'backend.modules.news.models.*',
+        'backend.modules.rating.models.*',
 		'backend.modules.product.models.*',
 		'backend.modules.user.models.*',
 		'backend.modules.profile.models.*',

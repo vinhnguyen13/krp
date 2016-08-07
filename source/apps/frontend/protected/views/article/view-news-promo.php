@@ -72,13 +72,33 @@ if(isset($view->categories[0])){
 						<div class="ver-c mgB-20">
 							<span class="font-centuB fs-16 text-uper d-ib mgR-10">Your Rating:</span>
 							<div class="stars d-ib">
-								<ul class="clearfix">
-									<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-								</ul>
+                                <script language="javascript" type="text/javascript">
+                                    jQuery(function($) {
+                                        $("#rating_star_<?php echo $view->id; ?>").codexworld_rating_widget({
+                                            starLength: '5',
+                                            initialValue: <?php echo $view->rating_number!=0?$view->total_points/$view->rating_number:0; ?>,
+                                            callbackFunctionName: 'processRating',
+                                            imageDirectory: '<?php echo Yii::app()->theme->baseUrl;?>/resources/html/css/images',
+                                            inputAttr: 'articleID'
+                                        });
+                                    });
+                                </script>
+                                <input name="rating_<?php echo $view->id; ?>" value="<?php echo $view->rating_number!=0?$view->total_points/$view->rating_number:0; ?>" id="rating_star_<?php echo $view->id; ?>" type="hidden" articleID="<?php echo $view->id; ?>" />
+                                <script type="text/javascript">
+                                    function processRating(val, attrVal){
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: '/site/rating',
+                                            data: 'id='+attrVal+'&total_points='+val,
+                                            dataType: 'json',
+                                            success : function(data) {
+                                                if (data.status == 'ok') {
+                                                }else{
+                                                }
+                                            }
+                                        });
+                                    }
+                                </script>
 							</div>
 						</div>
 						<?php $this->renderPartial("partial/comment-list", $comment);?>

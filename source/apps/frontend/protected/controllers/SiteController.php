@@ -440,5 +440,38 @@ class SiteController extends Controller
 
 		}
 	}
+
+    public function actionRating(){
+        if (Yii::app()->request->isAjaxRequest){
+            $total_points = Yii::app()->request->getPost('total_points');
+            $id = Yii::app()->request->getPost('id');
+            $model = Article::model()->findByPk($id);
+
+            if($model){
+                //print_r($model);
+                $model->rating_number=$model->rating_number+1;
+                $model->total_points=$model->total_points+$total_points;
+                $model->validate();
+                if(!$model->errors){
+                    if($model->save()){
+                        echo json_encode(array('status'=>'ok', 'message' => 'This rating has been saved'));
+                        Yii::app()->end();
+                    } else {
+                        echo json_encode($model->errors);
+                        Yii::app()->end();
+                    }
+                }else{
+                    print_r($model->errors);
+                }
+            } else {
+                echo json_encode(array('status'=>true, 'message' => 'This rating has not been saved!'));
+                Yii::app()->end();
+            }
+        }
+    }
+
+    public function actionFaq(){
+        $this->render('faq');
+    }
 	
 }

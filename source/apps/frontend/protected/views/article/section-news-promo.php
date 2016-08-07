@@ -12,7 +12,7 @@
 		</div>
 	</div>
 	<div class="title-box">
-		<span>Video</span>
+		<span>News & Promo</span>
 	</div>
 	<?php if(!empty($news)){?>
 	<ul class="clearfix row list-video-page">

@@ -2,7 +2,7 @@
 	<span>More Restaurants</span>
 </div>
 <?php
-foreach($morerestaurants['news'] as $key=>$value){
+foreach($mores['news'] as $key=>$value){
 	$producturl='';
 	$producturl	=	Yii::app()->createUrl('/article/view', array('section' => $value->sections['0']->slug, 'slug' => $value->slug, 'id' => $value->id));
 ?>
@@ -16,12 +16,17 @@ foreach($morerestaurants['news'] as $key=>$value){
 	<div class="intro-item">
 		<a href="<?php echo $producturl; ?>" class="link-item"><?php echo $value->title; ?></a>
 		<div class="stars d-ib">
+            <?php $current_rating=$value->rating_number!=0?$value->total_points/$value->rating_number:0; ?>
 			<ul class="clearfix">
-				<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+                <?php
+                for($i=0 ;$i<5 ;$i++){
+                    if($i<$current_rating){?>
+                        <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                    <?php }else{ ?>
+                        <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+                    <?php }
+                }
+                ?>
 			</ul>
 		</div>
 		<a href="<?php echo $producturl; ?>" class="d-ib mgL-10 fs-13"><?php echo $value->comment; ?> Comments</a>

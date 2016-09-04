@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/common.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
 <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -20,10 +20,39 @@
 <title>Untitled Document</title>
 <!-- InstanceEndEditable -->
 <link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/mobile.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div id="container">
         <header>
+        	<div class="ads-top-header">
+                <div class="inner-item container">
+                    <a href="#" class="logo"><img src="images/logo.png" alt=""></a>
+                    <div class="text-center ads"><a href="#"><img src="images/img730x90.jpg" alt=""></a></div>
+                    <div class="social-header">
+                        <ul class="clearfix">
+                            <li class="dropdown-emu gr-user-auth">
+                                <a href="#" class="icon-social user-auth item-click"><i class="fa fa-user" aria-hidden="true"></i></a>
+                                <div class="item-drop arrow-drop">
+                                    <ul>
+                                        <li><a href="#" data-toggle="modal" data-target="#popup-sign-in">Sign in</a></li>
+                                        <li><a href="#" data-toggle="modal" data-target="#popup-sign-up">Sign up</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="icon-social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon-social"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon-social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="container clearfix header-top">
                 <div class="text-center">
                     <a href="#" class="logo"><img src="images/logo.png" alt="" /></a>
@@ -32,7 +61,7 @@
                     <ul class="clearfix">
                         <li class="dropdown-emu gr-user-auth">
                             <a href="#" class="icon-social user-auth item-click"><i class="fa fa-user" aria-hidden="true"></i></a>
-                            <div class="item-drop">
+                            <div class="item-drop arrow-drop">
                                 <ul>
                                     <li><a href="#" data-toggle="modal" data-target="#popup-sign-in">Sign in</a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#popup-sign-up">Sign up</a></li>
@@ -57,7 +86,7 @@
                     <div class="pull-right">
                         <div class="search-bar pull-left dropdown-emu">
                             <a href="#" class="btn-search-header item-click"><i class="fa fa-search" aria-hidden="true"></i></a>
-                            <div class="item-drop">
+                            <div class="item-drop arrow-drop">
                                 <form action="" id="">
                                     <input type="text" />
                                     <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -66,7 +95,7 @@
                         </div>
                         <div class="lang pull-left dropdown-emu">
                             <a href="#" class="flag-us flag-country item-click"><span></span><i class="fa fa-caret-down" aria-hidden="true"></i></a>
-                            <div class="item-drop">
+                            <div class="item-drop arrow-drop">
                                 <ul>
                                 	<li><a href="#"><img src="images/flag-us.jpg" alt="" /></a></li>
                                     <li><a href="#"><img src="images/flag-vn.jpg" alt="" /></a></li>
@@ -77,8 +106,8 @@
                     <div class="inner-menu">
                         <ul class="clearfix">
                             <li class="user-auth">
-                                <a href="" herf="#" class="pull-left login-link">LOG IN</a>
-                                <a href="" herf="#" class="pull-left regis-link">CREATE<br>ACCOUNT</a>
+                                <a herf="#" data-toggle="modal" data-target="#popup-sign-in" class="pull-left login-link">LOG IN</a>
+                                <a herf="#" data-toggle="modal" data-target="#popup-sign-up" class="pull-left regis-link">CREATE<br>ACCOUNT</a>
                             </li>
                             <li class="show-sub">
                                 <a href="#">Features<i class="fa" aria-hidden="true"></i></a>
@@ -92,10 +121,40 @@
                                     </ul>
                                 </div>
                             </li>
-                            <li><a href="#">Restaurants<i class="fa" aria-hidden="true"></i></a></li>
-                            <li><a href="#">News & Promo<i class="fa" aria-hidden="true"></i></a></li>
-                            <li><a href="#">Most Popular<i class="fa" aria-hidden="true"></i></a></li>
-                            <li><a href="#">People<i class="fa" aria-hidden="true"></i></a></li>
+                            <li><a href="#">Restaurants<i class="fa" aria-hidden="true"></i></a>
+                            	<div class="sub-cate">
+                                    <ul class="clearfix">
+                                        <li><a href="#">Restaurant News & Features</a></li>
+                                        <li><a href="#">Restaurant Guide</a></li>
+                                        <li><a href="#">Restaurant News & Features</a></li>
+                                        <li><a href="#">Restaurant rEVIEW</a></li>
+                                        <li><a href="#">Restaurant News & Features</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#">News & Promo<i class="fa" aria-hidden="true"></i></a>
+                            	<div class="sub-cate">
+                                    <ul class="clearfix">
+                                        <li><a href="#">Restaurant News & Features</a></li>
+                                        <li><a href="#">Restaurant Guide</a></li>
+                                        <li><a href="#">Restaurant News & Features</a></li>
+                                        <li><a href="#">Restaurant rEVIEW</a></li>
+                                        <li><a href="#">Restaurant News & Features</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#">Most Popular<i class="fa" aria-hidden="true"></i></a>
+                            	<div class="sub-cate">
+                                    <ul class="clearfix">
+                                        <li><a href="#">Restaurant News & Features</a></li>
+                                        <li><a href="#">Restaurant Guide</a></li>
+                                        <li><a href="#">Restaurant News & Features</a></li>
+                                        <li><a href="#">Restaurant rEVIEW</a></li>
+                                        <li><a href="#">Restaurant News & Features</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#">People</a></li>
                             <li><a href="#">Video</a></li>
                         </ul>
                     </div>
@@ -135,7 +194,7 @@
                                     <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
-                            <a href="#" class="d-ib mgL-10">15 Comments</a>
+                            <a href="#" class="d-ib mgL-10 fs-16">15 Comments</a>
                         </div>
                     </div>
                 </li>
@@ -154,7 +213,7 @@
                                     <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
-                            <a href="#" class="d-ib mgL-10">15 Comments</a>
+                            <a href="#" class="d-ib mgL-10 fs-16">15 Comments</a>
                         </div>
                     </div>
                 </li>
@@ -173,7 +232,7 @@
                                     <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
-                            <a href="#" class="d-ib mgL-10">15 Comments</a>
+                            <a href="#" class="d-ib mgL-10 fs-16">15 Comments</a>
                         </div>
                     </div>
                 </li>
@@ -192,7 +251,7 @@
                                     <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
-                            <a href="#" class="d-ib mgL-10">15 Comments</a>
+                            <a href="#" class="d-ib mgL-10 fs-16">15 Comments</a>
                         </div>
                     </div>
                 </li>
@@ -211,7 +270,7 @@
                                     <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
-                            <a href="#" class="d-ib mgL-10">15 Comments</a>
+                            <a href="#" class="d-ib mgL-10 fs-16">15 Comments</a>
                         </div>
                     </div>
                 </li>
@@ -230,7 +289,7 @@
                                     <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
-                            <a href="#" class="d-ib mgL-10">15 Comments</a>
+                            <a href="#" class="d-ib mgL-10 fs-16">15 Comments</a>
                         </div>
                     </div>
                 </li>
@@ -249,7 +308,7 @@
                                     <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
-                            <a href="#" class="d-ib mgL-10">15 Comments</a>
+                            <a href="#" class="d-ib mgL-10 fs-16">15 Comments</a>
                         </div>
                     </div>
                 </li>
@@ -268,7 +327,7 @@
                                     <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
-                            <a href="#" class="d-ib mgL-10">15 Comments</a>
+                            <a href="#" class="d-ib mgL-10 fs-16">15 Comments</a>
                         </div>
                     </div>
                 </li>
@@ -287,7 +346,7 @@
                                     <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
-                            <a href="#" class="d-ib mgL-10">15 Comments</a>
+                            <a href="#" class="d-ib mgL-10 fs-16">15 Comments</a>
                         </div>
                     </div>
                 </li>
@@ -306,7 +365,7 @@
                                     <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
                                 </ul>
                             </div>
-                            <a href="#" class="d-ib mgL-10">15 Comments</a>
+                            <a href="#" class="d-ib mgL-10 fs-16">15 Comments</a>
                         </div>
                     </div>
                 </li>
@@ -330,6 +389,7 @@
         <footer>
             <div class="container">
                 <div class="row">
+                	
                     <div class="col-md-2">
                         <a href="#" class="logo-footer"><img src="images/logo-footer.png" alt=""></a>    
                     </div>
@@ -397,6 +457,8 @@
             </div>
         </footer>
     </div>
+    
+    <a id="gotop" href="#" rel="nofollow" class="show-hide">TOP</a>
     
     <div class="modal fade popup-common" id="popup-sign-in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -469,7 +531,9 @@
     </div>
     
     <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/velocity.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
     <!-- InstanceBeginEditable name="EditRegion2" -->
     
 	<!-- InstanceEndEditable -->

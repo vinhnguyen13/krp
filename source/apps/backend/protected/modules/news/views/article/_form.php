@@ -53,12 +53,6 @@ $modelTransDefault = ArticleTranslation::model()->findByAttributes(array('articl
 								'class' => 'application.extensions.elFinder.TinyMceElFinder',
 								'connectorRoute'=> Yii::app()->createUrl('//../elfinder/connector'),
 						),
-//						'settings' => array(
-//							'theme_advanced_buttons1' => "save,newdocument,|,bold,italic,underline,strikethrough",
-//							'theme_advanced_buttons2' => "",
-//							'theme_advanced_buttons3' => "",
-//							'theme_advanced_buttons4' => "",
-//						),
 						'htmlOptions' => array(
 								'rows' => 20,
 								'cols' => 60,
@@ -73,26 +67,6 @@ $modelTransDefault = ArticleTranslation::model()->findByAttributes(array('articl
 			<div class="block">
 				<h2><?php echo $form->labelEx($model,'extra_description'); ?></h2>
 				<div class="input-wrap">
-					<?php
-//					$this->widget('application.extensions.tinymce.TinyMce', array(
-//						'model' => $model,
-//						'attribute' => 'extra_description',
-//						'fileManager' => array(
-//							'class' => 'application.extensions.elFinder.TinyMceElFinder',
-//							'connectorRoute'=> Yii::app()->createUrl('//../elfinder/connector'),
-//						),
-////						'settings' => array(
-////							//'theme_advanced_buttons1' => "save,newdocument,|,bold,italic,underline,strikethrough",
-////							'theme_advanced_buttons2' => "",
-////							'theme_advanced_buttons3' => "",
-////							'theme_advanced_buttons4' => "",
-////						),
-//						'htmlOptions' => array(
-//							'rows' => 20,
-//							'cols' => 60,
-//						),
-//					));
-					?>
 					<?php echo $form->textArea($model,'extra_description',array('rows'=>20,'cols'=>300, 'value'=>!empty($modelTransDefault->extra_description) ? $modelTransDefault->extra_description : '')); ?>
 					<?php echo $form->error($model,'extra_description'); ?>
 				</div>
@@ -195,12 +169,6 @@ $modelTransDefault = ArticleTranslation::model()->findByAttributes(array('articl
 							'class' => 'application.extensions.elFinder.TinyMceElFinder',
 							'connectorRoute'=> Yii::app()->createUrl('//../elfinder/connector'),
 						),
-//						'settings' => array(
-//								'theme_advanced_buttons1' => "save,newdocument,|,bold,italic,underline,strikethrough",
-//								'theme_advanced_buttons2' => "",
-//								'theme_advanced_buttons3' => "",
-//								'theme_advanced_buttons4' => "",
-//						),
 						'htmlOptions' => array(
 							'rows' => 20,
 							'cols' => 60,
@@ -211,6 +179,124 @@ $modelTransDefault = ArticleTranslation::model()->findByAttributes(array('articl
 				?>
 				<?php echo $form->error($model,'body'); ?>
 			</div>
+            <br style="border:1px solid #f9f2f4"/>
+            <div class="block clearfix">
+                <div class="block clearfix">
+                    <h2><?php echo $form->labelEx($model,'res_city'); ?>
+                        <div class="input-wrap">
+                            <?php echo $form->textField($model,'res_city',array('size'=>60,'maxlength'=>500)); ?>
+                            <?php echo $form->error($model,'res_city'); ?>
+                        </div>
+                </div>
+                <div class="block clearfix">
+                    <h2><?php echo $form->labelEx($model,'res_district'); ?>
+                        <div class="input-wrap">
+                            <?php echo $form->textField($model,'res_district',array('size'=>60,'maxlength'=>500)); ?>
+                            <?php echo $form->error($model,'res_district'); ?>
+                        </div>
+                </div>
+                <h2><?php echo $form->labelEx($model,'res_address'); ?>
+                <div class="input-wrap">
+                    <?php echo $form->textField($model,'res_address',array('size'=>60,'maxlength'=>500)); ?>
+                    <?php echo $form->error($model,'res_address'); ?>
+                </div>
+            </div>
+            <div class="block clearfix">
+                <h2><?php echo $form->labelEx($model,'res_hotline'); ?>
+                <div class="input-wrap">
+                    <?php echo $form->textField($model,'res_hotline',array('size'=>60,'maxlength'=>500)); ?>
+                    <?php echo $form->error($model,'res_hotline'); ?>
+                </div>
+            </div>
+            <div class="block clearfix">
+                <h2><?php echo $form->labelEx($model,'res_year'); ?>
+                    <div class="input-wrap">
+                        <?php echo $form->textField($model,'res_year',array('size'=>60,'maxlength'=>500)); ?>
+                        <?php echo $form->error($model,'res_year'); ?>
+                    </div>
+            </div>
+
+            <div class="block clearfix">
+                <h2><?php echo $form->labelEx($model,'res_website'); ?>
+                    <div class="input-wrap">
+                        <?php echo $form->textField($model,'res_website',array('size'=>60,'maxlength'=>500)); ?>
+                        <?php echo $form->error($model,'res_website'); ?>
+                    </div>
+            </div>
+            <div class="block clearfix">
+                <h2><?php echo $form->labelEx($model,'res_setting'); ?>
+                    <ul>
+                        <?php
+                        if($model->res_setting!=""){
+                            $model->res_setting=explode(",",$model->res_setting);
+                            echo ZHtml::enumCheckBoxList($model,'res_setting',array('class'=>'CBLocation', 'template' => '<li>{label} {input}</li>', 'separator'=>false, 'container'=>false));
+                        }
+                        ?>
+                    </ul>
+            </div>
+            <div class="block clearfix">
+                <h2><?php echo $form->labelEx($model,'res_cuisine'); ?>
+                    <ul>
+                        <?php
+                        if($model->res_setting!="") {
+                            $model->res_cuisine = explode(",", $model->res_cuisine);
+                            echo ZHtml::enumDropDownList($model, 'res_cuisine', array('class' => 'CBLocation', 'template' => '<li>{label} {input}</li>', 'separator' => false, 'container' => false, 'multiple' => 'multiple'));
+                        }
+                        ?>
+                    </ul>
+            </div>
+            <div class="block clearfix">
+                <h2><?php echo $form->labelEx($model,'res_rating'); ?>
+                    <ul class="containerUl">
+                        <?php echo ZHtml::enumRadioList($model,'res_rating',array('class'=>'CBLocation', 'template' => '<li>{label} {input}</li>', 'separator'=>false, 'container'=>false)); ?>
+                    </ul>
+            </div>
+            <div class="block clearfix">
+                <h2><?php echo $form->labelEx($model,'res_open_hour'); ?>
+                    <div class="input-wrap">
+                        <?php echo $form->textField($model,'res_open_hour',array('size'=>60,'maxlength'=>500)); ?>
+                        <?php echo $form->error($model,'res_open_hour'); ?>
+                    </div>
+            </div>
+            <div class="block clearfix">
+                <h2><?php echo $form->labelEx($model,'res_closed_hour'); ?>
+                    <div class="input-wrap">
+                        <?php echo $form->textField($model,'res_closed_hour',array('size'=>60,'maxlength'=>500)); ?>
+                        <?php echo $form->error($model,'res_closed_hour'); ?>
+                    </div>
+            </div>
+            <div class="block clearfix">
+                <h2><?php echo $form->labelEx($model,'res_dress_code'); ?>
+                    <ul class="containerUl">
+                        <?php echo ZHtml::enumRadioList($model,'res_dress_code',array('class'=>'CBLocation',  'separator'=>false, 'container'=>false)); ?>
+                    </ul>
+            </div>
+            <div class="block clearfix">
+                <h2><?php echo $form->labelEx($model,'res_private_room'); ?>
+                    <ul class="containerUl">
+                        <?php echo ZHtml::enumRadioList($model,'res_private_room',array('class'=>'CBLocation', 'separator'=>false, 'container'=>false)); ?>
+                    </ul>
+            </div>
+            <div class="block clearfix">
+                <h2><?php echo $form->labelEx($model,'res_car_park'); ?>
+                    <ul class="containerUl">
+                        <?php echo ZHtml::enumRadioList($model,'res_car_park',array('class'=>'CBLocation', 'separator'=>false, 'container'=>false)); ?>
+                    </ul>
+            </div>
+
+            <div class="block clearfix">
+                <h2><?php echo $form->labelEx($model,'res_smoking_area'); ?>
+                    <ul class="containerUl">
+                        <?php echo ZHtml::enumRadioList($model,'res_smoking_area',array('class'=>'CBLocation', 'separator'=>false, 'container'=>false)); ?>
+                    </ul>
+            </div>
+            <div class="block clearfix">
+                <h2><?php echo $form->labelEx($model,'res_price'); ?>
+                    <div class="input-wrap">
+                        <?php echo $form->textField($model,'res_price',array('size'=>60,'maxlength'=>500)); ?>
+                        <?php echo $form->error($model,'res_price'); ?>
+                    </div>
+            </div>
 
 			<div class="block buttons">
 				<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class'=>'btn btn-primary')); ?>
@@ -411,12 +497,6 @@ $modelTransDefault = ArticleTranslation::model()->findByAttributes(array('articl
 						'class' => 'application.extensions.elFinder.TinyMceElFinder',
 						'connectorRoute'=> Yii::app()->createUrl('//../elfinder/connector'),
 					),
-//					'settings' => array(
-//							'theme_advanced_buttons1' => "save,newdocument,|,bold,italic,underline,strikethrough",
-//							'theme_advanced_buttons2' => "",
-//							'theme_advanced_buttons3' => "",
-//							'theme_advanced_buttons4' => "",
-//					),
 					'htmlOptions' => array(
 						'rows' => 10,
 						'cols' => 60,
@@ -433,28 +513,6 @@ $modelTransDefault = ArticleTranslation::model()->findByAttributes(array('articl
 		<div class="block">
 			<h2><?php echo $form->labelEx($modelTrans,'extra_description'); ?></h2>
 			<div class="input-wrap">
-				<?php
-//				$this->widget('application.extensions.tinymce.TinyMce', array(
-//					'model' => $modelTrans,
-//					'attribute' => 'extra_description',
-//					'fileManager' => array(
-//						'class' => 'application.extensions.elFinder.TinyMceElFinder',
-//						'connectorRoute'=> Yii::app()->createUrl('//../elfinder/connector'),
-//					),
-////					'settings' => array(
-////						'theme_advanced_buttons1' => "save,newdocument,|,bold,italic,underline,strikethrough",
-////						'theme_advanced_buttons2' => "",
-////						'theme_advanced_buttons3' => "",
-////						'theme_advanced_buttons4' => "",
-////					),
-//					'htmlOptions' => array(
-//						'rows' => 10,
-//						'cols' => 60,
-//						'id' => 'extra_description_'.$language->code,
-//						'name' => 'ArticleTranslation['.$language->code.'][extra_description]',
-//					),
-//				));
-				?>
 				<?php echo $form->textArea($modelTrans,'extra_description',array('rows'=>10,'cols'=>60, 'name'=>'ArticleTranslation['.$language->code.'][extra_description]')); ?>
 				<?php echo $form->error($modelTrans,'extra_description'); ?>
 			</div>
@@ -469,12 +527,6 @@ $modelTransDefault = ArticleTranslation::model()->findByAttributes(array('articl
 						'class' => 'application.extensions.elFinder.TinyMceElFinder',
 						'connectorRoute'=> Yii::app()->createUrl('//../elfinder/connector'),
 					),
-//					'settings' => array(
-//							'theme_advanced_buttons1' => "save,newdocument,|,bold,italic,underline,strikethrough",
-//							'theme_advanced_buttons2' => "",
-//							'theme_advanced_buttons3' => "",
-//							'theme_advanced_buttons4' => "",
-//					),
 					'htmlOptions' => array(
 						'rows' => 20,
 						'cols' => 60,
@@ -497,7 +549,12 @@ $modelTransDefault = ArticleTranslation::model()->findByAttributes(array('articl
 
 </div><!-- form -->
 
-
+<style>
+    .containerUl li{
+        float:left;
+        padding: 0 5px 0 5px;
+    }
+</style>
 <script type="text/javascript"><!--
 $(function() {
 	$("#Article_sections").change(function(){

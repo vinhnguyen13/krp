@@ -1,4 +1,4 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 
@@ -33,7 +33,7 @@
 <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 <!-- InstanceEndEditable -->
 <link href="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/css/style.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/css/rating.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/css/mobile.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 <?php Yii::app()->clientScript->registerCoreScript('jquery',CClientScript::POS_END); ?>
 <?php Yii::app()->clientScript->registerCoreScript('jquery.ui',CClientScript::POS_END); ?>

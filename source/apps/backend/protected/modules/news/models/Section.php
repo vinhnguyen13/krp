@@ -244,6 +244,7 @@ class Section extends CActiveRecord
 					$params = array(':language'=>$language);
 				}
 				$condition->params = $params;
+                $condition->order='displayorder ASC';
 			}
 		}
 

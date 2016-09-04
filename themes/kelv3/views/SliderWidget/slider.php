@@ -27,8 +27,8 @@ if ($items && count($items) > 0) {
                 ?>
             </div>
             <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+            <div class="swiper-button-prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
         </div>
     </div>
     <?php

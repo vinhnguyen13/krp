@@ -18,24 +18,32 @@
 <?php $this->widget('frontend.widgets.home.PopupRegisterWidget'); ?>
 
 <!-- InstanceBeginEditable name="EditRegion2" -->
+<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/js/velocity.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/js/common.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl; ?>/resources/html/js/swiper.jquery.min.js"></script>
 
 <?php Yii::app()->clientScript->registerCoreScript('jquery');?>
 <?php Yii::app()->clientScript->registerCoreScript('cookie');?>
 <?php Yii::app()->clientScript->registerCoreScript('jquery.ui');?>
 
 <script>
-	$(document).ready(function () {
-		var swiper = new Swiper('.slide-intro .swiper-container', {
-			pagination: '.swiper-pagination',
-			paginationClickable: true,
-			nextButton: '.swiper-button-next',
-			prevButton: '.swiper-button-prev',
-			spaceBetween: 0
-		});
+    $(document).ready(function () {
+        var swiper_1 = new Swiper('.slide-intro .swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            spaceBetween: 0
+        });
 
-		$('.dropdown-emu').dropdown_emu();
-	});
+        var swiper_2 = new Swiper('.list-video-home.swiper-container', {
+            slidesPerView: 'auto',
+            paginationClickable: true,
+            spaceBetween: 0
+        });
+
+        $('.dropdown-emu').dropdown_emu();
+    });
 </script>
 <!-- InstanceEndEditable -->
 

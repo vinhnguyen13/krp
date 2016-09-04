@@ -65,13 +65,21 @@ class ArticleController extends Controller
 			}
 			case 'restaurants':{
                 $mores = Article::model()->getListArticlesBySection(8, 1, 4,3);
+                break;
 			}
+            case 'features':{
+                $mores = Article::model()->getListArticlesBySection(12, 1, 4,5);
+                break;
+            }
+            case 'people':{
+                $mores = Article::model()->getListArticlesBySection(10, 1, 4,5);
+                break;
+            }
+            case 'news-promo':{
+                $mores = Article::model()->getListArticlesBySection(7, 1, 4,5);
+                break;
+            }
 		}
-        //echo $layout; die();
-		//$section='video';
-		//$section='restaurants';
-		//$section='features';
-		//$this->render('view', array('view'=>$view, 'comment' => $comment, 'layout' => $layout));
 
 		$this->render($this->loadArticleTemplate($layout),array('view'=>$view, 'comment' => $comment,'mores'=>$mores,'layout' => $layout));
 	}

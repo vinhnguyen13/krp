@@ -46,7 +46,6 @@ class SiteController extends Controller
 		$data['videos'] = Article::model()->getListArticlesBySection(11, 0, 4);
 		$data['peoples'] = Article::model()->getListArticlesBySection(10, 0, 4);
 		$data['populars'] = Article::model()->getMostLike(5);
-
 		$this->render('index',array('data'=>$data));
 	}
 

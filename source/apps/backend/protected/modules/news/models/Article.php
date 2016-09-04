@@ -23,8 +23,18 @@
  * @property integer $comment
  * @property integer $like
  * @property string $extra_description
- * @property integer $rating_number
- * @property integer $total_points
+ * @property string $res_city
+ * @property string $res_district
+ * @property string $res_setting
+ * @property string $res_rating
+ * @property string $res_cuisine
+ * @property string $res_open_hour
+ * @property string $res_closed_hour
+ * @property string $res_dress_code
+ * @property string $res_private_room
+ * @property string $res_car_park
+ * @property string $res_smoking_area
+ * @property string $res_price
  */
 class Article extends CActiveRecord
 {
@@ -62,8 +72,9 @@ class Article extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('sections', 'checkSection'),
-			array('rating_number, total_points,type, created, creator, last_modify, ispublic, layout, comment, like', 'numerical', 'integerOnly'=>true),
-			array('title, meta_description, meta_keywords, html_title, author_name,', 'length', 'max'=>500),
+			array(' type, created, creator, last_modify, ispublic, layout, comment, like', 'numerical', 'integerOnly'=>true),
+			//array('res_smoking_area,res_car_park,res_private_room,res_rating,res_price,res_dress_code,res_closed_hour,res_open_hour,res_cuisine,res_setting,res_disctrict,res_city,title, meta_description, meta_keywords, html_title, author_name,', 'length', 'max'=>500),
+            array('title, meta_description, meta_keywords, html_title, author_name,', 'length', 'max'=>500),
 			array('type, title, description, body, public_time, ispublic, author_name', 'required'),
 			array('thumbnail', 'length', 'max'=>255),
 			array('description,extra_description, body, slug, related, related_id, views, comment, like, thumbnail_slide', 'safe'),
@@ -80,12 +91,77 @@ class Article extends CActiveRecord
 	}
 	
 	public function beforeSave() {
+        //print_r($_POST['Article']); die();
 		if(empty($this->html_title))
 			$this->html_title = $this->title;
 		
 		if(empty($this->meta_description))
 			$this->meta_description = $this->description;
-		
+
+        if(isset($_POST['Article']['res_setting']) && count($_POST['Article']['res_setting']>0)){
+            $this->res_setting= implode(",",$_POST['Article']['res_setting']);
+        }
+
+        if(isset($_POST['Article']['res_cuisine']) && count($_POST['Article']['res_cuisine']>0)){
+            $this->res_cuisine= implode(",",$_POST['Article']['res_cuisine']);
+        }
+
+        if(isset($_POST['Article']['res_city'])){
+            $this->res_city= $_POST['Article']['res_city'];
+        }
+
+        if(isset($_POST['Article']['res_district'])){
+            $this->res_district= $_POST['Article']['res_district'];
+        }
+
+        if(isset($_POST['Article']['res_address'])){
+            $this->res_address= $_POST['Article']['res_address'];
+        }
+
+        if(isset($_POST['Article']['res_hotline'])){
+            $this->res_hotline= $_POST['Article']['res_hotline'];
+        }
+
+        if(isset($_POST['Article']['res_year'])){
+            $this->res_year= $_POST['Article']['res_year'];
+        }
+
+        if(isset($_POST['Article']['res_website'])){
+            $this->res_website= $_POST['Article']['res_website'];
+        }
+
+        if(isset($_POST['Article']['res_open_hour'])){
+            $this->res_open_hour= $_POST['Article']['res_open_hour'];
+        }
+
+        if(isset($_POST['Article']['res_closed_hour'])){
+            $this->res_closed_hour= $_POST['Article']['res_closed_hour'];
+        }
+
+        if(isset($_POST['Article']['res_dress_code'])){
+            $this->res_dress_code= $_POST['Article']['res_dress_code'];
+        }
+
+        if(isset($_POST['Article']['res_private_room'])){
+            $this->res_private_room= $_POST['Article']['res_private_room'];
+        }
+
+        if(isset($_POST['Article']['res_car_park'])){
+            $this->res_car_park= $_POST['Article']['res_car_park'];
+        }
+
+        if(isset($_POST['Article']['res_smoking_area'])){
+            $this->res_smoking_area= $_POST['Article']['res_smoking_area'];
+        }
+
+        if(isset($_POST['Article']['res_price'])){
+            $this->res_price= $_POST['Article']['res_price'];
+        }
+
+        if(isset($_POST['Article']['res_rating'])){
+            $this->res_rating= $_POST['Article']['res_rating'];
+        }
+
 		return parent::beforeSave();
 	}
 	

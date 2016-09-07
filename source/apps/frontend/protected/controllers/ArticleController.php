@@ -79,6 +79,10 @@ class ArticleController extends Controller
                 $mores = Article::model()->getListArticlesBySection(7, 1, 4,5);
                 break;
             }
+            case 'most-popular':{
+                $mores = Article::model()->getListArticlesBySection(9, 1, 4,5);
+                break;
+            }
 		}
 
 		$this->render($this->loadArticleTemplate($layout),array('view'=>$view, 'comment' => $comment,'mores'=>$mores,'layout' => $layout));

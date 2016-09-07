@@ -48,51 +48,29 @@ if(isset($view->categories[0])){
                         </div>
                         <div class="share-detail clearfix">
                             <div class="col-md-3 ver-c"><?php echo date('d.m.Y', $view->public_time) ;?></div>
-
                             <div class="col-md-3 ver-c text-uper"><a href="javascript:void(0);" class="show-frm-email"><i class="fa fa-share-square-o mgR-5" aria-hidden="true"></i><?php echo Lang::t('article', 'Share');?></a></div>
                             <div class="col-md-3 ver-c text-uper"><a href="javascript:void(0);" onclick="ArticleView.print();"><i class="fa fa-envelope-o mgR-5" aria-hidden="true"></i><?php echo Lang::t('article', 'Email');?></a></div>
                             <div class="col-md-3 ver-c text-uper"><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo Util::getCurrentUrl();?>"><i class="fa fa-print mgR-5" aria-hidden="true"></i><?php echo Lang::t('article', 'Print');?></a></div>
-
-                            <!--
-							<li><a href="javascript:void(0);" class="show-frm-email"><i class="icon_common icon-email-content">&nbsp;</i><?php echo Lang::t('article', 'Email');?></a></li>
-							<li><a href="javascript:void(0);" onclick="ArticleView.print();"><i class="icon_common icon-print">&nbsp;</i><?php echo Lang::t('article', 'Print');?></a></li>
-							<li>
-								<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo Util::getCurrentUrl();?>" target="_blank">
-									<i class="icon_common icon-share-fb">&nbsp;</i><?php echo Lang::t('article', 'Share');?></a>
-							</li>
-							-->
                         </div>
                         <?php echo $view->body;?>
                         <div class="ver-c mgB-20">
                             <span class="font-centuB fs-16 text-uper d-ib mgR-10">Your Rating:</span>
                             <div class="stars d-ib">
-                                <script language="javascript" type="text/javascript">
-                                    jQuery(function($) {
-                                        $("#rating_star_<?php echo $view->id; ?>").codexworld_rating_widget({
-                                            starLength: '5',
-                                            initialValue: <?php echo $view->rating_number!=0?$view->total_points/$view->rating_number:0; ?>,
-                                            callbackFunctionName: 'processRating',
-                                            imageDirectory: '<?php echo Yii::app()->theme->baseUrl;?>/resources/html/css/images',
-                                            inputAttr: 'articleID'
-                                        });
-                                    });
-                                </script>
-                                <input name="rating_<?php echo $view->id; ?>" value="<?php echo $view->rating_number!=0?$view->total_points/$view->rating_number:0; ?>" id="rating_star_<?php echo $view->id; ?>" type="hidden" articleID="<?php echo $view->id; ?>" />
-                                <script type="text/javascript">
-                                    function processRating(val, attrVal){
-                                        $.ajax({
-                                            type: 'POST',
-                                            url: '/site/rating',
-                                            data: 'id='+attrVal+'&total_points='+val,
-                                            dataType: 'json',
-                                            success : function(data) {
-                                                if (data.status == 'ok') {
-                                                }else{
-                                                }
-                                            }
-                                        });
+                                <ul class="clearfix">
+                                    <?php
+                                    for($rate=0;$rate<5;$rate++){
+                                        if($rate<$view->res_rating){
+                                            ?>
+                                            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                        <?php
+                                        }else{
+                                            ?>
+                                            <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                        <?php
+                                        }
                                     }
-                                </script>
+                                    ?>
+                                </ul>
                             </div>
                         </div>
                         <?php $this->renderPartial("partial/comment-list", $comment);?>
@@ -100,9 +78,9 @@ if(isset($view->categories[0])){
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 more-fea clearfix">
-                <?php $this->renderPartial("partial/more-video", array('mores'=>$mores));?>
+                <?php $this->renderPartial("partial/more-most-popular", array('mores'=>$mores));?>
+                <?php $this->widget('frontend.widgets.home.AdsWidget',array('position'=>'RIGHT','hideFollowing'=>0)); ?>
             </div>
-            <?php $this->widget('frontend.widgets.home.AdsWidget',array('hideFollowing'=>0)); ?>
         </div>
     </div>
 </div>

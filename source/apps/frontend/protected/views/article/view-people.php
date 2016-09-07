@@ -43,11 +43,19 @@ if(isset($view->categories[0])){
                             <span class="font-centuB fs-16 text-uper d-ib mgR-10">Your Rating:</span>
                             <div class="stars d-ib">
                                 <ul class="clearfix">
-                                    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                    <?php
+                                    for($rate=0;$rate<5;$rate++){
+                                        if($rate<$view->res_rating){
+                                            ?>
+                                            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                        <?php
+                                        }else{
+                                            ?>
+                                            <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                        <?php
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </div>
                         </div>

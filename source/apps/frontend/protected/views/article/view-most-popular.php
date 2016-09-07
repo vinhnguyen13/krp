@@ -66,8 +66,8 @@ if(isset($view->categories[0])){
             </div>
             <div class="col-lg-3 col-md-4 more-fea clearfix">
                 <?php $this->renderPartial("partial/more-most-popular", array('mores'=>$mores));?>
+                <?php $this->widget('frontend.widgets.home.AdsWidget',array('position'=>'RIGHT','hideFollowing'=>0)); ?>
             </div>
-            <?php $this->widget('frontend.widgets.home.AdsWidget',array('position'=>'RIGHT','hideFollowing'=>0)); ?>
         </div>
     </div>
 </div>

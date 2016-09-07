@@ -21,11 +21,19 @@
 
 					<div class="stars d-ib">
 						<ul class="clearfix">
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-							<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+                            <?php
+                            for($rate=0;$rate<5;$rate++){
+                                if($rate<$value->res_rating){
+                                ?>
+                                    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                <?php
+                                }else{
+                                    ?>
+                                    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+                            <?php
+                                }
+                            }
+                            ?>
 						</ul>
 					</div>
 					<a href="<?php echo $producturl;?>" class="d-ib mgL-10"><?php echo $value->comment; ?> Comments</a>

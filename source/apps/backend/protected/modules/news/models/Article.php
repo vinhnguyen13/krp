@@ -80,7 +80,8 @@ class Article extends CActiveRecord
 			array('description,extra_description, body, slug, related, related_id, views, comment, like, thumbnail_slide', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, type, title, slug, description,extra_description, body, thumbnail, thumbnail2, created, creator, last_modify, ispublic, public_time, meta_description, meta_keywords, html_title, author_name, views, layout, featured, comment, like, thumbnail_slide', 'safe', 'on'=>'search'),
+			array('res_city,res_district,res_setting,res_cuisine,res_rating,res_open_hour,res_closed_hour,res_dress_code,res_private_room,res_car_park,res_smoking_area,res_price,res_address,res_hotline,res_year,res_website,id, type, title, slug, description,extra_description, body, thumbnail, thumbnail2, created, creator, last_modify, ispublic, public_time, meta_description, meta_keywords, html_title, author_name, views, layout, featured, comment, like, thumbnail_slide', 'safe', 'on'=>'search'),
+
 		);
 	}
 	
@@ -447,7 +448,7 @@ class Article extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
+		$criteria->compare('t.id',$this->id);
 		$criteria->compare('type',$this->type);
 		$criteria->compare('views',$this->views);
 		$criteria->compare('title',$this->title,true);
@@ -468,6 +469,23 @@ class Article extends CActiveRecord
 		$criteria->compare('slug',$this->slug,true);
 		$criteria->compare('layout',$this->layout);
 		$criteria->compare('featured',$this->featured);
+
+        $criteria->compare('res_city',$this->res_city,true);
+        $criteria->compare('res_district',$this->res_district,true);
+        $criteria->compare('res_setting',$this->res_setting,true);
+        $criteria->compare('res_cuisine',$this->res_cuisine,true);
+        $criteria->compare('res_rating',$this->res_rating,true);
+        $criteria->compare('res_open_hour',$this->res_open_hour,true);
+        $criteria->compare('res_closed_hour',$this->res_closed_hour,true);
+        $criteria->compare('res_dress_code',$this->res_dress_code,true);
+        $criteria->compare('res_private_room',$this->res_private_room,true);
+        $criteria->compare('res_car_park',$this->res_car_park,true);
+        $criteria->compare('res_smoking_area',$this->res_smoking_area,true);
+        $criteria->compare('res_price',$this->res_price,true);
+        $criteria->compare('res_address',$this->res_address,true);
+        $criteria->compare('res_hotline',$this->res_hotline,true);
+        $criteria->compare('res_year',$this->res_year,true);
+        $criteria->compare('res_website',$this->res_website,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

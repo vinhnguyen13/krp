@@ -2,13 +2,7 @@
 <div class="container">
 	<div class="clearfix mgT-20 mgB-20">
 		<div class="pull-right ver-c">
-			<span class="text-uper fs-14 font-centuB">location:</span>
-			<div class="dropdown-emu d-ib slect-loca">
-				<a href="#" class="val-selected fs-13">Hồ Chí Minh<i class="fa fa-caret-down mgL-5" aria-hidden="true"></i></a>
-				<div class="item-dropdown hide">
-
-				</div>
-			</div>
+            <?php $this->widget('frontend.widgets.home.LocationWidget'); ?>
 		</div>
 	</div>
 	<div class="title-box">
@@ -32,18 +26,21 @@
 					<a href="<?php echo $url; ?>" class="link-title"><?php echo $article->title; ?></a>
 
 					<div class="stars">
-						<ul class="clearfix">
-                            <?php $current_rating=$article->rating_number!=0?$article->total_points/$article->rating_number:0; ?>
+                        <ul class="clearfix">
                             <?php
-                            for($i=0 ;$i<5 ;$i++){
-                                if($i<$current_rating){?>
+                            for($rate=0;$rate<5;$rate++){
+                                if($rate<$article->res_rating){
+                                    ?>
                                     <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                <?php }else{ ?>
+                                <?php
+                                }else{
+                                    ?>
                                     <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-                                <?php }
+                                <?php
+                                }
                             }
                             ?>
-						</ul>
+                        </ul>
 					</div>
 					<p><?php echo Util::partString($article->description, 0,150); ?></p>
 				</div>

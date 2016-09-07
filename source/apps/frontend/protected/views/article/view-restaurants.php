@@ -50,33 +50,21 @@ if(isset($view->categories[0])){
 						<div class="ver-c mgB-20">
 							<span class="font-centuB fs-16 text-uper d-ib mgR-10">Your Rating:</span>
 							<div class="stars d-ib">
-                                <script language="javascript" type="text/javascript">
-                                    jQuery(function($) {
-                                        $("#rating_star_<?php echo $view->id; ?>").codexworld_rating_widget({
-                                            starLength: '5',
-                                            initialValue: <?php echo $view->rating_number!=0?$view->total_points/$view->rating_number:0; ?>,
-                                            callbackFunctionName: 'processRating',
-                                            imageDirectory: '<?php echo Yii::app()->theme->baseUrl;?>/resources/html/css/images',
-                                            inputAttr: 'articleID'
-                                        });
-                                    });
-                                </script>
-                                <input name="rating_<?php echo $view->id; ?>" value="<?php echo $view->rating_number!=0?$view->total_points/$view->rating_number:0; ?>" id="rating_star_<?php echo $view->id; ?>" type="hidden" articleID="<?php echo $view->id; ?>" />
-                                <script type="text/javascript">
-                                    function processRating(val, attrVal){
-                                        $.ajax({
-                                            type: 'POST',
-                                            url: '/site/rating',
-                                            data: 'id='+attrVal+'&total_points='+val,
-                                            dataType: 'json',
-                                            success : function(data) {
-                                                if (data.status == 'ok') {
-                                                }else{
-                                                }
-                                            }
-                                        });
+                                <ul class="clearfix">
+                                    <?php
+                                    for($rate=0;$rate<5;$rate++){
+                                        if($rate<$view->res_rating){
+                                            ?>
+                                            <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                        <?php
+                                        }else{
+                                            ?>
+                                            <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                        <?php
+                                        }
                                     }
-                                </script>
+                                    ?>
+                                </ul>
 							</div>
 						</div>
 						<?php $this->renderPartial("partial/comment-list", $comment);?>
@@ -84,12 +72,67 @@ if(isset($view->categories[0])){
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-4">
-				<?php echo $view->extra_description; ?>
+                <div class="detail-attr">
+                    <div class="item-attr">
+                        <p><?php echo $view->res_address; ?></p>
+                        <p>Hotline: <?php echo $view->res_hotline; ?></p>
+                        <a href="#">View map</a>
+                    </div>
+                    <div class="item-attr">
+                        <p>Year Established: <?php echo $view->res_year; ?></p>
+                        <p>Opening Hours: <?php echo $view->res_open_hour; ?> - <?php echo $view->res_closed_hour; ?></p>
+                        <p>Website: <a href="<?php echo $view->res_website; ?>"><?php echo $view->res_website; ?></a></p>
+                    </div>
+                    <div class="item-attr">
+                        <p class="ver-c"><span class="d-ib mgR-5 iconDress"></span><span class="font-600">Dress Code:</span> <?php echo $view->res_dress_code; ?></p>
+                        <p class="ver-c"><span class="d-ib mgR-5 iconPrivate"></span><span class="font-600">Private Room:</span> <?php echo $view->res_private_room; ?></p>
+                        <p class="ver-c"><span class="d-ib mgR-5 iconCar"></span><span class="font-600">Car Park:</span> <?php echo $view->res_car_park; ?></p>
+                        <p class="ver-c"><span class="d-ib mgR-5 iconSmoking"></span><span class="font-600">Smoking:</span> <?php echo $view->res_smoking_area; ?></p>
+                        <p class="ver-c price-detail"><span class="d-ib mgR-5 iconPrice"></span><span class="font-600">Price:</span>
+                            <?php $count=count(explode("$",$view->res_price)); ?>
+                            <?php
+                            for($i=0;$i<5;$i++){
+                                if($i<$count){
+                                    ?>
+                                    <i class="fa fa-dollar active" aria-hidden="true"></i>
+                            <?php
+                                }else{
+                                    ?>
+                                    <i class="fa fa-dollar" aria-hidden="true"></i>
+                            <?php
+                                }
+                            }
+                            ?>
+                        </p>
+                    </div>
+                    <div class="item-attr ver-c">
+                        Rating
+                        <div class="stars d-ib mgL-10">
+                            <ul class="clearfix">
+                                <?php
+                                for($rate=0;$rate<5;$rate++){
+                                    if($rate<$view->res_rating){
+                                        ?>
+                                        <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                    <?php
+                                    }else{
+                                        ?>
+                                        <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+                                    <?php
+                                    }
+                                }
+                                ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 				<div class="more-restau">
 					<?php $this->renderPartial("partial/more-restaurant", array('mores'=>$mores));?>
 				</div>
 			</div>
-			<?php $this->widget('frontend.widgets.home.AdsWidget',array('hideFollowing'=>0)); ?>
+            <div class="col-xs-12 col-lg-3 box-ads-follow">
+                <?php $this->widget('frontend.widgets.home.AdsWidget',array('position'=>'RIGHT','hideFollowing'=>0)); ?>
+            </div>
 		</div>
 	</div>
 </div>

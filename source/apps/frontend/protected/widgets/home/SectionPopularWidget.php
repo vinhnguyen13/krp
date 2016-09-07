@@ -6,13 +6,14 @@ class SectionPopularWidget extends CWidget {
 	
 	public function run(){
 		Yii::app()->cache->flush();
-		$data = Yii::app()->cache->get($this->cache_key);
-		if (!$data){
-			$data	=	Article::model()->getMostLike(5);
-			Yii::app()->cache->set($this->cache_key, $data, $this->timeout);
-		}
 
-		$this->render('section-popular', array('section_populars' => $data));
+        $section_populars = Yii::app()->cache->get($this->cache_key);
+        if (!$section_populars){
+            $section_populars = Article::model()->getListArticlesBySection(9, 0, 4, 5);
+            Yii::app()->cache->set($this->cache_key, $section_populars, $this->timeout);
+        }
+        //$section_populars['title']=Lang::t('article', 'People');
+        $this->render('section-popular', array('section_populars' => $section_populars));
 	}
 
 }

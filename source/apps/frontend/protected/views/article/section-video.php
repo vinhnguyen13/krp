@@ -2,13 +2,7 @@
 <div class="container">
 	<div class="clearfix mgT-20 mgB-20">
 		<div class="pull-right ver-c">
-			<span class="text-uper fs-14 font-centuB">location:</span>
-			<div class="dropdown-emu d-ib slect-loca">
-				<a href="#" class="val-selected fs-13">Hồ Chí Minh<i class="fa fa-caret-down mgL-5" aria-hidden="true"></i></a>
-				<div class="item-dropdown hide">
-
-				</div>
-			</div>
+            <?php $this->widget('frontend.widgets.home.LocationWidget'); ?>
 		</div>
 	</div>
 	<div class="title-box">
@@ -26,11 +20,8 @@
 					<div class="bg-bottom"></div>
 					<div class="inner-item style-box">
 						<div class="thumb">
-							<!--
-							<img src="<?php echo Yii::app()->theme->baseUrl;?>/resources/html/images/img324x356.jpg" alt="">
-							-->
 							<?php echo $article->getImageThumbnail(array('border' => '', 'width' => 324, 'height' => 356)); ?>
-							<span class="icon-video"><i class="fa fa-play-circle-o" aria-hidden="true"></i></span>
+							<span class="icon-video"></span>
 						</div>
 						<div class="text-center link-title"><?php echo $article->title; ?></div>
 					</div>

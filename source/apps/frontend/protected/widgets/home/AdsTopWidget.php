@@ -6,12 +6,12 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class AdsBottomWidget extends CWidget {
+class AdsTopWidget extends CWidget {
     public $position;
     public function run(){
-        $zone = AdsZone::model()->getAll($this->position);
-        $this->render('ads-bottom', array(
-            'botzone' => $zone
+        $topzone = AdsZone::model()->getAll($this->position);
+        $this->render('ads-top', array(
+            'topzone' => $topzone
         ));
     }
 }

@@ -2,13 +2,7 @@
 <div class="container">
 	<div class="clearfix mgT-20 mgB-20">
 		<div class="pull-right ver-c">
-			<span class="text-uper fs-14 font-centuB">location:</span>
-			<div class="dropdown-emu d-ib slect-loca">
-				<a href="#" class="val-selected fs-13">Hồ Chí Minh<i class="fa fa-caret-down mgL-5" aria-hidden="true"></i></a>
-				<div class="item-dropdown hide">
-
-				</div>
-			</div>
+            <?php $this->widget('frontend.widgets.home.LocationWidget'); ?>
 		</div>
 	</div>
 	<div class="title-box">

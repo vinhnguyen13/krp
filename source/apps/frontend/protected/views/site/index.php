@@ -4,7 +4,9 @@
     <div class="clearfix mgB-40 box-big-news-promo">
         <?php $this->widget('frontend.widgets.home.NewlyOpenedWidget'); ?>
         <?php $this->widget('frontend.widgets.home.SliderWidget'); ?>
-        <?php $this->widget('frontend.widgets.home.AdsWidget'); ?>
+        <div class="col-xs-12 col-md-3 pdL-0 pdR-0 box-ads-follow">
+            <?php $this->widget('frontend.widgets.home.AdsWidget',array('position'=>'RIGHT')); ?>
+        </div>
     </div>
 
     <?php $this->widget('frontend.widgets.home.SectionRestaurantsWidget'); ?>
@@ -18,5 +20,4 @@
         <?php $this->widget('frontend.widgets.home.SectionPopularWidget'); ?>
     </div>
 </div>
-
 <!-- Picks Sections -->
